@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/06/12/A-Stupid-Mistake-I-Made-about-Sorting-in-Python-DataFrame/</loc>
+    
+    <lastmod>2018-06-12T02:48:56.108Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/</loc>
     
     <lastmod>2018-06-12T02:46:08.486Z</lastmod>
