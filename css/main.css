@@ -1837,7 +1837,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0890ff;
+  background: #90ff7a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2958,7 +2958,7 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background-image: url("/images/king.jpg");
+  background-image: url("/images/james.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
