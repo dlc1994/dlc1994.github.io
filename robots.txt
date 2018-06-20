@@ -9,5 +9,5 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Sitemap: http://dlc1994.github.io/sitemap.xml
-Sitemap: http://dlc1994.github.io/baidusitemap.xml
+Sitemap: https://dlc1994.github.io/sitemap.xml
+Sitemap: https://dlc1994.github.io/baidusitemap.xml
