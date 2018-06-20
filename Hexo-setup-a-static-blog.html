@@ -117,17 +117,17 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 <meta name="keywords" content="Hexo,Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo: setup a static blog">
-<meta property="og:url" content="http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/index.html">
+<meta property="og:url" content="dlc1994.github.io/Hexo-setup-a-static-blog.html">
 <meta property="og:site_name" content="DLC&#39;s Blog">
 <meta property="og:description" content="​    Before we start, you have to know what is the difference between static site and dynamic site. Let’s take a look at the definition in Wiki:  A static web page (sometimes called a flat page/statio">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/4.png">
+<meta property="og:image" content="/Hexo-setup-a-static-blog/2.jpg">
+<meta property="og:image" content="/Hexo-setup-a-static-blog/4.png">
 <meta property="og:updated_time" content="2018-06-14T07:52:25.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo: setup a static blog">
 <meta name="twitter:description" content="​    Before we start, you have to know what is the difference between static site and dynamic site. Let’s take a look at the definition in Wiki:  A static web page (sometimes called a flat page/statio">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/2.jpg">
+<meta name="twitter:image" content="/Hexo-setup-a-static-blog/2.jpg">
 
 
 
@@ -136,7 +136,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/"/>
+  <link rel="canonical" href="dlc1994.github.io/Hexo-setup-a-static-blog.html"/>
 
 
 
@@ -311,7 +311,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/Hexo-setup-a-static-blog/">
+    <link itemprop="mainEntityOfPage" href="dlc1994.github.io/Hexo-setup-a-static-blog.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lingcheng Dai">
@@ -401,7 +401,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
           
           
-             <span id="/2018/06/12/Hexo-setup-a-static-blog/" class="leancloud_visitors" data-flag-title="Hexo: setup a static blog">
+             <span id="/Hexo-setup-a-static-blog.html" class="leancloud_visitors" data-flag-title="Hexo: setup a static blog">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -448,7 +448,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 </blockquote>
 <p>​    <strong>Dynamic site is not our topic here. I wil talk about how to deploy a hexo blog in Github repository under the environment of Window 10.</strong> </p>
 <h1 id="1-Github-initialization"><a href="#1-Github-initialization" class="headerlink" title="1. Github initialization"></a>1. Github initialization</h1><p>​    From the very beginning, you have to create a <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> account and new a repository, note that the repository name need to be the same with your owner name (the alarm is appeared cause I have already newed a same one).</p>
-<img src="/2018/06/12/Hexo-setup-a-static-blog/2.jpg" title="Create a repository">
+<img src="/Hexo-setup-a-static-blog/2.jpg" title="Create a repository">
 <p><strong>REMEMBER</strong> the repository address (two kinds of address— <code>SSH: git@github.com:dlc1994/dlc1994.github.io.git</code> and <code>HTTPS: https://github.com/dlc1994/dlc1994.github.io.git</code>). The configuration of SSH can be seen in <a href="https://www.cnblogs.com/superGG1990/p/6844952.html" target="_blank" rel="noopener">here</a>, and HTTPS has no need of extra operation.</p>
 <p>Install <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> tool and the rest of operations is done through this tool.</p>
 <h1 id="2-Install-the-necessary-components"><a href="#2-Install-the-necessary-components" class="headerlink" title="2. Install the necessary components"></a>2. Install the necessary components</h1><p>After that, install <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>, in case of the low speed, you can also download it in <a href="http://nodejs.cn/download/" target="_blank" rel="noopener">here</a>.</p>
@@ -463,7 +463,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 <p>In <code>Git Bash</code>, input <code>hexo g</code> and <code>hexo s</code>, it will return (perfectly)</p>
 <p><code>Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code></p>
 <p>Open your browser and input <code>localhost:4000</code> in address bar, you can see that (Ok it is really ugly)</p>
-<img src="/2018/06/12/Hexo-setup-a-static-blog/4.png" title="Your First Blog">
+<img src="/Hexo-setup-a-static-blog/4.png" title="Your First Blog">
 <p>Lastly, you have to deploy it to your github repository, continue to input <code>hexo d</code>. Luckily, there is no error and you can see it in your repository address like <a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:dlc1994/dlc1994.github.io.git`. If not, go to google for help.</p>
 <p>Create a new blog use <code>hexo new &quot;postname&quot;</code> or in your blog path <code>blogpath\source\_posts</code> new a <code>.md</code> file and edit it use Markdown (<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a> is recommended here).</p>
 <p>More commands can be found <a href="https://hexo.io/docs/commands.html" target="_blank" rel="noopener">here</a>. I will update the process of blog beautification in my next blogs.</p>
@@ -504,7 +504,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/08/hello-world/" rel="next" title="Hello World">
+              <a href="/hello-world.html" rel="next" title="Hello World">
                 <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
@@ -514,7 +514,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/12/A-Stupid-Mistake-I-Made-about-Sorting-in-Python-DataFrame/" rel="prev" title="A Stupid Mistake I Made about Sorting in Python DataFrame">
+              <a href="/A-Stupid-Mistake-I-Made-about-Sorting-in-Python-DataFrame.html" rel="prev" title="A Stupid Mistake I Made about Sorting in Python DataFrame">
                 A Stupid Mistake I Made about Sorting in Python DataFrame <i class="fa fa-chevron-right"></i>
               </a>
             
