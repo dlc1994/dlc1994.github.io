@@ -443,7 +443,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
   & \underset{P_1,P_2,...,P_N}{\mathop{\max }}\,\text{          }{C_{sum}}=\sum_{n=1}^{N}{\log \left( 1+\frac{P_n{\left| {h_n} \right|}^2}{N_0} \right)}  \\
  & \text{subject to      }\sum_{n=1}^{N}{P_n}={P}_{sum},n=1,2,...,N \
-\end{align}</script><p>其中${C}<em>{sum}$表示系统总信道容量，$N$为信道数，${P}</em>{n}$为第$n$个信道的功率，${h}<em>{n}$为第$n$个信道的信道增益，${N}</em>{0}$为噪声功率谱密度，${P}_{sum}$为传输总功率，也就是总水量。</p>
+\end{align}</script><p>其中${C}_{sum}$表示系统总信道容量，$N$为信道数，${P}_{n}$为第$n$个信道的功率，${h}_{n}$为第$n$个信道的信道增益，${N}_{0}$为噪声功率谱密度，${P}_{sum}$为传输总功率，也就是总水量。</p>
 <p>该优化问题为凸优化问题，可以用拉格朗日乘数法求得全局最优解。</p>
 <script type="math/tex; mode=display">
 \mathcal{L}(\lambda ,{P_1},{P_2},...,{P_N})=\sum_{n=1}^{N}{\log \left( 1+\frac{P_n{\left| {h_n} \right|}^2}{N_0} \right)}+\lambda (\sum_{n=1}^{N}{P_n}-P_{sum})</script><p>令$\frac{\partial \mathcal{L} }{\partial P_n}=\frac{\partial \mathcal{L} }{\partial \lambda }=0$，解得<strong>最优功率分配方案</strong>为：</p>
