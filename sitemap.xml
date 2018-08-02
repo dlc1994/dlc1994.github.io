@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dlc1994.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-08-02T11:13:54.645Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dlc1994.github.io/about/index.html</loc>
     
     <lastmod>2018-08-02T11:02:13.289Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>https://dlc1994.github.io/hello-world.html</loc>
     
     <lastmod>2018-07-21T08:05:26.801Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-06-12T02:56:37.108Z</lastmod>
     
   </url>
   
