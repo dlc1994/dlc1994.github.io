@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dlc1994.github.io/"/>
-  <updated>2018-09-20T01:58:23.673Z</updated>
+  <updated>2018-09-20T02:15:36.250Z</updated>
   <id>https://dlc1994.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://dlc1994.github.io/LeetCode%20Solutions.html"/>
     <id>https://dlc1994.github.io/LeetCode Solutions.html</id>
     <published>2018-07-30T04:50:07.000Z</published>
-    <updated>2018-09-20T01:58:23.673Z</updated>
+    <updated>2018-09-20T02:15:36.250Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><a href="https://github.com/dlc1994/LeetCode/blob/master/JewerAndStones.py" target="_blank" rel="noopener">JewelsInStones</a>  —simple</li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/MorseCode.py" target="_blank" rel="noopener">MorseCode</a>  —simple</li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/circle.py" target="_blank" rel="noopener">Circle</a>  —simple</li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/flipping%20image.py" target="_blank" rel="noopener">Flipping Image</a>  —simple</li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/hamming.py" target="_blank" rel="noopener">Hamming</a>  —simple</li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/lowerCase.py" target="_blank" rel="noopener">LowerCase</a>  —simple</li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/twoSums.py" target="_blank" rel="noopener">Two Sum</a>  —simple</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>Here are my solutions to the LeetCode problems, linking to my <a href="https://github.com/dlc1994" target="_blank" rel="noopener">Github</a> repository:</p><h1 id="EASY"><a href="#EASY" class="headerlink" title="EASY"></a>EASY</h1><ul><li><a href="https://github.com/dlc1994/LeetCode/blob/master/JewerAndStones.py" target="_blank" rel="noopener">Jewels and Stones</a>  </li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/MorseCode.py" target="_blank" rel="noopener">Unique Morse Code Words</a>  </li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/circle.py" target="_blank" rel="noopener">Circle</a>  </li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/flipping%20image.py" target="_blank" rel="noopener">Flipping an Image</a>  </li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/hamming.py" target="_blank" rel="noopener">Hamming Distance</a> </li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/lowerCase.py" target="_blank" rel="noopener">To Lower Case</a> </li><li><a href="https://github.com/dlc1994/LeetCode/blob/master/twoSums.py" target="_blank" rel="noopener">Two Sum</a>  <h1 id="MEDIUM"><a href="#MEDIUM" class="headerlink" title="MEDIUM"></a>MEDIUM</h1><h1 id="HARD"><a href="#HARD" class="headerlink" title="HARD"></a>HARD</h1></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/dlc1994/LeetCode/blob/master/JewerAndStones.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JewelsInStones&lt;/a&gt;  —sim
+        &lt;p&gt;Here are my solutions to the LeetCode problems, linking to my &lt;a href=&quot;https://github.com/dlc1994&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github&lt;
       
     
     </summary>
