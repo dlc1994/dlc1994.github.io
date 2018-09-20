@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
+    
+    <lastmod>2018-09-20T01:58:23.673Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dlc1994.github.io/tags/index.html</loc>
     
     <lastmod>2018-08-02T11:16:43.890Z</lastmod>
@@ -23,14 +30,7 @@
   </url>
   
   <url>
-    <loc>https://dlc1994.github.io/LeetCode--Jewels%20and%20Stones.html</loc>
-    
-    <lastmod>2018-07-30T05:05:29.293Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/LeetCode--Two%20Sum.html</loc>
+    <loc>https://dlc1994.github.io/drafts/LeetCode--Two%20Sum.html</loc>
     
     <lastmod>2018-07-30T04:50:52.605Z</lastmod>
     
