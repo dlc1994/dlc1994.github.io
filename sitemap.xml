@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dlc1994.github.io/about/index.html</loc>
+    
+    <lastmod>2019-03-09T15:30:19.188Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dlc1994.github.io/BinaryTree.html</loc>
     
-    <lastmod>2019-03-09T12:25:24.948Z</lastmod>
+    <lastmod>2019-03-09T15:21:42.347Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>https://dlc1994.github.io/categories/index.html</loc>
     
     <lastmod>2018-08-02T11:13:54.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/about/index.html</loc>
-    
-    <lastmod>2018-08-02T11:02:13.289Z</lastmod>
     
   </url>
   
