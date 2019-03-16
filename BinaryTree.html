@@ -113,18 +113,18 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
 
 
-  <meta name="description" content="[TOC] 1.1 二叉树的初始化12345678910111213141516171819202122#initial of BinaryTreeclass BinaryTree:    def __init__(self,rootObj):        self.val = rootObj        self.left = None        self.right = None">
+  <meta name="description" content="二叉树的最全总结，常考题型，持续更新 1.1 二叉树的初始化12345678910111213141516171819202122#initial of BinaryTreeclass BinaryTree:    def __init__(self,rootObj):        self.val = rootObj        self.left = None        self.ri">
 <meta name="keywords" content="Python,Binary Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树常用操作的Python实现">
+<meta property="og:title" content="二叉树常用操作的实现">
 <meta property="og:url" content="https://dlc1994.github.io/BinaryTree.html">
 <meta property="og:site_name" content="DLC&#39;s Blog">
-<meta property="og:description" content="[TOC] 1.1 二叉树的初始化12345678910111213141516171819202122#initial of BinaryTreeclass BinaryTree:    def __init__(self,rootObj):        self.val = rootObj        self.left = None        self.right = None">
+<meta property="og:description" content="二叉树的最全总结，常考题型，持续更新 1.1 二叉树的初始化12345678910111213141516171819202122#initial of BinaryTreeclass BinaryTree:    def __init__(self,rootObj):        self.val = rootObj        self.left = None        self.ri">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-09T16:09:16.037Z">
+<meta property="og:updated_time" content="2019-03-16T13:59:13.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树常用操作的Python实现">
-<meta name="twitter:description" content="[TOC] 1.1 二叉树的初始化12345678910111213141516171819202122#initial of BinaryTreeclass BinaryTree:    def __init__(self,rootObj):        self.val = rootObj        self.left = None        self.right = None">
+<meta name="twitter:title" content="二叉树常用操作的实现">
+<meta name="twitter:description" content="二叉树的最全总结，常考题型，持续更新 1.1 二叉树的初始化12345678910111213141516171819202122#initial of BinaryTreeclass BinaryTree:    def __init__(self,rootObj):        self.val = rootObj        self.left = None        self.ri">
 
 
 
@@ -143,7 +143,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
   };
 </script>
 
-  <title>二叉树常用操作的Python实现 | DLC's Blog</title>
+  <title>二叉树常用操作的实现 | DLC's Blog</title>
   
 
 
@@ -333,7 +333,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
         
         
-          <h1 class="post-title" itemprop="name headline">二叉树常用操作的Python实现
+          <h1 class="post-title" itemprop="name headline">二叉树常用操作的实现
               
             
           </h1>
@@ -375,7 +375,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-10 00:09:16" itemprop="dateModified" datetime="2019-03-10T00:09:16+08:00">2019-03-10</time>
+                <time title="Modified: 2019-03-16 21:59:13" itemprop="dateModified" datetime="2019-03-16T21:59:13+08:00">2019-03-16</time>
               
             
           </span>
@@ -416,7 +416,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
           
           
-             <span id="/BinaryTree.html" class="leancloud_visitors" data-flag-title="二叉树常用操作的Python实现">
+             <span id="/BinaryTree.html" class="leancloud_visitors" data-flag-title="二叉树常用操作的实现">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,7 +447,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
       
 
       
-        <p>[TOC]</p>
+        <p>二叉树的最全总结，常考题型，持续更新</p>
 <h1 id="1-1-二叉树的初始化"><a href="#1-1-二叉树的初始化" class="headerlink" title="1.1 二叉树的初始化"></a>1.1 二叉树的初始化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#initial of BinaryTree</span><br><span class="line">class BinaryTree:</span><br><span class="line">    def __init__(self,rootObj):</span><br><span class="line">        self.val = rootObj</span><br><span class="line">        self.left = None</span><br><span class="line">        self.right = None</span><br><span class="line"></span><br><span class="line">    def insertLeft(self,newNode):</span><br><span class="line">        if self.left == None:</span><br><span class="line">            self.left = BinaryTree(newNode)</span><br><span class="line">        else:</span><br><span class="line">            t = BinaryTree(newNode)</span><br><span class="line">            t.left = self.left</span><br><span class="line">            self.left = t</span><br><span class="line"></span><br><span class="line">    def insertRight(self,newNode):</span><br><span class="line">        if self.right == None:</span><br><span class="line">            self.right = BinaryTree(newNode)</span><br><span class="line">        else:</span><br><span class="line">            t = BinaryTree(newNode)</span><br><span class="line">            t.right = self.right</span><br><span class="line">            self.right = t</span><br></pre></td></tr></table></figure>
 <h1 id="1-2-创建一个二叉树"><a href="#1-2-创建一个二叉树" class="headerlink" title="1.2 创建一个二叉树"></a>1.2 创建一个二叉树</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#create a BinaryTree</span><br><span class="line">#		18</span><br><span class="line">#	  7    11</span><br><span class="line">#   3  4  5   6</span><br><span class="line">#		 1 3 2 4</span><br><span class="line"></span><br><span class="line">root = BinaryTree(18)</span><br><span class="line">root.left = BinaryTree(7)</span><br><span class="line">root.right = BinaryTree(11)</span><br><span class="line">root.left.left = BinaryTree(3)</span><br><span class="line">root.left.right = BinaryTree(4)</span><br><span class="line">root.right.left = BinaryTree(5)</span><br><span class="line">root.right.right = BinaryTree(6)</span><br><span class="line">root.right.left.left = BinaryTree(1)</span><br><span class="line">root.right.left.right = BinaryTree(3)</span><br><span class="line">root.right.right.left = BinaryTree(2)</span><br><span class="line">root.right.right.right = BinaryTree(4)</span><br></pre></td></tr></table></figure>
 <h1 id="1-3-前序遍历"><a href="#1-3-前序遍历" class="headerlink" title="1.3 前序遍历"></a>1.3 前序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def PreOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.PreOrder(node.left)</span><br><span class="line">        self.PreOrder(node.right)</span><br><span class="line">#循环版本</span><br><span class="line">def PreOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack =[]</span><br><span class="line">    print(node.val)</span><br><span class="line">    stack.append(node)</span><br><span class="line">    node = node.left</span><br><span class="line">    while stack!=[] or node:</span><br><span class="line">        while node:</span><br><span class="line">            print(node.val)</span><br><span class="line">            stack.append(node)</span><br><span class="line">            node = node.left</span><br><span class="line">        node = stack[-1].right</span><br><span class="line">        stack.pop()</span><br><span class="line"></span><br><span class="line">#ouput: 18 7 3 4 11 5 1 3 6 2 4</span><br></pre></td></tr></table></figure>
