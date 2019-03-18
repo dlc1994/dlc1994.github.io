@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dlc1994.github.io/about/index.html</loc>
+    
+    <lastmod>2019-03-18T06:34:48.339Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/Introduction.html</loc>
+    
+    <lastmod>2019-03-17T10:09:57.923Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
+    
+    <lastmod>2019-03-17T10:09:34.579Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/BinaryTree.html</loc>
+    
+    <lastmod>2019-03-17T10:08:54.601Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dlc1994.github.io/toutiao.html</loc>
     
     <lastmod>2019-03-16T15:07:54.342Z</lastmod>
@@ -9,37 +37,9 @@
   </url>
   
   <url>
-    <loc>https://dlc1994.github.io/BinaryTree.html</loc>
-    
-    <lastmod>2019-03-16T13:59:13.738Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/about/index.html</loc>
-    
-    <lastmod>2019-03-09T16:42:55.174Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://dlc1994.github.io/LinearRegression.html</loc>
     
     <lastmod>2018-11-28T14:49:15.246Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/Introduction.html</loc>
-    
-    <lastmod>2018-11-28T12:20:01.269Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
-    
-    <lastmod>2018-09-20T03:02:13.545Z</lastmod>
     
   </url>
   
