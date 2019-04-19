@@ -113,18 +113,18 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
 
 
-  <meta name="description" content="冒泡排序1234567def bubbleSort(alist):    for i in range(len(alist)):        for j in range(len(alist)-i-1):            if alist[j]&amp;gt;alist[j+1]:                tmp = alist[j]                alist[j] = al">
-<meta name="keywords" content="Machine Learning, Wireless Communications">
+  <meta name="description" content="常用排序算法（python）">
+<meta name="keywords" content="Sorting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DLC&#39;s Blog">
+<meta property="og:title" content="常用排序算法（python）">
 <meta property="og:url" content="https://dlc1994.github.io/sort.html">
 <meta property="og:site_name" content="DLC&#39;s Blog">
-<meta property="og:description" content="冒泡排序1234567def bubbleSort(alist):    for i in range(len(alist)):        for j in range(len(alist)-i-1):            if alist[j]&amp;gt;alist[j+1]:                tmp = alist[j]                alist[j] = al">
+<meta property="og:description" content="常用排序算法（python）">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-09T15:56:35.978Z">
+<meta property="og:updated_time" content="2019-04-19T13:24:56.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DLC&#39;s Blog">
-<meta name="twitter:description" content="冒泡排序1234567def bubbleSort(alist):    for i in range(len(alist)):        for j in range(len(alist)-i-1):            if alist[j]&amp;gt;alist[j+1]:                tmp = alist[j]                alist[j] = al">
+<meta name="twitter:title" content="常用排序算法（python）">
+<meta name="twitter:description" content="常用排序算法（python）">
 
 
 
@@ -143,7 +143,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
   };
 </script>
 
-  <title> | DLC's Blog</title>
+  <title>常用排序算法（python） | DLC's Blog</title>
   
 
 
@@ -333,7 +333,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">常用排序算法（python）
               
             
           </h1>
@@ -358,28 +358,34 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
                 
               
 
-              <time title="Created: 2019-04-19 21:13:56" itemprop="dateCreated datePublished" datetime="2019-04-19T21:13:56+08:00">2019-04-19</time>
+              <time title="Created: 2019-04-19 21:27:23 / Modified: 21:24:56" itemprop="dateCreated datePublished" datetime="2019-04-19T21:27:23+08:00">2019-04-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-09 23:56:35" itemprop="dateModified" datetime="2019-04-09T23:56:35+08:00">2019-04-09</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -398,7 +404,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
 
           
           
-             <span id="/sort.html" class="leancloud_visitors" data-flag-title="">
+             <span id="/sort.html" class="leancloud_visitors" data-flag-title="常用排序算法（python）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +435,8 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
       
 
       
-        <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def bubbleSort(alist):</span><br><span class="line">    for i in range(len(alist)):</span><br><span class="line">        for j in range(len(alist)-i-1):</span><br><span class="line">            if alist[j]&gt;alist[j+1]:</span><br><span class="line">                tmp = alist[j]</span><br><span class="line">                alist[j] = alist[j+1]</span><br><span class="line">                alist[j+1] = tmp</span><br></pre></td></tr></table></figure>
+        <p>常用排序算法（python）<br><a id="more"></a></p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def bubbleSort(alist):</span><br><span class="line">    for i in range(len(alist)):</span><br><span class="line">        for j in range(len(alist)-i-1):</span><br><span class="line">            if alist[j]&gt;alist[j+1]:</span><br><span class="line">                tmp = alist[j]</span><br><span class="line">                alist[j] = alist[j+1]</span><br><span class="line">                alist[j+1] = tmp</span><br></pre></td></tr></table></figure>
 <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def selectSort(alist):</span><br><span class="line">    for i in range(len(alist)):</span><br><span class="line">        minPos = i</span><br><span class="line">        for j in range(i+1, len(alist)):</span><br><span class="line">            if alist[i]&gt;alist[j]:</span><br><span class="line">                minPos = j</span><br><span class="line">        tmp = alist[i]</span><br><span class="line">        alist[i] = alist[minPos]</span><br><span class="line">        alist[minPos] = tmp</span><br></pre></td></tr></table></figure>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def insertSort(alist):</span><br><span class="line">    for i in range(1, len(alist)):</span><br><span class="line">        current = alist[i]</span><br><span class="line">        pos = i</span><br><span class="line">        while pos&gt;0 and current&lt;alist[pos-1]:</span><br><span class="line">            alist[pos] = alist[pos-1]</span><br><span class="line">            pos-=1</span><br><span class="line">        alist[pos] = current</span><br></pre></td></tr></table></figure>
 <h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def shellSort(alist):</span><br><span class="line">    gap = len(alist)//2</span><br><span class="line">    while gap&gt;0:</span><br><span class="line">        for i in range(gap, len(alist)):</span><br><span class="line">            j = i</span><br><span class="line">            current = alist[i]</span><br><span class="line">            while j-gap&gt;0 and current&lt;alist[j-gap]:</span><br><span class="line">                alist[j] = alist[j-gap]</span><br><span class="line">                j = j - gap</span><br><span class="line">            alist[j] = current</span><br><span class="line">        gap = gap // 2</span><br></pre></td></tr></table></figure>
@@ -451,6 +458,12 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Sorting/" rel="tag"># Sorting</a>
+          
+        </div>
       
 
       
@@ -516,7 +529,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
   
 	<div class="category-all-page">
 		<div class="category-all">
-		  <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Processing/">Data Processing</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Paper-Work/">Paper Work</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Wireless-Communications/">Wireless Communications</a><span class="category-list-count">1</span></li></ul>
+		  <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Processing/">Data Processing</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Paper-Work/">Paper Work</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Wireless-Communications/">Wireless Communications</a><span class="category-list-count">1</span></li></ul>
 		</div>
 	</div>
 
@@ -583,7 +596,9 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/can
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
