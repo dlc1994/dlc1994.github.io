@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
+    
+    <lastmod>2019-04-23T04:49:21.325Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/about/index.html</loc>
+    
+    <lastmod>2019-04-23T04:15:39.476Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/BinaryTree.html</loc>
+    
+    <lastmod>2019-04-19T15:06:14.851Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dlc1994.github.io/sort.html</loc>
     
     <lastmod>2019-04-19T13:24:56.836Z</lastmod>
@@ -16,30 +37,9 @@
   </url>
   
   <url>
-    <loc>https://dlc1994.github.io/about/index.html</loc>
-    
-    <lastmod>2019-03-18T06:34:48.339Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://dlc1994.github.io/Introduction.html</loc>
     
     <lastmod>2019-03-17T10:09:57.923Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
-    
-    <lastmod>2019-03-17T10:09:34.579Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/BinaryTree.html</loc>
-    
-    <lastmod>2019-03-17T10:08:54.601Z</lastmod>
     
   </url>
   
