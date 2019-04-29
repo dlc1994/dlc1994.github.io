@@ -1837,7 +1837,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #87579d;
+  background: #17ff52;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2824,7 +2824,7 @@ hr {
   }
 }
 body {
-  background-image: url("/images/timg.jpg");
+  background-image: url("/images/watermelon.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
