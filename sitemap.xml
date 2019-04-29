@@ -2,16 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
+    <loc>https://dlc1994.github.io/Water-Filling-Algorithm-and-Matlab-simulation.html</loc>
     
-    <lastmod>2019-04-29T13:21:58.126Z</lastmod>
+    <lastmod>2019-04-29T13:36:59.220Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/toutiao.html</loc>
+    
+    <lastmod>2019-04-29T13:36:48.563Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://dlc1994.github.io/stack.html</loc>
     
-    <lastmod>2019-04-29T13:14:30.883Z</lastmod>
+    <lastmod>2019-04-29T13:36:38.753Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/sort.html</loc>
+    
+    <lastmod>2019-04-29T13:36:31.957Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/LinearRegression.html</loc>
+    
+    <lastmod>2019-04-29T13:36:21.521Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/LeetCode%20Solutions.html</loc>
+    
+    <lastmod>2019-04-29T13:36:13.068Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/Latexdiff.html</loc>
+    
+    <lastmod>2019-04-29T13:36:05.138Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/Introduction.html</loc>
+    
+    <lastmod>2019-04-29T13:35:57.430Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/Hexo-setup-a-static-blog.html</loc>
+    
+    <lastmod>2019-04-29T13:35:45.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/hello-world.html</loc>
+    
+    <lastmod>2019-04-29T13:35:34.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dlc1994.github.io/A-Stupid-Mistake-I-Made-about-Sorting-in-Python-DataFrame.html</loc>
+    
+    <lastmod>2019-04-29T13:32:15.790Z</lastmod>
     
   </url>
   
@@ -26,34 +89,6 @@
     <loc>https://dlc1994.github.io/BinaryTree.html</loc>
     
     <lastmod>2019-04-19T15:06:14.851Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/sort.html</loc>
-    
-    <lastmod>2019-04-19T13:24:56.836Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/toutiao.html</loc>
-    
-    <lastmod>2019-03-18T09:50:49.981Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/Introduction.html</loc>
-    
-    <lastmod>2019-03-17T10:09:57.923Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/LinearRegression.html</loc>
-    
-    <lastmod>2018-11-28T14:49:15.246Z</lastmod>
     
   </url>
   
@@ -75,41 +110,6 @@
     <loc>https://dlc1994.github.io/drafts/LeetCode--Two%20Sum.html</loc>
     
     <lastmod>2018-07-30T04:50:52.605Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/Water-Filling-Algorithm-and-Matlab-simulation.html</loc>
-    
-    <lastmod>2018-07-21T08:13:06.088Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/Latexdiff.html</loc>
-    
-    <lastmod>2018-07-21T08:12:50.459Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/Hexo-setup-a-static-blog.html</loc>
-    
-    <lastmod>2018-07-21T08:12:39.650Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/A-Stupid-Mistake-I-Made-about-Sorting-in-Python-DataFrame.html</loc>
-    
-    <lastmod>2018-07-21T08:12:27.271Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dlc1994.github.io/hello-world.html</loc>
-    
-    <lastmod>2018-07-21T08:05:26.801Z</lastmod>
     
   </url>
   
