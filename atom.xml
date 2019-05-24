@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dlc1994.github.io/"/>
-  <updated>2019-04-29T13:36:38.753Z</updated>
+  <updated>2019-05-24T15:07:14.551Z</updated>
   <id>https://dlc1994.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019中兴捧月算法大赛——无线信道估计</title>
+    <link href="https://dlc1994.github.io/zte2019.html"/>
+    <id>https://dlc1994.github.io/zte2019.html</id>
+    <published>2019-05-24T15:02:50.000Z</published>
+    <updated>2019-05-24T15:07:14.551Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/dlc1994/2019ZTE-Algorithm-Competition" target="_blank" rel="noopener">Github项目：https://github.com/dlc1994/2019ZTE-Algorithm-Competition</a></p><p>本来想参加深度学习题目的，但看到用caffe，还要现学就作罢了</p><p>傅里叶门派有三个题目，一开始想做了智能调度，但是看了半天题目也没理解，随便提交了一个上去（最后发现一共才50多份提交，悔不当初）</p><p>看到这个有点像曲线拟合，题目就是用最少的导频数，估计带噪声的其余一共250个频点的信道值</p><p>看上去有点像曲线拟合，所以我就往曲线拟合方向做了</p><p>1 导频数用62，此时导频和误差百分比大致在50%</p><p>2 导频分开实部和虚部分开进行拟合，拟合函数使用SmoothingSpline</p><p>3 拟合出来函数是带噪声的，接下来去噪</p><p>4 用小波变换，小波基为coif5,分解层数为10层 </p><p>5 输出最终结果，感觉有点过拟合了</p><p>最后一天做了半天，只能提高到36名了，看到进决赛拿蓝剑的那些大神还是很羡慕的，应该多花些时间的，从原理上改进而不是简单的去噪拟合</p><p>大佬的思路：</p><p>1 多种组合构成个闭环优化，中兴专家做的，好像用20个导频左右拿了第一</p><p>2 用CNN，这个可能是从autoencoder方向想，但是数据集够用？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/dlc1994/2019ZTE-Algorithm-Competition&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github项目：https://github.com/dlc1994/201
+      
+    
+    </summary>
+    
+      <category term="Competition" scheme="https://dlc1994.github.io/categories/Competition/"/>
+    
+    
+      <category term="Matlab, wireless communications" scheme="https://dlc1994.github.io/tags/Matlab-wireless-communications/"/>
+    
+  </entry>
   
   <entry>
     <title>常用数据结构——栈</title>
