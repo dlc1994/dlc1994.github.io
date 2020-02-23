@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Git - LC-Garden</title>
+<title>Hexo: setup a static blog - LC-Garden</title>
 
 
-    <meta name="description" content="Git &amp;amp; Linux operations 程序后台运行，打印结果到out.log文件nohup python -u test.py &amp;gt; out.log 2&amp;gt;&amp;amp;1 &amp;amp;说明：  末尾的“&amp;amp;”：表示后台运行程序 “nohup” ：保证程序不被挂起 “python”：是执行python代码的命令 “-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加">
-<meta name="keywords" content="ML&amp;DL,Info&amp;Communs">
+    <meta name="description" content="​    Before we start, you have to know what is the difference between static site and dynamic site. Let’s take a look at the definition in Wiki:  A static web page (sometimes called a flat page/statio">
+<meta name="keywords" content="Hexo,Markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="https://dlc1994.github.io/git.html">
+<meta property="og:title" content="Hexo: setup a static blog">
+<meta property="og:url" content="https://dlc1994.github.io/2018/06/12/ck6z4edpj000610unetb67w5c/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="Git &amp;amp; Linux operations 程序后台运行，打印结果到out.log文件nohup python -u test.py &amp;gt; out.log 2&amp;gt;&amp;amp;1 &amp;amp;说明：  末尾的“&amp;amp;”：表示后台运行程序 “nohup” ：保证程序不被挂起 “python”：是执行python代码的命令 “-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加">
+<meta property="og:description" content="​    Before we start, you have to know what is the difference between static site and dynamic site. Let’s take a look at the definition in Wiki:  A static web page (sometimes called a flat page/statio">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/git.jpg">
-<meta property="og:updated_time" content="2020-01-09T01:25:29.102Z">
+<meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-24T15:34:28.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git">
-<meta name="twitter:description" content="Git &amp;amp; Linux operations 程序后台运行，打印结果到out.log文件nohup python -u test.py &amp;gt; out.log 2&amp;gt;&amp;amp;1 &amp;amp;说明：  末尾的“&amp;amp;”：表示后台运行程序 “nohup” ：保证程序不被挂起 “python”：是执行python代码的命令 “-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加">
-<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/git.jpg">
+<meta name="twitter:title" content="Hexo: setup a static blog">
+<meta name="twitter:description" content="​    Before we start, you have to know what is the difference between static site and dynamic site. Let’s take a look at the definition in Wiki:  A static web page (sometimes called a flat page/statio">
+<meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
 
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Git" height="28">
+                <img src="/images/logo.svg" alt="Hexo: setup a static blog" height="28">
             
             </a>
         </div>
@@ -133,23 +133,21 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
-        </span>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time>
+                <time class="level-item has-text-grey" datetime="2018-06-12T01:46:53.000Z">2018-06-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/HEXO/">HEXO</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 232 words)
+                    5 minutes read (About 740 words)
                 </span>
                 
                 
@@ -163,26 +161,57 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Git
+                Hexo: setup a static blog
             
         </h1>
         <div class="content">
-            <p>Git &amp; Linux operations</p>
-<p>程序后台运行，打印结果到out.log文件<br>nohup python -u test.py &gt; out.log 2&gt;&amp;1 &amp;<br>说明：</p>
-<ol>
-<li>末尾的“&amp;”：表示后台运行程序</li>
-<li>“nohup” ：保证程序不被挂起</li>
-<li>“python”：是执行python代码的命令</li>
-<li>“-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息）</li>
-<li>“Job.py”：是python的源代码文件</li>
-<li>“log.log”：是输出的日志文件</li>
-<li>“&gt;”：是指将打印信息指定到日志文件</li>
-<li>“2&gt;&amp;1”：将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</li>
-</ol>
-<p>查询下进程 ，可查看pid<br>ps -ef | grep xxx</p>
-<p>终止脚本进程<br>kill -9 pid</p>
-<p>to be continue…</p>
+            <p>​    Before we start, you have to know what is the difference between <strong>static</strong> site and <strong>dynamic</strong> site. Let’s take a look at the definition in Wiki:</p>
+<blockquote>
+<p>A <strong>static web page</strong> (sometimes called a <strong>flat page/stationary page</strong>) is a <a href="https://en.wikipedia.org/wiki/Web_page">web page</a> that is delivered to the user exactly as stored, in contrast to <a href="https://en.wikipedia.org/wiki/Dynamic_web_page">dynamic web pages</a> which are generated by a <a href="https://en.wikipedia.org/wiki/Web_application">web application</a>. Consequently, a static web page displays the same information for all users, from all contexts, subject to modern capabilities of a web server to negotiate content-type or language of the document where such versions are available and the server is configured to do so. It’s pros and cons are listed as follows:</p>
+<p> <strong>Advantages of a static website</strong></p>
+<ul>
+<li>Provide improved security over dynamic websites</li>
+<li>Improved performance for end users compared to dynamic websites</li>
+<li>Fewer or no dependencies on systems such as databases or other application servers</li>
+</ul>
+<p><strong>Disadvantages of a static website</strong></p>
+<ul>
+<li>Dynamic functionality has to be added separately</li>
+</ul>
+</blockquote>
+<p>​    <strong>Dynamic site is not our topic here. I wil talk about how to deploy a hexo blog in Github repository under the environment of Window 10.</strong> </p>
+<h1 id="1-Github-initialization"><a href="#1-Github-initialization" class="headerlink" title="1. Github initialization"></a>1. Github initialization</h1><p>​    From the very beginning, you have to create a <a href="https://github.com/">GitHub</a> account and new a repository, note that the repository name need to be the same with your owner name (the alarm is appeared cause I have already newed a same one).</p>
+<img src="/2018/06/12/ck6z4edpj000610unetb67w5c/2.jpg" title="Create a repository">
+<p><strong>REMEMBER</strong> the repository address (two kinds of address—- <code>SSH: git@github.com:dlc1994/dlc1994.github.io.git</code> and <code>HTTPS: https://github.com/dlc1994/dlc1994.github.io.git</code>). The configuration of SSH can be seen in <a href="https://www.cnblogs.com/superGG1990/p/6844952.html">here</a>, and HTTPS has no need of extra operation.</p>
+<p>Install <a href="https://git-scm.com/">Git</a> tool and the rest of operations is done through this tool.</p>
+<h1 id="2-Install-the-necessary-components"><a href="#2-Install-the-necessary-components" class="headerlink" title="2. Install the necessary components"></a>2. Install the necessary components</h1><p>After that, install <a href="https://nodejs.org/en/">Node.js</a>, in case of the low speed, you can also download it in <a href="http://nodejs.cn/download/">here</a>.</p>
+<p>Now it’s time to install Hexo in your machine, click right-hand button anywhere and open <code>Git Bash</code>, then input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git  --save</span><br></pre></td></tr></table></figure>
+<p>Wait a minute you can check if the component is installed successfully. Input directly in <code>Git Bash</code>, or <code>Win+R</code> and input <code>cmd</code>, then input codes as follow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>If return the version number then you can go on, otherwise just google your mistake during your installation.</p>
+<p>After Hexo is installed, go to the place where you want to save your blog and open <code>Git Bash</code>. Input <code>hexo init</code>, you can find that a lot of files are created. </p>
+<h1 id="3-Create-your-first-blog"><a href="#3-Create-your-first-blog" class="headerlink" title="3. Create your first blog"></a>3. Create your first blog</h1><p>Use file editor like <a href="https://notepad-plus-plus.org/download/v7.5.6.html">Notepad++</a>, open file <code>_config.yml</code>, find the codes and edit it as you want</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: DLC&apos;s Blog          					#your blog name</span><br><span class="line">subtitle: Find myself in the darkest place	 #your blog subtitle</span><br><span class="line">description: Personal Blog					#description of your blog</span><br><span class="line">keywords:</span><br><span class="line">author: </span><br><span class="line">language: 									</span><br><span class="line">timezone: Asia/Shanghai</span><br><span class="line"></span><br><span class="line">theme: landscape    #your blog theme, I will talk about how to change it to `Next`</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: </span><br><span class="line">  repository: git@github.com:dlc1994/dlc1994.github.io.git  #your repository address</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>In <code>Git Bash</code>, input <code>hexo g</code> and <code>hexo s</code>, it will return (perfectly)</p>
+<p><code>Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code></p>
+<p>Open your browser and input <code>localhost:4000</code> in address bar, you can see that (Ok it is really ugly)</p>
+<img src="/2018/06/12/ck6z4edpj000610unetb67w5c/4.png" title="Your First Blog">
+<p>Lastly, you have to deploy it to your github repository, continue to input <code>hexo d</code>. Luckily, there is no error and you can see it in your repository address like <code>git@github.com:dlc1994/dlc1994.github.io.git</code>. If not, go to google for help.</p>
+<p>Create a new blog use <code>hexo new &quot;postname&quot;</code> or in your blog path <code>blogpath\source\_posts</code> new a <code>.md</code> file and edit it use Markdown (<a href="https://www.typora.io/">Typora</a> is recommended here).</p>
+<p>More commands can be found <a href="https://hexo.io/docs/commands.html">here</a>. I will update the process of blog beautification in my next blogs.</p>
+<p>!!!Tips: if you suffer any problem, first go to google or baidu it. </p>
+<p><strong>Please discover the truth by yourself.</strong></p>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Hexo/">Hexo</a>, <a class="has-link-grey -link" href="/tags/Markdown/">Markdown</a>
+                </div>
+            </div>
         </div>
         
         
@@ -231,13 +260,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/zte2019.html">
-                <span class="level-item">2019中兴捧月算法大赛——无线信道估计</span>
-                <i class="level-item fas fa-chevron-right"></i>
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/06/12/ck6z4edp8000010unb4ghcxhs/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">A Stupid Mistake I Made about Sorting in Python DataFrame</span>
             </a>
         </div>
+        
         
     </div>
 </div>
@@ -473,7 +502,7 @@
         
         <article class="media">
             
-            <a href="/git.html" class="media-left">
+            <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -482,7 +511,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/git.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -492,7 +521,7 @@
         
         <article class="media">
             
-            <a href="/zte2019.html" class="media-left">
+            <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -501,7 +530,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/zte2019.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -511,7 +540,7 @@
         
         <article class="media">
             
-            <a href="/stack.html" class="media-left">
+            <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -520,7 +549,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/stack.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -530,7 +559,7 @@
         
         <article class="media">
             
-            <a href="/sort.html" class="media-left">
+            <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -539,7 +568,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/sort.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -549,7 +578,7 @@
         
         <article class="media">
             
-            <a href="/toutiao.html" class="media-left">
+            <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -558,7 +587,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/toutiao.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -796,7 +825,7 @@
         
         <article class="media">
             
-            <a href="/git.html" class="media-left">
+            <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -805,7 +834,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/git.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -815,7 +844,7 @@
         
         <article class="media">
             
-            <a href="/zte2019.html" class="media-left">
+            <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -824,7 +853,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/zte2019.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -834,7 +863,7 @@
         
         <article class="media">
             
-            <a href="/stack.html" class="media-left">
+            <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -843,7 +872,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/stack.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -853,7 +882,7 @@
         
         <article class="media">
             
-            <a href="/sort.html" class="media-left">
+            <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -862,7 +891,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/sort.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -872,7 +901,7 @@
         
         <article class="media">
             
-            <a href="/toutiao.html" class="media-left">
+            <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -881,7 +910,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/toutiao.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1112,7 +1141,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Git" height="28">
+                    <img src="/images/logo.svg" alt="Hexo: setup a static blog" height="28">
                 
                 </a>
                 <p class="is-size-7">
