@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Git - LC-Garden</title>
+<title>A Stupid Mistake I Made about Sorting in Python DataFrame - LC-Garden</title>
 
 
-    <meta name="description" content="Git &amp;amp; Linux operations 程序后台运行，打印结果到out.log文件nohup python -u test.py &amp;gt; out.log 2&amp;gt;&amp;amp;1 &amp;amp;说明：  末尾的“&amp;amp;”：表示后台运行程序 “nohup” ：保证程序不被挂起 “python”：是执行python代码的命令 “-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加">
-<meta name="keywords" content="ML&amp;DL,Info&amp;Communs">
+    <meta name="description" content="One day when I try to sort a DataFrame by a column, an amazing mistake happens! I will reproduce this stupid thing here. Firstly, make a dataframe example: 12345   a  b  c0  9  4  61  2  7  52  5 -3">
+<meta name="keywords" content="Python,DataFrame,Sorting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="https://dlc1994.github.io/2020/01/08/ck6z4edq1000j10un6ojmy22g/index.html">
+<meta property="og:title" content="A Stupid Mistake I Made about Sorting in Python DataFrame">
+<meta property="og:url" content="https://dlc1994.github.io/2018/06/12/ck6z4sjwd0000v0unbrgmxzri/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="Git &amp;amp; Linux operations 程序后台运行，打印结果到out.log文件nohup python -u test.py &amp;gt; out.log 2&amp;gt;&amp;amp;1 &amp;amp;说明：  末尾的“&amp;amp;”：表示后台运行程序 “nohup” ：保证程序不被挂起 “python”：是执行python代码的命令 “-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加">
+<meta property="og:description" content="One day when I try to sort a DataFrame by a column, an amazing mistake happens! I will reproduce this stupid thing here. Firstly, make a dataframe example: 12345   a  b  c0  9  4  61  2  7  52  5 -3">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/git.jpg">
-<meta property="og:updated_time" content="2020-01-09T01:25:29.102Z">
+<meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-24T15:34:16.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git">
-<meta name="twitter:description" content="Git &amp;amp; Linux operations 程序后台运行，打印结果到out.log文件nohup python -u test.py &amp;gt; out.log 2&amp;gt;&amp;amp;1 &amp;amp;说明：  末尾的“&amp;amp;”：表示后台运行程序 “nohup” ：保证程序不被挂起 “python”：是执行python代码的命令 “-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加">
-<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/git.jpg">
+<meta name="twitter:title" content="A Stupid Mistake I Made about Sorting in Python DataFrame">
+<meta name="twitter:description" content="One day when I try to sort a DataFrame by a column, an amazing mistake happens! I will reproduce this stupid thing here. Firstly, make a dataframe example: 12345   a  b  c0  9  4  61  2  7  52  5 -3">
+<meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
 
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Git" height="28">
+                <img src="/images/logo.svg" alt="A Stupid Mistake I Made about Sorting in Python DataFrame" height="28">
             
             </a>
         </div>
@@ -133,23 +133,21 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
-        </span>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time>
+                <time class="level-item has-text-grey" datetime="2018-06-12T02:47:31.000Z">2018-06-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Processing/">Data Processing</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 232 words)
+                    2 minutes read (About 263 words)
                 </span>
                 
                 
@@ -163,26 +161,37 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Git
+                A Stupid Mistake I Made about Sorting in Python DataFrame
             
         </h1>
         <div class="content">
-            <p>Git &amp; Linux operations</p>
-<p>程序后台运行，打印结果到out.log文件<br>nohup python -u test.py &gt; out.log 2&gt;&amp;1 &amp;<br>说明：</p>
-<ol>
-<li>末尾的“&amp;”：表示后台运行程序</li>
-<li>“nohup” ：保证程序不被挂起</li>
-<li>“python”：是执行python代码的命令</li>
-<li>“-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息）</li>
-<li>“Job.py”：是python的源代码文件</li>
-<li>“log.log”：是输出的日志文件</li>
-<li>“&gt;”：是指将打印信息指定到日志文件</li>
-<li>“2&gt;&amp;1”：将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</li>
-</ol>
-<p>查询下进程 ，可查看pid<br>ps -ef | grep xxx</p>
-<p>终止脚本进程<br>kill -9 pid</p>
-<p>to be continue…</p>
+            <p>One day when I try to sort a <code>DataFrame</code> by a column, an amazing mistake happens!</p>
+<p>I will reproduce this stupid thing here. Firstly, make a dataframe example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   a  b  c</span><br><span class="line">0  9  4  6</span><br><span class="line">1  2  7  5</span><br><span class="line">2  5 -3  8</span><br><span class="line">3  1  2  3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frame = pd.DataFrame(&#123;&quot;a&quot;:[9,2,5,1],&quot;b&quot;:[4,7,-3,2],&quot;c&quot;:[6,5,8,3]&#125;)</span><br><span class="line">frame.sort_values(&apos;a&apos;,inplace=True)</span><br><span class="line">print(frame)</span><br></pre></td></tr></table></figure>
+<p>What do you think the result will be? What I expect it will get is like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   a  b  c</span><br><span class="line">3  1  2  3</span><br><span class="line">1  2  7  5</span><br><span class="line">2  5 -3  8</span><br><span class="line">0  9  4  6</span><br></pre></td></tr></table></figure>
+<p>However, what I actually get is</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   a  b  c</span><br><span class="line">0  9  4  6</span><br><span class="line">1  2  7  5</span><br><span class="line">2  5 -3  8</span><br><span class="line">3  1  2  3</span><br></pre></td></tr></table></figure>
+<p>I get really confused, so I try all the <em>arg</em> in function </p>
+<blockquote>
+<p>DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind=’quicksort’, na_position=’last’)</p>
+</blockquote>
+<p>I find out that only if the <code>inplace=</code> is set to True, the result is as expected. But the usage of this function I searched in google, did not meantion this parameter.</p>
+<p>Therefore, I look for an instruction of <code>inplace</code>， and I find that the <code>inplace</code> parameter is a generic term w.r.t pandas and not specific to <code>sort_values</code> alone. You can see it in several functions like <code>pd.fillna, pd.replace</code> etc. Whenever the <code>inplace</code> is set to True, it modifies the existing data frame and you need not assign it to a new data frame. </p>
+<p>Ohhhh… Then I find out where the mistake really lies in. In my previous code, the DataFrame <code>frame</code> I sorted has not been modified only if the parameter <code>inplace</code> is set to True, so I modify the code as follow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frame = pd.DataFrame(&#123;&quot;a&quot;:[9,2,5,1],&quot;b&quot;:[4,7,-3,2],&quot;c&quot;:[6,5,8,3]&#125;)</span><br><span class="line">df = frame.sort_values(&apos;a&apos;,inplace=True)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+<p> The problem is solved! How stupid I was! </p>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/DataFrame/">DataFrame</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>, <a class="has-link-grey -link" href="/tags/Sorting/">Sorting</a>
+                </div>
+            </div>
         </div>
         
         
@@ -231,10 +240,17 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/06/19/ck6z4sjx3000av0unx0dm1wuw/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/24/ck6z4edq8000w10unujekhlsj/">
-                <span class="level-item">2019中兴捧月算法大赛——无线信道估计</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/06/12/ck6z4sjwt0006v0unien5ukij/">
+                <span class="level-item">Hexo: setup a static blog</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -473,7 +489,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="media-left">
+            <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -482,7 +498,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -492,7 +508,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="media-left">
+            <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -501,7 +517,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -511,7 +527,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="media-left">
+            <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -520,7 +536,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -530,7 +546,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="media-left">
+            <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -539,7 +555,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -549,7 +565,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="media-left">
+            <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -558,7 +574,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -796,7 +812,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="media-left">
+            <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -805,7 +821,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck6z4edq1000j10un6ojmy22g/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -815,7 +831,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="media-left">
+            <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -824,7 +840,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck6z4edq8000w10unujekhlsj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -834,7 +850,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="media-left">
+            <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -843,7 +859,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck6z4edq5000p10unuo6ulbsi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -853,7 +869,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="media-left">
+            <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -862,7 +878,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck6z4edq4000n10un12pxc8c9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -872,7 +888,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="media-left">
+            <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -881,7 +897,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck6z4edq7000u10unl23ydkfn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1112,7 +1128,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Git" height="28">
+                    <img src="/images/logo.svg" alt="A Stupid Mistake I Made about Sorting in Python DataFrame" height="28">
                 
                 </a>
                 <p class="is-size-7">
