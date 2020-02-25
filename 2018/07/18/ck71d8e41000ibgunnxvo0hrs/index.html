@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>常用数据结构——栈 - LC-Garden</title>
+<title>Water Filling Algorithm and Matlab Simulation - LC-Garden</title>
 
 
-    <meta name="description" content="本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。">
-<meta name="keywords" content="Stack">
+    <meta name="description" content="注水算法是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。 当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。 实现功率的“注水”分配，发送端必须知道CSI。 直观而言，就如下图所示：  图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少） 注水原">
+<meta name="keywords" content="Algorithms,Matlab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用数据结构——栈">
-<meta property="og:url" content="https://dlc1994.github.io/2019/04/29/ck71cosp2000o3sunw69gaqol/index.html">
+<meta property="og:title" content="Water Filling Algorithm and Matlab Simulation">
+<meta property="og:url" content="https://dlc1994.github.io/2018/07/18/ck71d8e41000ibgunnxvo0hrs/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。">
+<meta property="og:description" content="注水算法是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。 当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。 实现功率的“注水”分配，发送端必须知道CSI。 直观而言，就如下图所示：  图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少） 注水原">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/stack.jpg">
-<meta property="og:updated_time" content="2020-01-09T01:28:34.525Z">
+<meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-04-29T13:36:59.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用数据结构——栈">
-<meta name="twitter:description" content="本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。">
-<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/stack.jpg">
+<meta name="twitter:title" content="Water Filling Algorithm and Matlab Simulation">
+<meta name="twitter:description" content="注水算法是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。 当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。 实现功率的“注水”分配，发送端必须知道CSI。 直观而言，就如下图所示：  图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少） 注水原">
+<meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
 
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="常用数据结构——栈" height="28">
+                <img src="/images/logo.svg" alt="Water Filling Algorithm and Matlab Simulation" height="28">
             
             </a>
         </div>
@@ -133,27 +133,21 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
-        </span>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time>
+                <time class="level-item has-text-grey" datetime="2018-07-18T15:33:07.000Z">2018-07-18</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
+                <a class="has-link-grey -link" href="/categories/Wireless-Communications/">Wireless Communications</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1320 words)
+                    4 minutes read (About 552 words)
                 </span>
                 
                 
@@ -167,31 +161,30 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                常用数据结构——栈
+                Water Filling Algorithm and Matlab Simulation
             
         </h1>
         <div class="content">
-            <p>本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。<br><a id="more"></a><br>  栈（stack）、队列（queues）、双端队列（deques）和列表都是有序数据容器，元素添加后在容器内的位置跟其他元素添加和删除的顺序有关，像这样的容器被称作线性数据结构（linear data structure）。<br>  栈可以想象为只有一端开口的瓶子，假设每放一个东西进去都会把前面放的完全盖住，那么这时你想取出最里面的东西显然是不可能的，所以你只能把上面的一个个拿出来才能取到你想要的，这就叫做后进先出（LIFO, last-in first-out）。</p>
-<h1 id="1-栈的主要方法及实现"><a href="#1-栈的主要方法及实现" class="headerlink" title="1. 栈的主要方法及实现"></a>1. 栈的主要方法及实现</h1><p>  栈的方法主要有下面几种：</p>
-<ul>
-<li><code>Stack()</code> creates a new stack that is empty. It needs no parameters and returns an empty stack.</li>
-<li><code>push(item)</code> adds a new item to the top of the stack. It needs the item and returns nothing.</li>
-<li><code>pop()</code> removes the top item from the stack. It needs no parameters and returns the item. The stack is modified.</li>
-<li><code>peek()</code> returns the top item from the stack but does not remove it. It needs no parameters. The stack is not modified.</li>
-<li><code>isEmpty()</code> tests to see whether the stack is empty. It needs no parameters and returns a boolean value.</li>
-<li><code>size()</code> returns the number of items on the stack. It needs no parameters and returns an integer.<br>在python中是没有栈的实现的，所以栈需要自己实现，简单点可以用个list充当下，更一般的要实现上面各种方法还是面向对象创造一个类比较好，实现代码如下所示：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line">     def __init__(self):</span><br><span class="line">         self.items = []</span><br><span class="line"></span><br><span class="line">     def isEmpty(self):</span><br><span class="line">         return self.items == []</span><br><span class="line"></span><br><span class="line">     def push(self, item):</span><br><span class="line">         self.items.append(item)</span><br><span class="line"></span><br><span class="line">     def pop(self):</span><br><span class="line">         return self.items.pop()</span><br><span class="line"></span><br><span class="line">     def peek(self):</span><br><span class="line">         return self.items[len(self.items)-1]</span><br><span class="line"></span><br><span class="line">     def size(self):</span><br><span class="line">         return len(self.items)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="2-栈的主要应用"><a href="#2-栈的主要应用" class="headerlink" title="2. 栈的主要应用"></a>2. 栈的主要应用</h1><h2 id="2-1-字符串反转"><a href="#2-1-字符串反转" class="headerlink" title="2.1 字符串反转"></a>2.1 字符串反转</h2><p>  那么，费尽心机创造一个栈有啥用呢？首先可以用来翻转字符串，当然python有超级多方式可以反转字符串，最简单的自然是string[::-1]。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def stringReverse(self, stringstring):</span><br><span class="line">	s = Stack()</span><br><span class="line">	output = &quot;&quot;</span><br><span class="line">	for ss in stringstring:</span><br><span class="line">		s.push(ss)</span><br><span class="line">	while not s.isEmpty():</span><br><span class="line">		output = output + s.pop()</span><br><span class="line">	return output</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-2-简单括号匹配"><a href="#2-2-简单括号匹配" class="headerlink" title="2.2 简单括号匹配"></a>2.2 简单括号匹配</h2><p>  除此之外，还有简单的括号匹配问题，也可以利用栈的特性来解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    s = Stack()</span><br><span class="line">    balanced = True</span><br><span class="line">    index = 0</span><br><span class="line">    while index &lt; len(symbolString) and balanced:</span><br><span class="line">        symbol = symbolString[index]</span><br><span class="line">        if symbol == &quot;(&quot;:</span><br><span class="line">            s.push(symbol)</span><br><span class="line">        else:</span><br><span class="line">            if s.isEmpty():</span><br><span class="line">                balanced = False</span><br><span class="line">            else:</span><br><span class="line">                s.pop()</span><br><span class="line"></span><br><span class="line">        index = index + 1</span><br><span class="line"></span><br><span class="line">    if balanced and s.isEmpty():</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br></pre></td></tr></table></figure></p>
-<p>  其实吧，也可以不用栈解决呀（不是我杠，笔试时间也是很重要的）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    left = 0</span><br><span class="line">    right = 0</span><br><span class="line">    for s in symbolString:</span><br><span class="line">        if s == &apos;(&apos;:</span><br><span class="line">            left+=1</span><br><span class="line">        else:</span><br><span class="line">            right+=1</span><br><span class="line">    return left==right</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-3-多重括号匹配"><a href="#2-3-多重括号匹配" class="headerlink" title="2.3 多重括号匹配"></a>2.3 多重括号匹配</h2><p>  拓展到更复杂一点的括号匹配问题——多重括号匹配：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    s = Stack()</span><br><span class="line">    balanced = True</span><br><span class="line">    index = 0</span><br><span class="line">    while index &lt; len(symbolString) and balanced:</span><br><span class="line">        symbol = symbolString[index]</span><br><span class="line">        if symbol in &quot;([&#123;&quot;:</span><br><span class="line">            s.push(symbol)</span><br><span class="line">        else:</span><br><span class="line">            if s.isEmpty():</span><br><span class="line">                balanced = False</span><br><span class="line">            else:</span><br><span class="line">                top = s.pop()</span><br><span class="line">                if not matches(top,symbol):</span><br><span class="line">                       balanced = False</span><br><span class="line">        index = index + 1</span><br><span class="line">    if balanced and s.isEmpty():</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">def matches(open,close):</span><br><span class="line">    opens = &quot;([&#123;&quot;</span><br><span class="line">    closers = &quot;)]&#125;&quot;</span><br><span class="line">    return opens.index(open) == closers.index(close)</span><br></pre></td></tr></table></figure></p>
-<p>  当然，我又“杠”了，主要不想想这么复杂的结构2333：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    l1,l2,l3,r1,r2,r3=0,0,0,0,0,0</span><br><span class="line">    for s in symbolString:</span><br><span class="line">        if s==&apos;&#123;&apos;:</span><br><span class="line">            l1+=1</span><br><span class="line">        elif s==&apos;&#125;&apos;:</span><br><span class="line">            r1+=1</span><br><span class="line">        elif s==&apos;(&apos;:</span><br><span class="line">            l2+=1</span><br><span class="line">        elif s==&apos;)&apos;:</span><br><span class="line">            r2+=1</span><br><span class="line">        elif s==&apos;[&apos;:</span><br><span class="line">            l3+=1</span><br><span class="line">        else:</span><br><span class="line">            r3+=1</span><br><span class="line">    return [l1,l2,l3]==[r1,r2,r3]</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-4-将十进制数转换为各种进制"><a href="#2-4-将十进制数转换为各种进制" class="headerlink" title="2.4 将十进制数转换为各种进制"></a>2.4 将十进制数转换为各种进制</h2><p>  想将10进制数（Decimal）转换为2进制（Binary）、8进制（Octal）或者16进制（Hexidecimal），就将这个数不断除进制数，然后将余数逆序输出，不想贴图了自己百度查下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def baseConverter(decNumber,base):</span><br><span class="line">    digits = &quot;0123456789ABCDEF&quot;</span><br><span class="line">    remstack = Stack()</span><br><span class="line"></span><br><span class="line">    while decNumber &gt; 0:</span><br><span class="line">        rem = decNumber % base</span><br><span class="line">        remstack.push(rem)</span><br><span class="line">        decNumber = decNumber // base</span><br><span class="line"></span><br><span class="line">    newString = &quot;&quot;</span><br><span class="line">    while not remstack.isEmpty():</span><br><span class="line">        newString = newString + digits[remstack.pop()]</span><br><span class="line"></span><br><span class="line">    return newString</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-5-中缀表达式、前后缀表达式"><a href="#2-5-中缀表达式、前后缀表达式" class="headerlink" title="2.5 中缀表达式、前后缀表达式"></a>2.5 <strong>中缀表达式、前后缀表达式</strong></h2><p>  接下来就是栈的重点操作了（就是比较复杂一点）。<br>  什么是中缀表达式呢？就是一般的表达式，比如A+B, C*D等。<br>  顾名思义，前缀表达式就是操作符在前面，后缀就是在后面，给几个例子体会一下：<br> <strong>Infix Expression</strong>        <strong>Prefix Expression</strong>    <strong>Postfix Expression</strong><br>  A + B <em> C + D        + + A </em> B C D            A B C <em> + D +<br>  (A + B) </em> (C + D)        <em> + A B + C D            A B + C D + </em><br>  A <em> B + C </em> D        + <em> A B </em> C D            A B <em> C D </em> +<br>  A + B + C + D        + + + A B C D            A B + C + D +</p>
-<p>  将中缀表达式转换为后缀表达式，利用栈可以写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">def infixToPostfix(infixexpr):</span><br><span class="line">    prec = &#123;&#125;</span><br><span class="line">    prec[&quot;*&quot;] = 3</span><br><span class="line">    prec[&quot;/&quot;] = 3</span><br><span class="line">    prec[&quot;+&quot;] = 2</span><br><span class="line">    prec[&quot;-&quot;] = 2</span><br><span class="line">    prec[&quot;(&quot;] = 1</span><br><span class="line">    opStack = Stack()</span><br><span class="line">    postfixList = []</span><br><span class="line">    tokenList = infixexpr.split()</span><br><span class="line"></span><br><span class="line">    for token in tokenList:</span><br><span class="line">        if token in &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot; or token in &quot;0123456789&quot;:</span><br><span class="line">            postfixList.append(token)</span><br><span class="line">        elif token == &apos;(&apos;:</span><br><span class="line">            opStack.push(token)</span><br><span class="line">        elif token == &apos;)&apos;:</span><br><span class="line">            topToken = opStack.pop()</span><br><span class="line">            while topToken != &apos;(&apos;:</span><br><span class="line">                postfixList.append(topToken)</span><br><span class="line">                topToken = opStack.pop()</span><br><span class="line">        else:</span><br><span class="line">            while (not opStack.isEmpty()) and \</span><br><span class="line">               (prec[opStack.peek()] &gt;= prec[token]):</span><br><span class="line">                  postfixList.append(opStack.pop())</span><br><span class="line">            opStack.push(token)</span><br><span class="line"></span><br><span class="line">    while not opStack.isEmpty():</span><br><span class="line">        postfixList.append(opStack.pop())</span><br><span class="line">    return &quot; &quot;.join(postfixList)</span><br></pre></td></tr></table></figure></p>
-<p>  假如直接给你一个后缀表达式让你计算呢，这就是需要再写一个算法了，不过比较简单，贴上来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">def postfixEval(postfixExpr):</span><br><span class="line">    operandStack = Stack()</span><br><span class="line">    tokenList = postfixExpr.split()</span><br><span class="line"></span><br><span class="line">    for token in tokenList:</span><br><span class="line">        if token in &quot;0123456789&quot;:</span><br><span class="line">            operandStack.push(int(token))</span><br><span class="line">        else:</span><br><span class="line">            operand2 = operandStack.pop()</span><br><span class="line">            operand1 = operandStack.pop()</span><br><span class="line">            result = doMath(token,operand1,operand2)</span><br><span class="line">            operandStack.push(result)</span><br><span class="line">    return operandStack.pop()</span><br><span class="line"></span><br><span class="line">def doMath(op, op1, op2):</span><br><span class="line">    if op == &quot;*&quot;:</span><br><span class="line">        return op1 * op2</span><br><span class="line">    elif op == &quot;/&quot;:</span><br><span class="line">        return op1 / op2</span><br><span class="line">    elif op == &quot;+&quot;:</span><br><span class="line">        return op1 + op2</span><br><span class="line">    else:</span><br><span class="line">        return op1 - op2</span><br></pre></td></tr></table></figure></p>
-<p>  栈就目前学完了，后续有的话还会补充。</p>
+            <p><strong>注水算法</strong>是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。</p>
+<p>当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。</p>
+<p><strong>实现功率的“注水”分配，发送端必须知道CSI。</strong></p>
+<p>直观而言，就如下图所示：</p>
+<img src="/2018/07/18/ck71d8e41000ibgunnxvo0hrs/1.png" title="water filling">
+<p>图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少）</p>
+<p>注水原理可以建模为下述优化问题：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+
+  & \underset{P_1,P_2,...,P_N}{\mathop{\max }}\,\text{          }{C_{sum}}=\sum_{n=1}^{N}{\log \left( 1+\frac{P_n{\left| {h_n} \right|}^2}{N_0} \right)}  \\
+ & \text{subject to      }\sum_{n=1}^{N}{P_n}={P}_{sum},n=1,2,...,N \
+\end{align}</script><p>其中${C}_{sum}$表示系统总信道容量，$N$为信道数，${P}_{n}$为第$n$个信道的功率，${h}_{n}$为第$n$个信道的信道增益，${N}_{0}$为噪声功率谱密度，${P}_{sum}$为传输总功率，也就是总水量。</p>
+<p>该优化问题为凸优化问题，可以用拉格朗日乘数法求得全局最优解。</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(\lambda ,{P_1},{P_2},...,{P_N})=\sum_{n=1}^{N}{\log \left( 1+\frac{P_n{\left| {h_n} \right|}^2}{N_0} \right)}+\lambda (\sum_{n=1}^{N}{P_n}-P_{sum})</script><p>令$\frac{\partial \mathcal{L} }{\partial P_n}=\frac{\partial \mathcal{L} }{\partial \lambda }=0$，解得<strong>最优功率分配方案</strong>为：</p>
+<script type="math/tex; mode=display">
+P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \right)}^{+}</script><p>其中${(\centerdot )}^{+}$表示取值非负。</p>
+<p><strong>MATLAB实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">clear all;</span><br><span class="line">channel_n=10;                         %channel number</span><br><span class="line">M=[5,10,20,50];                        %transmitted power</span><br><span class="line">N0=0.5;          </span><br><span class="line">h_1= random(&apos;rayleigh&apos;,1,1,channel_n);    %Rayleigh fading</span><br><span class="line">h_2=h_1.^2;                           %|h|.^2</span><br><span class="line">h_2_sorted=sort(h_2);                   %sort the channel gain</span><br><span class="line">h=h_2_sorted/N0;  </span><br><span class="line">syms lamda</span><br><span class="line">for m=1:length(M)</span><br><span class="line">    fprintf(&apos;transmitted power is %d watt&apos;,M(m));</span><br><span class="line">    for k=1:channel_n</span><br><span class="line">     p=zeros(1,channel_n);</span><br><span class="line">   sum=0;</span><br><span class="line">    for i=k:channel_n</span><br><span class="line">        sum=sum+(1/lamda-1/h(i));</span><br><span class="line">    end</span><br><span class="line">    f=sum-M(m);</span><br><span class="line">    x=solve(f,lamda);                    %find lamda</span><br><span class="line">    if k==1</span><br><span class="line">        if vpa(x)&gt;0 &amp;&amp; vpa(x)&lt;h(k)</span><br><span class="line">        for i=k:channel_n</span><br><span class="line">            p(i)=1/x-1/h(i);              %allocate power</span><br><span class="line">            capacity=capacity+log2(1+p(i)*h(i));%compute the capacity</span><br><span class="line">        end</span><br><span class="line">         p(i)=vpa(p(i),3)  </span><br><span class="line">         capacity=vpa(capacity,3)</span><br><span class="line">        end</span><br><span class="line">    else </span><br><span class="line">        if vpa(x)&gt;h(k-1) &amp;&amp; vpa(x)&lt;h(k)</span><br><span class="line">            capacity=0;</span><br><span class="line">        for i=k:channel_n</span><br><span class="line">            p(i)=1/x-1/h(i);               %allocate power</span><br><span class="line">            capacity=capacity+log2(1+p(i)*h(i)); %compute the capacity</span><br><span class="line">        end</span><br><span class="line">        p(i)=vpa(p(i),3)   </span><br><span class="line">        capacity=vpa(capacity,3)</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -199,7 +192,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Stack/">Stack</a>
+                    <a class="has-link-grey -link" href="/tags/Algorithms/">Algorithms</a>, <a class="has-link-grey -link" href="/tags/Matlab/">Matlab</a>
                 </div>
             </div>
         </div>
@@ -251,16 +244,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/30/ck71d8e3z000ebgunlfjl48a7/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">2019中兴捧月算法大赛——无线信道估计</span>
+                <span class="level-item">LeetCode Solutions</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/19/ck71cosox000i3sunddjiux3t/">
-                <span class="level-item">常用排序算法（python）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/06/19/ck71d8e3t0009bgunh2j3adc4/">
+                <span class="level-item">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -499,7 +492,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="media-left">
+            <a href="/2020/01/08/ck71d8e43000jbgun8ldmeu30/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -508,7 +501,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck71d8e43000jbgun8ldmeu30/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -518,7 +511,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="media-left">
+            <a href="/2019/05/24/ck71d8e4c000wbgun9mw8hi6f/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -527,7 +520,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck71d8e4c000wbgun9mw8hi6f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -537,7 +530,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="media-left">
+            <a href="/2019/04/29/ck71d8e48000pbgun6rsa62wg/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -546,7 +539,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck71d8e48000pbgun6rsa62wg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -556,7 +549,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="media-left">
+            <a href="/2019/04/19/ck71d8e46000nbgunv7zc7ip3/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -565,7 +558,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck71d8e46000nbgunv7zc7ip3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -575,7 +568,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="media-left">
+            <a href="/2019/03/16/ck71d8e4a000ubgunqiim3706/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -584,7 +577,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck71d8e4a000ubgunqiim3706/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -822,7 +815,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="media-left">
+            <a href="/2020/01/08/ck71d8e43000jbgun8ldmeu30/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -831,7 +824,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck71d8e43000jbgun8ldmeu30/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -841,7 +834,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="media-left">
+            <a href="/2019/05/24/ck71d8e4c000wbgun9mw8hi6f/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -850,7 +843,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck71d8e4c000wbgun9mw8hi6f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -860,7 +853,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="media-left">
+            <a href="/2019/04/29/ck71d8e48000pbgun6rsa62wg/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -869,7 +862,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck71d8e48000pbgun6rsa62wg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -879,7 +872,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="media-left">
+            <a href="/2019/04/19/ck71d8e46000nbgunv7zc7ip3/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -888,7 +881,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck71d8e46000nbgunv7zc7ip3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -898,7 +891,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="media-left">
+            <a href="/2019/03/16/ck71d8e4a000ubgunqiim3706/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -907,7 +900,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck71d8e4a000ubgunqiim3706/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1138,7 +1131,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="常用数据结构——栈" height="28">
+                    <img src="/images/logo.svg" alt="Water Filling Algorithm and Matlab Simulation" height="28">
                 
                 </a>
                 <p class="is-size-7">
