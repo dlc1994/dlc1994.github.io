@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Water Filling Algorithm and Matlab Simulation - LC-Garden</title>
+<title>Introduction to Machine Learning - LC-Garden</title>
 
 
-    <meta name="description" content="注水算法是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。 当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。 实现功率的“注水”分配，发送端必须知道CSI。 直观而言，就如下图所示：  图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少） 注水原">
-<meta name="keywords" content="Algorithms,Matlab">
+    <meta name="description" content="做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Water Filling Algorithm and Matlab Simulation">
-<meta property="og:url" content="https://dlc1994.github.io/2018/07/18/ck6z4sjxj000ov0unp3xixivp/index.html">
+<meta property="og:title" content="Introduction to Machine Learning">
+<meta property="og:url" content="https://dlc1994.github.io/2018/11/28/ck71cosol00083sunbkjuivkm/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="注水算法是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。 当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。 实现功率的“注水”分配，发送端必须知道CSI。 直观而言，就如下图所示：  图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少） 注水原">
+<meta property="og:description" content="做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-29T13:36:59.220Z">
+<meta property="og:updated_time" content="2019-04-29T13:35:57.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Water Filling Algorithm and Matlab Simulation">
-<meta name="twitter:description" content="注水算法是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。 当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。 实现功率的“注水”分配，发送端必须知道CSI。 直观而言，就如下图所示：  图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少） 注水原">
+<meta name="twitter:title" content="Introduction to Machine Learning">
+<meta name="twitter:description" content="做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。">
 <meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Water Filling Algorithm and Matlab Simulation" height="28">
+                <img src="/images/logo.svg" alt="Introduction to Machine Learning" height="28">
             
             </a>
         </div>
@@ -137,17 +137,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-07-18T15:33:07.000Z">2018-07-18</time>
+                <time class="level-item has-text-grey" datetime="2018-11-28T12:13:53.000Z">2018-11-28</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Wireless-Communications/">Wireless Communications</a>
+                <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 552 words)
+                    6 minutes read (About 909 words)
                 </span>
                 
                 
@@ -161,30 +161,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Water Filling Algorithm and Matlab Simulation
+                Introduction to Machine Learning
             
         </h1>
         <div class="content">
-            <p><strong>注水算法</strong>是根据某种准则，并根据信道状况对发送功率进行自适应分配，通常是信道状况好的时刻，多分配功率，信道差的时候，少分配功率，从而最大化传输速率。</p>
-<p>当接收端完全已知CSI（信道状态信息）而发送端未知CSI时，发送天线阵列中的功率平均分配是合理的。</p>
-<p><strong>实现功率的“注水”分配，发送端必须知道CSI。</strong></p>
-<p>直观而言，就如下图所示：</p>
-<img src="/2018/07/18/ck6z4sjxj000ov0unp3xixivp/1.png" title="water filling">
-<p>图1 注水原理示意图（白色平台越高代表信道条件越差，注入的水就越少）</p>
-<p>注水原理可以建模为下述优化问题：</p>
-<script type="math/tex; mode=display">
-\begin{align}
-
-  & \underset{P_1,P_2,...,P_N}{\mathop{\max }}\,\text{          }{C_{sum}}=\sum_{n=1}^{N}{\log \left( 1+\frac{P_n{\left| {h_n} \right|}^2}{N_0} \right)}  \\
- & \text{subject to      }\sum_{n=1}^{N}{P_n}={P}_{sum},n=1,2,...,N \
-\end{align}</script><p>其中${C}_{sum}$表示系统总信道容量，$N$为信道数，${P}_{n}$为第$n$个信道的功率，${h}_{n}$为第$n$个信道的信道增益，${N}_{0}$为噪声功率谱密度，${P}_{sum}$为传输总功率，也就是总水量。</p>
-<p>该优化问题为凸优化问题，可以用拉格朗日乘数法求得全局最优解。</p>
-<script type="math/tex; mode=display">
-\mathcal{L}(\lambda ,{P_1},{P_2},...,{P_N})=\sum_{n=1}^{N}{\log \left( 1+\frac{P_n{\left| {h_n} \right|}^2}{N_0} \right)}+\lambda (\sum_{n=1}^{N}{P_n}-P_{sum})</script><p>令$\frac{\partial \mathcal{L} }{\partial P_n}=\frac{\partial \mathcal{L} }{\partial \lambda }=0$，解得<strong>最优功率分配方案</strong>为：</p>
-<script type="math/tex; mode=display">
-P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \right)}^{+}</script><p>其中${(\centerdot )}^{+}$表示取值非负。</p>
-<p><strong>MATLAB实现</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">clear all;</span><br><span class="line">channel_n=10;                         %channel number</span><br><span class="line">M=[5,10,20,50];                        %transmitted power</span><br><span class="line">N0=0.5;          </span><br><span class="line">h_1= random(&apos;rayleigh&apos;,1,1,channel_n);    %Rayleigh fading</span><br><span class="line">h_2=h_1.^2;                           %|h|.^2</span><br><span class="line">h_2_sorted=sort(h_2);                   %sort the channel gain</span><br><span class="line">h=h_2_sorted/N0;  </span><br><span class="line">syms lamda</span><br><span class="line">for m=1:length(M)</span><br><span class="line">    fprintf(&apos;transmitted power is %d watt&apos;,M(m));</span><br><span class="line">    for k=1:channel_n</span><br><span class="line">     p=zeros(1,channel_n);</span><br><span class="line">   sum=0;</span><br><span class="line">    for i=k:channel_n</span><br><span class="line">        sum=sum+(1/lamda-1/h(i));</span><br><span class="line">    end</span><br><span class="line">    f=sum-M(m);</span><br><span class="line">    x=solve(f,lamda);                    %find lamda</span><br><span class="line">    if k==1</span><br><span class="line">        if vpa(x)&gt;0 &amp;&amp; vpa(x)&lt;h(k)</span><br><span class="line">        for i=k:channel_n</span><br><span class="line">            p(i)=1/x-1/h(i);              %allocate power</span><br><span class="line">            capacity=capacity+log2(1+p(i)*h(i));%compute the capacity</span><br><span class="line">        end</span><br><span class="line">         p(i)=vpa(p(i),3)  </span><br><span class="line">         capacity=vpa(capacity,3)</span><br><span class="line">        end</span><br><span class="line">    else </span><br><span class="line">        if vpa(x)&gt;h(k-1) &amp;&amp; vpa(x)&lt;h(k)</span><br><span class="line">            capacity=0;</span><br><span class="line">        for i=k:channel_n</span><br><span class="line">            p(i)=1/x-1/h(i);               %allocate power</span><br><span class="line">            capacity=capacity+log2(1+p(i)*h(i)); %compute the capacity</span><br><span class="line">        end</span><br><span class="line">        p(i)=vpa(p(i),3)   </span><br><span class="line">        capacity=vpa(capacity,3)</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+            <p>  做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。<br><a id="more"></a><br>  众所周知， 机器学习是研究计算机怎样模拟或实现人类的学习行为，以获取新是研究计算机怎样模拟或实现人类的学习行为。<br>  来自卡内基梅隆大学的Tom Mitchell提出的关于机器学习的定义较为人所接受，他定义的机器学习是，一个程序被认为能从经验E中学习，解决任务T，达到性能度量值P，当且仅当，有了经验E后，经过P评判，程序在处理T时的性能有所提升。<br>  一般而言，我把机器学习分为<strong>监督学习</strong>、<strong>无监督学习</strong>和<strong>增强学习</strong>，而深度学习和大数据是拓展也是紧密的关联，如下图所示：<br><img src="/2018/11/28/ck71cosol00083sunbkjuivkm/1.jpg" title="classification"><br>  监督学习，顾名思义，就是有人指导你，告诉你这个学习正确与否。专业点来讲，就是数据集中每个样本都会带有一个正确答案，比如在西瓜分类里，“红瓤，有蒂”带有标签“甜”，“黄瓤，无蒂”带有标签“不甜”；在回归里，房价预测里每个样本都带有房价。<strong>分类和回归的区别在于预测的是一组离散的结果，而回归可以预测连续的输出。</strong><br><img src="/2018/11/28/ck71cosol00083sunbkjuivkm/2.jpg" title="Supervisedlearning and Unsupervisedlearning"><br>  无监督学习，从上图可以看出，我们事先不知道样本是哪一类或者是哪一个值，也就是没有任何的标签或“答案”。一个比较著名的例子就是鸡尾酒宴问题：许多人坐在一起参加鸡尾酒会，大家都在同一时间说话，声音此起彼伏，重重叠叠，要想分离出不同人说话的声音，就是一个聚类问题，也是无监督学习问题。这个例子可能比较难懂，再说一个就是在无线通信中，有时会根据用户的行为特征对用户进行分类，便于进行一些资源的调度和统一管理，而如何判断一堆用户里哪些用户是类似的，比如上班族、学生党、旅客等，这就是一个典型的聚类问题。<br>  增强学习则是要解决这样的问题，一个能感知环境的自治agent，怎样通过学习选择能达到其目标的最优动作。当agent（机器人，下棋，在无线领域则可以是用户、基站和operator）在环境中作出某个动作时，会产生不同的奖励值或者惩罚值，agent的任务就是从这个非直接的，有延迟的回报中学习，以便后续的动作产生最大的累积效应。<br><img src="/2018/11/28/ck71cosol00083sunbkjuivkm/3.jpg" title="Reinforcementlearning"><br>  在后续的文章中，我们会对各个算法有比较详细的学习过程，敬请期待啦。</p>
 
         </div>
         
@@ -192,7 +173,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Algorithms/">Algorithms</a>, <a class="has-link-grey -link" href="/tags/Matlab/">Matlab</a>
+                    <a class="has-link-grey -link" href="/tags/Python/">Python</a>
                 </div>
             </div>
         </div>
@@ -244,16 +225,16 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/30/ck6z4sjxc000jv0unchksblcl/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/28/ck71cosou000e3sunl1fr5olg/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">LeetCode Solutions</span>
+                <span class="level-item">Linear Regression</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/06/19/ck6z4sjx3000av0unx0dm1wuw/">
-                <span class="level-item">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/30/ck71cosos000d3sunpuynu320/">
+                <span class="level-item">LeetCode Solutions</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -492,7 +473,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="media-left">
+            <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -501,7 +482,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -511,7 +492,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="media-left">
+            <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -520,7 +501,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -530,7 +511,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="media-left">
+            <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -539,7 +520,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -549,7 +530,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="media-left">
+            <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -558,7 +539,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -568,7 +549,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="media-left">
+            <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -577,7 +558,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -815,7 +796,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="media-left">
+            <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -824,7 +805,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck6z4sjx9000fv0un5v549qdu/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck71cosoy000j3sunlklbvi71/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -834,7 +815,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="media-left">
+            <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -843,7 +824,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck6z4sjxq000xv0unhchn8ndc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck71cosp8000x3sunrfzbzjhc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -853,7 +834,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="media-left">
+            <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -862,7 +843,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck6z4sjxo000vv0un15eyk2jn/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck71cosp2000o3sunw69gaqol/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -872,7 +853,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="media-left">
+            <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -881,7 +862,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck6z4sjxe000kv0un2pytgu6q/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck71cosox000i3sunddjiux3t/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -891,7 +872,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
         
         <article class="media">
             
-            <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="media-left">
+            <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -900,7 +881,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck6z4sjxm000qv0un0xo2tkbh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck71cosp6000v3sun0a2ckxuj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1131,7 +1112,7 @@ P_{n}^{*}={\left( \frac{1}{\lambda }-\frac{N_0}{\left| {h}_{n} \right|}^{2} \rig
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Water Filling Algorithm and Matlab Simulation" height="28">
+                    <img src="/images/logo.svg" alt="Introduction to Machine Learning" height="28">
                 
                 </a>
                 <p class="is-size-7">
