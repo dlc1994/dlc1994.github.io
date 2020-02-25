@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Introduction to Machine Learning - LC-Garden</title>
+<title>二叉树常用操作的实现 - LC-Garden</title>
 
 
-    <meta name="description" content="做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。">
-<meta name="keywords" content="Python">
+    <meta name="description" content="二叉树的最全总结，常考题型，持续更新二叉树的递归思想很重要，还有递归的复杂度分析">
+<meta name="keywords" content="Python,Binary Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Introduction to Machine Learning">
-<meta property="og:url" content="https://dlc1994.github.io/2018/11/28/ck71e1d8x0009jkunm9agez71/index.html">
+<meta property="og:title" content="二叉树常用操作的实现">
+<meta property="og:url" content="https://dlc1994.github.io/2019/03/09/ck71edwn900001cunsl2ffqft/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。">
+<meta property="og:description" content="二叉树的最全总结，常考题型，持续更新二叉树的递归思想很重要，还有递归的复杂度分析">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-29T13:35:57.430Z">
+<meta property="og:updated_time" content="2019-04-29T13:52:47.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Introduction to Machine Learning">
-<meta name="twitter:description" content="做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。">
+<meta name="twitter:title" content="二叉树常用操作的实现">
+<meta name="twitter:description" content="二叉树的最全总结，常考题型，持续更新二叉树的递归思想很重要，还有递归的复杂度分析">
 <meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Introduction to Machine Learning" height="28">
+                <img src="/images/logo.svg" alt="二叉树常用操作的实现" height="28">
             
             </a>
         </div>
@@ -137,17 +137,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-28T12:13:53.000Z">2018-11-28</time>
+                <time class="level-item has-text-grey" datetime="2019-03-09T12:23:52.000Z">2019-03-09</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 909 words)
+                    5 minutes read (About 801 words)
                 </span>
                 
                 
@@ -161,11 +161,26 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Introduction to Machine Learning
+                二叉树常用操作的实现
             
         </h1>
         <div class="content">
-            <p>  做了与机器学习相关的项目好久了，但对机器学习一直没有一个系统的认识，导致在切入一些新的领域时力有不逮，总感觉理解有偏差或者理解困难，因此想系统地、详细地学习机器学习，就从周志华的西瓜书和Andrew Ng的机器学习视频开始吧。<br><a id="more"></a><br>  众所周知， 机器学习是研究计算机怎样模拟或实现人类的学习行为，以获取新是研究计算机怎样模拟或实现人类的学习行为。<br>  来自卡内基梅隆大学的Tom Mitchell提出的关于机器学习的定义较为人所接受，他定义的机器学习是，一个程序被认为能从经验E中学习，解决任务T，达到性能度量值P，当且仅当，有了经验E后，经过P评判，程序在处理T时的性能有所提升。<br>  一般而言，我把机器学习分为<strong>监督学习</strong>、<strong>无监督学习</strong>和<strong>增强学习</strong>，而深度学习和大数据是拓展也是紧密的关联，如下图所示：<br><img src="/2018/11/28/ck71e1d8x0009jkunm9agez71/1.jpg" title="classification"><br>  监督学习，顾名思义，就是有人指导你，告诉你这个学习正确与否。专业点来讲，就是数据集中每个样本都会带有一个正确答案，比如在西瓜分类里，“红瓤，有蒂”带有标签“甜”，“黄瓤，无蒂”带有标签“不甜”；在回归里，房价预测里每个样本都带有房价。<strong>分类和回归的区别在于预测的是一组离散的结果，而回归可以预测连续的输出。</strong><br><img src="/2018/11/28/ck71e1d8x0009jkunm9agez71/2.jpg" title="Supervisedlearning and Unsupervisedlearning"><br>  无监督学习，从上图可以看出，我们事先不知道样本是哪一类或者是哪一个值，也就是没有任何的标签或“答案”。一个比较著名的例子就是鸡尾酒宴问题：许多人坐在一起参加鸡尾酒会，大家都在同一时间说话，声音此起彼伏，重重叠叠，要想分离出不同人说话的声音，就是一个聚类问题，也是无监督学习问题。这个例子可能比较难懂，再说一个就是在无线通信中，有时会根据用户的行为特征对用户进行分类，便于进行一些资源的调度和统一管理，而如何判断一堆用户里哪些用户是类似的，比如上班族、学生党、旅客等，这就是一个典型的聚类问题。<br>  增强学习则是要解决这样的问题，一个能感知环境的自治agent，怎样通过学习选择能达到其目标的最优动作。当agent（机器人，下棋，在无线领域则可以是用户、基站和operator）在环境中作出某个动作时，会产生不同的奖励值或者惩罚值，agent的任务就是从这个非直接的，有延迟的回报中学习，以便后续的动作产生最大的累积效应。<br><img src="/2018/11/28/ck71e1d8x0009jkunm9agez71/3.jpg" title="Reinforcementlearning"><br>  在后续的文章中，我们会对各个算法有比较详细的学习过程，敬请期待啦。</p>
+            <p>二叉树的最全总结，常考题型，持续更新<br><strong>二叉树的递归思想很重要，还有递归的复杂度分析</strong><br><a id="more"></a></p>
+<h1 id="1-1-二叉树的初始化"><a href="#1-1-二叉树的初始化" class="headerlink" title="1.1 二叉树的初始化"></a>1.1 二叉树的初始化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#initial of BinaryTree</span><br><span class="line">class BinaryTree:</span><br><span class="line">    def __init__(self,rootObj):</span><br><span class="line">        self.val = rootObj</span><br><span class="line">        self.left = None</span><br><span class="line">        self.right = None</span><br><span class="line"></span><br><span class="line">    def insertLeft(self,newNode):</span><br><span class="line">        if self.left == None:</span><br><span class="line">            self.left = BinaryTree(newNode)</span><br><span class="line">        else:</span><br><span class="line">            t = BinaryTree(newNode)</span><br><span class="line">            t.left = self.left</span><br><span class="line">            self.left = t</span><br><span class="line"></span><br><span class="line">    def insertRight(self,newNode):</span><br><span class="line">        if self.right == None:</span><br><span class="line">            self.right = BinaryTree(newNode)</span><br><span class="line">        else:</span><br><span class="line">            t = BinaryTree(newNode)</span><br><span class="line">            t.right = self.right</span><br><span class="line">            self.right = t</span><br></pre></td></tr></table></figure>
+<h1 id="1-2-创建一个二叉树"><a href="#1-2-创建一个二叉树" class="headerlink" title="1.2 创建一个二叉树"></a>1.2 创建一个二叉树</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#create a BinaryTree [18,7,11,3,4,5,6,#,#,#,#,1,3,2,4]</span><br><span class="line">#  18</span><br><span class="line"># 7  11</span><br><span class="line">#3 4 5 6</span><br><span class="line">#   1 3 2 4</span><br><span class="line"></span><br><span class="line">root = BinaryTree(18)</span><br><span class="line">root.left = BinaryTree(7)</span><br><span class="line">root.right = BinaryTree(11)</span><br><span class="line">root.left.left = BinaryTree(3)</span><br><span class="line">root.left.right = BinaryTree(4)</span><br><span class="line">root.right.left = BinaryTree(5)</span><br><span class="line">root.right.right = BinaryTree(6)</span><br><span class="line">root.right.left.left = BinaryTree(1)</span><br><span class="line">root.right.left.right = BinaryTree(3)</span><br><span class="line">root.right.right.left = BinaryTree(2)</span><br><span class="line">root.right.right.right = BinaryTree(4)</span><br></pre></td></tr></table></figure>
+<h1 id="1-3-前序遍历"><a href="#1-3-前序遍历" class="headerlink" title="1.3 前序遍历"></a>1.3 前序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def PreOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.PreOrder(node.left)</span><br><span class="line">        self.PreOrder(node.right)</span><br><span class="line">#循环版本</span><br><span class="line">def PreOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack =[]</span><br><span class="line">    print(node.val)</span><br><span class="line">    stack.append(node)</span><br><span class="line">    node = node.left</span><br><span class="line">    while stack!=[] or node:</span><br><span class="line">        while node:</span><br><span class="line">            print(node.val)</span><br><span class="line">            stack.append(node)</span><br><span class="line">            node = node.left</span><br><span class="line">        node = stack[-1].right</span><br><span class="line">        stack.pop()</span><br><span class="line"></span><br><span class="line">#ouput: 18 7 3 4 11 5 1 3 6 2 4</span><br></pre></td></tr></table></figure>
+<h1 id="1-4-中序遍历"><a href="#1-4-中序遍历" class="headerlink" title="1.4 中序遍历"></a>1.4 中序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def InOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        self.InOrder(node.left)</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.InOrder(node.right)</span><br><span class="line">#循环版本</span><br><span class="line">def InOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return None</span><br><span class="line">    stack = []</span><br><span class="line">    stack.append(node)</span><br><span class="line">    node = node.left</span><br><span class="line">    while stack!=[] or node:</span><br><span class="line">        while node:</span><br><span class="line">            stack.append(node)</span><br><span class="line">            node = node.left</span><br><span class="line">        print(stack[-1].val)</span><br><span class="line">        node = stack[-1].right</span><br><span class="line">        stack.pop()</span><br><span class="line">#output：3 7 4 18 1 5 3 11 2 6 4</span><br></pre></td></tr></table></figure>
+<h1 id="1-5-后序遍历"><a href="#1-5-后序遍历" class="headerlink" title="1.5 后序遍历"></a>1.5 后序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#递归</span><br><span class="line">def PostOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        self.PostOrder(node.left)</span><br><span class="line">        self.PostOrder(node.right)</span><br><span class="line">        print(node.val)</span><br><span class="line">#非递归</span><br><span class="line">def PostOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack =[]</span><br><span class="line">    stack.append(node)</span><br><span class="line">    pre = None</span><br><span class="line">    while stack!=[]:</span><br><span class="line">        node = stack[-1]</span><br><span class="line">        if ((node.left==None and node.right==None) or</span><br><span class="line">                (pre and (pre == node.left or pre ==node.right))):</span><br><span class="line">            print(node.val)</span><br><span class="line">            pre = node</span><br><span class="line">            stack.pop()</span><br><span class="line">        else:</span><br><span class="line">            if node.right:</span><br><span class="line">                stack.append(node.right)</span><br><span class="line">            if node.left:</span><br><span class="line">                stack.append(node.left)</span><br><span class="line">#output:3 4 7 1 3 5 2 4 6 11 18</span><br></pre></td></tr></table></figure>
+<h1 id="1-6-层序遍历"><a href="#1-6-层序遍历" class="headerlink" title="1.6 层序遍历"></a>1.6 层序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def LevelOrder(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack = []</span><br><span class="line">    stack.append(node)</span><br><span class="line">    while stack!=[]:</span><br><span class="line">        node = stack[0]</span><br><span class="line">        if node.left:</span><br><span class="line">            stack.append(node.left)</span><br><span class="line">        if node.right:</span><br><span class="line">            stack.append(node.right)</span><br><span class="line">        print(node.val)</span><br><span class="line">        stack.pop(0)</span><br><span class="line">output: 18 7 11 3 4 5 6 1 3 2 4</span><br></pre></td></tr></table></figure>
+<h1 id="1-7-计算节点数"><a href="#1-7-计算节点数" class="headerlink" title="1.7 计算节点数"></a>1.7 计算节点数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def CountNode(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    return self.CountNode(root.left) + self.CountNode(root.right) + 1</span><br><span class="line">#非递归版本</span><br><span class="line">def CountNodeNotRev(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    stack = []</span><br><span class="line">    stack.append(root)</span><br><span class="line">    index = 0</span><br><span class="line">    while index&lt;len(stack):</span><br><span class="line">        if stack[index].left:</span><br><span class="line">            stack.append(stack[index].left)</span><br><span class="line">        if stack[index].right:</span><br><span class="line">            stack.append(stack[index].right)</span><br><span class="line">        index += 1</span><br><span class="line">    print(len(stack))</span><br><span class="line">output: 11</span><br></pre></td></tr></table></figure>
+<h1 id="1-8-计算树的深度"><a href="#1-8-计算树的深度" class="headerlink" title="1.8 计算树的深度"></a>1.8 计算树的深度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def getTreeDepth(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    left = self.getTreeDepth(root.left) + 1</span><br><span class="line">    right = self.getTreeDepth(root.right) + 1</span><br><span class="line">    return left if left&gt;right else right</span><br></pre></td></tr></table></figure>
+<h1 id="1-9-计算树的叶子树"><a href="#1-9-计算树的叶子树" class="headerlink" title="1.9 计算树的叶子树"></a>1.9 计算树的叶子树</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def countLeaves(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    if root.left==None and root.right==None:</span><br><span class="line">        return 1</span><br><span class="line">    return self.countLeaves(root.left)+self.countLeaves(root.right)</span><br></pre></td></tr></table></figure>
+<h1 id="1-10-获取第K层节点数"><a href="#1-10-获取第K层节点数" class="headerlink" title="1.10 获取第K层节点数"></a>1.10 获取第K层节点数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def getKLevel(self, root, K):</span><br><span class="line">    if root == None: return 0</span><br><span class="line">    if K == 1: return 1</span><br><span class="line">    return self.getKLevel(root.left, K-1)+self.getKLevel(root.right, K-1)</span><br></pre></td></tr></table></figure>
+<h1 id="1-11-判断两颗二叉树是否相同"><a href="#1-11-判断两颗二叉树是否相同" class="headerlink" title="1.11 判断两颗二叉树是否相同"></a>1.11 判断两颗二叉树是否相同</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def StrucCmp(self, root1, root2):</span><br><span class="line">    if root1 == None and root2 == None: return True</span><br><span class="line">    elif root1 ==None or root2 == None: return False</span><br><span class="line">    return self.StrucCmp(root1.left, root2.left) and self.StrucCmp(root1.right, root2.right)</span><br></pre></td></tr></table></figure>
+<h1 id="1-12-二叉树的镜像"><a href="#1-12-二叉树的镜像" class="headerlink" title="1.12 二叉树的镜像"></a>1.12 二叉树的镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def Mirror(self, root):</span><br><span class="line">    if root == None: return</span><br><span class="line">    tmp = root.left</span><br><span class="line">    root.left = root.right</span><br><span class="line">    root.right = tmp</span><br><span class="line">    self.Mirror(root.left)</span><br><span class="line">    self.Mirror(root.right)</span><br></pre></td></tr></table></figure>
+<h1 id="1-13-找最低公共祖先节点"><a href="#1-13-找最低公共祖先节点" class="headerlink" title="1.13 找最低公共祖先节点"></a>1.13 找最低公共祖先节点</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def findLCA(self, root, node1, node2):</span><br><span class="line">    if root == None: return</span><br><span class="line">    if root == node1 or root == node2: return root</span><br><span class="line">    left = self.findLCA(root.left, node1, node2)</span><br><span class="line">    right = self.findLCA(root.right, node1, node2)</span><br><span class="line">    if left and right:</span><br><span class="line">        return root</span><br><span class="line">    return left if left else right</span><br></pre></td></tr></table></figure>
+<h1 id="1-14-获取两个节点的距离"><a href="#1-14-获取两个节点的距离" class="headerlink" title="1.14 获取两个节点的距离"></a>1.14 获取两个节点的距离</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def getDist(self, root, node1, node2):</span><br><span class="line">    lca = self.findLCA(root, node1, node2) #找最低公共祖宗节点</span><br><span class="line">    level1 = self.FindLevel(lca, node1) #祖节点到两个节点的距离</span><br><span class="line">    level2 = self.FindLevel(lca, node2)</span><br><span class="line">    return level1+level2</span><br><span class="line">def FindLevel(self, node, target):</span><br><span class="line">    if node == None: return -1</span><br><span class="line">    if node == target: return 0</span><br><span class="line">    level = self.FindLevel(node.left, target)</span><br><span class="line">    if level == -1: level = self.FindLevel(node.right, target)</span><br><span class="line">    if level != -1: return level + 1</span><br><span class="line">    return -1</span><br></pre></td></tr></table></figure>
+<h1 id="1-20-找一个节点的所有祖宗节点"><a href="#1-20-找一个节点的所有祖宗节点" class="headerlink" title="1.20 找一个节点的所有祖宗节点"></a>1.20 找一个节点的所有祖宗节点</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def findAllAncestor(self, root, target):</span><br><span class="line">    if root == None: return False</span><br><span class="line">    if root == target: return True</span><br><span class="line">    if self.findAllAncestor(root.left, target) or self.findAllAncestor(root.right, target):</span><br><span class="line">        print(root.val)</span><br><span class="line">        return True</span><br><span class="line">    return False</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -173,7 +188,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                    <a class="has-link-grey -link" href="/tags/Binary-Tree/">Binary Tree</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
                 </div>
             </div>
         </div>
@@ -225,16 +240,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/28/ck71e1d94000ijkun0d9wcce6/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/16/ck71edwo7000u1cunrqd7ghxt/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Linear Regression</span>
+                <span class="level-item">暑期实习招聘笔试题3月(更新ing)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/30/ck71e1d8z000cjkunfzrdru4r/">
-                <span class="level-item">LeetCode Solutions</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/28/ck71edwo2000k1cun0ad0er6k/">
+                <span class="level-item">Linear Regression</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -473,7 +488,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck71e1d95000jjkunl8cdgymr/" class="media-left">
+            <a href="/2020/01/08/ck71edwo0000i1cunlcgee9lz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -482,7 +497,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck71e1d95000jjkunl8cdgymr/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck71edwo0000i1cunlcgee9lz/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -492,7 +507,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck71e1d9e000wjkun657hrio3/" class="media-left">
+            <a href="/2019/05/24/ck71edwo8000w1cun5t5yar90/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -501,7 +516,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck71e1d9e000wjkun657hrio3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck71edwo8000w1cun5t5yar90/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -511,7 +526,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck71e1d99000njkunnlll0mz9/" class="media-left">
+            <a href="/2019/04/29/ck71edwo5000q1cunoupfh80r/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -520,7 +535,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck71e1d99000njkunnlll0mz9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck71edwo5000q1cunoupfh80r/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -530,7 +545,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/19/ck71e1d9a000pjkunta8gcy88/" class="media-left">
+            <a href="/2019/04/19/ck71edwo4000p1cunnvsfia0l/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -539,7 +554,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck71e1d9a000pjkunta8gcy88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck71edwo4000p1cunnvsfia0l/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -549,7 +564,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/16/ck71e1d9c000ujkunk50mns5d/" class="media-left">
+            <a href="/2019/03/16/ck71edwo7000u1cunrqd7ghxt/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -558,7 +573,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck71e1d9c000ujkunk50mns5d/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck71edwo7000u1cunrqd7ghxt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -796,7 +811,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck71e1d95000jjkunl8cdgymr/" class="media-left">
+            <a href="/2020/01/08/ck71edwo0000i1cunlcgee9lz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -805,7 +820,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck71e1d95000jjkunl8cdgymr/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck71edwo0000i1cunlcgee9lz/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -815,7 +830,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck71e1d9e000wjkun657hrio3/" class="media-left">
+            <a href="/2019/05/24/ck71edwo8000w1cun5t5yar90/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -824,7 +839,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck71e1d9e000wjkun657hrio3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck71edwo8000w1cun5t5yar90/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -834,7 +849,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck71e1d99000njkunnlll0mz9/" class="media-left">
+            <a href="/2019/04/29/ck71edwo5000q1cunoupfh80r/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -843,7 +858,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck71e1d99000njkunnlll0mz9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck71edwo5000q1cunoupfh80r/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -853,7 +868,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/19/ck71e1d9a000pjkunta8gcy88/" class="media-left">
+            <a href="/2019/04/19/ck71edwo4000p1cunnvsfia0l/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/sort.gif" alt="常用排序算法（python）">
                 </p>
@@ -862,7 +877,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:27:23.000Z">2019-04-19</time></div>
-                    <a href="/2019/04/19/ck71e1d9a000pjkunta8gcy88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
+                    <a href="/2019/04/19/ck71edwo4000p1cunnvsfia0l/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用排序算法（python）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -872,7 +887,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/16/ck71e1d9c000ujkunk50mns5d/" class="media-left">
+            <a href="/2019/03/16/ck71edwo7000u1cunrqd7ghxt/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="暑期实习招聘笔试题3月(更新ing)">
                 </p>
@@ -881,7 +896,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time></div>
-                    <a href="/2019/03/16/ck71e1d9c000ujkunk50mns5d/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
+                    <a href="/2019/03/16/ck71edwo7000u1cunrqd7ghxt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">暑期实习招聘笔试题3月(更新ing)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1112,7 +1127,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Introduction to Machine Learning" height="28">
+                    <img src="/images/logo.svg" alt="二叉树常用操作的实现" height="28">
                 
                 </a>
                 <p class="is-size-7">
