@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>2019中兴捧月算法大赛——无线信道估计 - LC-Garden</title>
+<title>暑期实习招聘笔试题3月(更新ing) - LC-Garden</title>
 
 
-    <meta name="description" content="Github项目：https://github.com/dlc1994/2019ZTE-Algorithm-Competition 本来想参加深度学习题目的，但看到用caffe，还要现学就作罢了">
-<meta name="keywords" content="Matlab,Wireless communications">
+    <meta name="description" content="实习笔试试题，有些没投（准备好先），拿过来先看了看">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019中兴捧月算法大赛——无线信道估计">
-<meta property="og:url" content="https://dlc1994.github.io/2019/05/24/ck7g3bjht000qh8unr1lf52lq/index.html">
+<meta property="og:title" content="暑期实习招聘笔试题3月(更新ing)">
+<meta property="og:url" content="https://dlc1994.github.io/2019/03/16/ck7g3h05n000vw4unvzxcxlbm/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="Github项目：https://github.com/dlc1994/2019ZTE-Algorithm-Competition 本来想参加深度学习题目的，但看到用caffe，还要现学就作罢了">
+<meta property="og:description" content="实习笔试试题，有些没投（准备好先），拿过来先看了看">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/zte.jpg">
-<meta property="og:updated_time" content="2020-01-09T01:24:42.332Z">
+<meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-24T15:35:06.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019中兴捧月算法大赛——无线信道估计">
-<meta name="twitter:description" content="Github项目：https://github.com/dlc1994/2019ZTE-Algorithm-Competition 本来想参加深度学习题目的，但看到用caffe，还要现学就作罢了">
-<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/zte.jpg">
+<meta name="twitter:title" content="暑期实习招聘笔试题3月(更新ing)">
+<meta name="twitter:description" content="实习笔试试题，有些没投（准备好先），拿过来先看了看">
+<meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
 
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="2019中兴捧月算法大赛——无线信道估计" height="28">
+                <img src="/images/logo.svg" alt="暑期实习招聘笔试题3月(更新ing)" height="28">
             
             </a>
         </div>
@@ -133,27 +133,21 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
-        </span>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time>
+                <time class="level-item has-text-grey" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
+                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 384 words)
+                    2 minutes read (About 257 words)
                 </span>
                 
                 
@@ -167,24 +161,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                2019中兴捧月算法大赛——无线信道估计
+                暑期实习招聘笔试题3月(更新ing)
             
         </h1>
         <div class="content">
-            <p><a href="https://github.com/dlc1994/2019ZTE-Algorithm-Competition">Github项目：https://github.com/dlc1994/2019ZTE-Algorithm-Competition</a></p>
-<p>本来想参加深度学习题目的，但看到用caffe，还要现学就作罢了<br><a id="more"></a></p>
-<p>傅里叶门派有三个题目，一开始想做了智能调度，但是看了半天题目也没理解，随便提交了一个上去（最后发现一共才50多份提交，悔不当初）</p>
-<p>看到这个有点像曲线拟合，题目就是用最少的导频数，估计带噪声的其余一共250个频点的信道值</p>
-<p>看上去有点像曲线拟合，所以我就往曲线拟合方向做了</p>
-<p>1 导频数用62，此时导频和误差百分比大致在50%</p>
-<p>2 导频分开实部和虚部分开进行拟合，拟合函数使用SmoothingSpline</p>
-<p>3 拟合出来函数是带噪声的，接下来去噪</p>
-<p>4 用小波变换，小波基为coif5,分解层数为10层 </p>
-<p>5 输出最终结果，感觉有点过拟合了</p>
-<p>最后一天做了半天，只能提高到36名了，看到进决赛拿蓝剑的那些大神还是很羡慕的，应该多花些时间的，从原理上改进而不是简单的去噪拟合</p>
-<p>大佬的思路：</p>
-<p>1 多种组合构成个闭环优化，中兴专家做的，好像用20个导频左右拿了第一</p>
-<p>2 用CNN，这个可能是从autoencoder方向想，但是数据集够用？</p>
+            <p>实习笔试试题，有些没投（准备好先），拿过来先看了看<br><a id="more"></a></p>
+<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><h1 id="2-头条笔试题"><a href="#2-头条笔试题" class="headerlink" title="2 头条笔试题"></a>2 头条笔试题</h1><p><img src="toutiao/3.jpg" alt="3.jpg"><br><img src="toutiao/4.jpg" alt="4.jpg"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;numeric&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    int N;</span><br><span class="line">    cin&gt;&gt;N;</span><br><span class="line">    for(int n=0;n&lt;N;++n)&#123;</span><br><span class="line">        int L, minVal, minPos;</span><br><span class="line">        minVal = 1000;</span><br><span class="line">        minPos = 0;</span><br><span class="line">        cin&gt;&gt;L;</span><br><span class="line">        vector&lt;int&gt; v(L, 0);</span><br><span class="line">        for(int l=0;l&lt;L;l++)&#123;</span><br><span class="line">            cin&gt;&gt;v[l];</span><br><span class="line">            if(v[l]&lt;minVal)&#123;</span><br><span class="line">                minVal = v[l];</span><br><span class="line">                minPos = l;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;int&gt; reward(v.size(), 0);</span><br><span class="line">        reward[minPos] = 1;</span><br><span class="line">        for(int k=0;k&lt;L;k++)&#123;</span><br><span class="line">            int pos = k+minPos;</span><br><span class="line">            if (pos&gt;=L)&#123;</span><br><span class="line">                pos = pos - L;</span><br><span class="line">            &#125;</span><br><span class="line">            if(pos==0)&#123;</span><br><span class="line">                if(v[pos]&gt;v[L-1]) reward[pos] = reward[L-1]+1;</span><br><span class="line">                else if(v[pos]==v[L-1]) reward[pos] = reward[L-1] - 1;</span><br><span class="line">                else reward[pos]=reward[pos];</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                if(v[pos]&gt;v[pos-1]) reward[pos] = reward[pos-1]+1;</span><br><span class="line">                else if(v[pos]==v[pos-1]) reward[pos] = reward[pos-1] - 1;</span><br><span class="line">                else reward[pos]=reward[pos];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;accumulate(reward.begin(),reward.end(),0)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-头条笔试题"><a href="#3-头条笔试题" class="headerlink" title="3 头条笔试题"></a>3 头条笔试题</h1><p><img src="toutiao/5.jpg" alt="5.jpg"><br><img src="toutiao/6.jpg" alt="6.jpg"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;numeric&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">vector&lt;int&gt; zhaoqian(int N)&#123;</span><br><span class="line">	vector&lt;int&gt; v(4,0);</span><br><span class="line">    N = 1024 - N;</span><br><span class="line">	int value[4] = &#123;64, 16, 4, 1&#125;;</span><br><span class="line">	for(int i=0;i&lt;(sizeof(value)/sizeof(value[0]));i++)&#123;</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">        int a = N/value[i];</span><br><span class="line">		v[i] = a;</span><br><span class="line">		N = N%value[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return v;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int N;</span><br><span class="line">	cin&gt;&gt;N;</span><br><span class="line">	vector&lt;int&gt; vv;</span><br><span class="line">	vv = zhaoqian(N);</span><br><span class="line">    cout&lt;&lt;accumulate(vv.begin(), vv.end(), 0)&lt;&lt;endl;</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="4-招行笔试题"><a href="#4-招行笔试题" class="headerlink" title="4 招行笔试题"></a>4 招行笔试题</h1><p>题目描述：切不等高的蛋糕，蛋糕N份，每刀切平一部分，切下来的不得超过k份，整块蛋糕切平最少需要几刀，比如如下输入<br>5 6<br>1 2 3 4 5<br>提示：第一刀可以切到2，切下来刚好是6份，剩下蛋糕为1 2 2 2 2<br>第二刀全切到1，最少需要2刀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;numeric&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;set&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">#include &lt;list&gt;</span><br><span class="line">#include &lt;stack&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    int N,k;</span><br><span class="line">    cin&gt;&gt;N&gt;&gt;k;</span><br><span class="line">    vector&lt;int&gt; v(N, 0);</span><br><span class="line">    for(int l=0;l&lt;N;l++)&#123;</span><br><span class="line">        cin&gt;&gt;v[l];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(v.begin(),v.end());</span><br><span class="line">    int minVal = v.front();</span><br><span class="line">    int maxVal = v.back();</span><br><span class="line">    int dao = 0;</span><br><span class="line">    bool hello = false;</span><br><span class="line">    int i = 0;</span><br><span class="line">    while(i&lt;v.size())&#123;</span><br><span class="line">        if(hello) i=0;</span><br><span class="line">        if(minVal==maxVal) break;</span><br><span class="line">        int sum = 0;</span><br><span class="line">        bool flag = true;</span><br><span class="line">        int minVal1=v[i];</span><br><span class="line">        for(int j=v.size()-1;j&gt;i;--j)&#123;</span><br><span class="line">            sum = sum+(v[j]-minVal1);</span><br><span class="line">            if(sum&gt;k)&#123;</span><br><span class="line">                flag = false;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(flag)&#123;</span><br><span class="line">            dao++;</span><br><span class="line">            hello = true;</span><br><span class="line">            for(int g=v.size()-1;g&gt;i;g--)&#123;</span><br><span class="line">                v[g] = v[g]-(v[g]-minVal1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maxVal=v.back();</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;dao;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
@@ -192,7 +176,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Matlab/">Matlab</a>, <a class="has-link-grey -link" href="/tags/Wireless-communications/">Wireless communications</a>
+                    <a class="has-link-grey -link" href="/tags/C/">C++</a>
                 </div>
             </div>
         </div>
@@ -210,16 +194,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/19/ck7g3h05k000ow4un4d78mo6q/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">链表的算法合集整理</span>
+                <span class="level-item">常用排序算法（python）</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/">
-                <span class="level-item">常用数据结构——栈</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/09/ck7g3h04r0002w4unjqb4h0x4/">
+                <span class="level-item">二叉树常用操作的实现</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -466,7 +450,7 @@
         
         <article class="media">
             
-            <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="media-left">
+            <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
                 </p>
@@ -475,7 +459,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
-                    <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -485,7 +469,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="media-left">
+            <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -494,7 +478,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -504,7 +488,7 @@
         
         <article class="media">
             
-            <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="media-left">
+            <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/linkedlist.png" alt="链表的算法合集整理">
                 </p>
@@ -513,7 +497,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T15:26:34.000Z">2019-08-21</time></div>
-                    <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
+                    <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a>
                     </p>
@@ -523,7 +507,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="media-left">
+            <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -532,7 +516,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -542,7 +526,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="media-left">
+            <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -551,7 +535,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -832,7 +816,7 @@
         
         <article class="media">
             
-            <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="media-left">
+            <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
                 </p>
@@ -841,7 +825,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
-                    <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -851,7 +835,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="media-left">
+            <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -860,7 +844,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -870,7 +854,7 @@
         
         <article class="media">
             
-            <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="media-left">
+            <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/linkedlist.png" alt="链表的算法合集整理">
                 </p>
@@ -879,7 +863,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T15:26:34.000Z">2019-08-21</time></div>
-                    <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
+                    <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a>
                     </p>
@@ -889,7 +873,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="media-left">
+            <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -898,7 +882,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -908,7 +892,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="media-left">
+            <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -917,7 +901,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -1191,7 +1175,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="2019中兴捧月算法大赛——无线信道估计" height="28">
+                    <img src="/images/logo.svg" alt="暑期实习招聘笔试题3月(更新ing)" height="28">
                 
                 </a>
                 <p class="is-size-7">

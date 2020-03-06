@@ -156,7 +156,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/03/16/ck7g3bjhs000oh8unbp0sby18/">暑期实习招聘笔试题3月(更新ing)</a>
+                <a class="has-link-black-ter" href="/2019/03/16/ck7g3h05n000vw4unvzxcxlbm/">暑期实习招聘笔试题3月(更新ing)</a>
             
         </h1>
         <div class="content">
@@ -167,7 +167,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/03/16/ck7g3bjhs000oh8unbp0sby18/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2019/03/16/ck7g3h05n000vw4unvzxcxlbm/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/11/28/ck7g3bjha000ah8un5i7wqcp2/">Linear Regression</a>
+                <a class="has-link-black-ter" href="/2018/11/28/ck7g3h05a000dw4un38e74kbx/">Linear Regression</a>
             
         </h1>
         <div class="content">
@@ -245,7 +245,7 @@
 <script type="math/tex; mode=display">
 \mathbf{\theta}^*=(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}</script><p>  如果$\mathbf{X}^T\mathbf{X}$不可逆怎么办，这可能是由于矩阵中存在冗余特征，在线性代数里说明矩阵并非线性不相关，因此可以删除多余特征；也有可能是由于特征数大于等于样本数，也就是$m \le n$，可以通过删除一些特征或者使用正则化（regularization，后续介绍）。<br>  给出python一个实现例子如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line"></span><br><span class="line">X = 2 * np.random.rand(100, 1)</span><br><span class="line">y = 2 + 6 * X + np.random.randn(100, 1)</span><br><span class="line"></span><br><span class="line">X_b = np.c_[np.ones((100, 1)), X] # add x0 = 1 to each instance</span><br><span class="line">theta_best = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)</span><br><span class="line">print(theta_best)</span><br><span class="line"># [[1.74568681] [6.27246194]]</span><br><span class="line"></span><br><span class="line">X_new = np.array([[0], [2]])</span><br><span class="line">X_new_b = np.c_[np.ones((2, 1)), X_new] # add x0 = 1 to each instance</span><br><span class="line">y_predict = X_new_b.dot(theta_best)</span><br><span class="line">print(y_predict) #[[ 1.74568681] [14.29061069]]</span><br><span class="line"></span><br><span class="line">plt.plot(X_new, y_predict, &quot;r-&quot;)</span><br><span class="line">plt.plot(X, y, &quot;b.&quot;)</span><br><span class="line">plt.axis([0, 2, 0, 15])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<img src="/2018/11/28/ck7g3bjha000ah8un5i7wqcp2/1.png" title="Linear Regression">
+<img src="/2018/11/28/ck7g3h05a000dw4un38e74kbx/1.png" title="Linear Regression">
 <p>  如果用sklearn实现的话，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from sklearn.linear_model import LinearRegression</span><br><span class="line">&gt;&gt;&gt; lin_reg = LinearRegression()</span><br><span class="line">&gt;&gt;&gt; lin_reg.fit(X, y)</span><br><span class="line">&gt;&gt;&gt; lin_reg.intercept_, lin_reg.coef_</span><br><span class="line">(array([ 4.21509616]), array([[ 2.77011339]]))</span><br><span class="line">&gt;&gt;&gt; lin_reg.predict(X_new)</span><br><span class="line">array([[ 4.21509616],</span><br><span class="line">[ 9.75532293]])</span><br></pre></td></tr></table></figure></p>
 <p>  这种方式实现的计算复杂度只要在矩阵求逆上，对于一个$n \times n$的矩阵，求逆复杂度大约是$O(n^{2.4})$到$O(n^{3})$，当特征数量很大时（比如100,000以上时），标准闭式解会变得很慢；另一方面，对于样本数量其复杂度是$O(m)$，也就是线性的；此外，模型训练完成后，预测的复杂度对于样本数量和特征数量复杂度都很快。</p>
 <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><p>  梯度下降法是十分常用的优化算法，目的是通过迭代过程不断更新参数进而最小化代价函数，每次优化的方向都是斜率绝对值最大的方向。<br><strong>Note：</strong></p>
@@ -270,10 +270,10 @@
 =\frac{2}{m}\mathbf{X}^T\cdot(\mathbf{X}\cdot \theta-\mathbf{y})</script><p>  由此，我们可以得到梯度下降的步骤：</p>
 <script type="math/tex; mode=display">
 \theta^{(n+1)} = \theta^{(n)}-\eta \nabla_{\theta}\text{MSE}(\theta)</script><p>  推导出这个公式之后就可以实现了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">eta = 0.1 # learning rate</span><br><span class="line">n_iterations = 1000</span><br><span class="line">m = 100</span><br><span class="line">theta = np.random.randn(2,1) # random initialization</span><br><span class="line">for iteration in range(n_iterations):</span><br><span class="line">	gradients = 2/m * X_b.T.dot(X_b.dot(theta) - y)</span><br><span class="line">	theta = theta - eta * gradients</span><br></pre></td></tr></table></figure></p>
-<h2 id="Stochastic-Gradient-Descent"><a href="#Stochastic-Gradient-Descent" class="headerlink" title="Stochastic Gradient Descent"></a>Stochastic Gradient Descent</h2><p>  在前面讲过，BGD在每次迭代中是把所有数据都用于计算的，因此当数据量很大时，算法会变得难以忍受的慢，因此需要使用其他梯度下降算法。随机梯度下降法跟批梯度下降是两个极端，SGD在每次迭代中会随机从训练集中选择一个样本，然后只用这个样本计算并更新梯度。因此，这个算法计算比BGD快很多很多；但也由于其随机特性，优化曲线不会“直接”向着最优点前进，而是来回波动，但最终会抵达最优值附近。其算法如下图所示：<br><img src="/2018/11/28/ck7g3bjha000ah8un5i7wqcp2/2.jpg" title="SGD"><br>  Python实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n_epochs = 50</span><br><span class="line">t0, t1 = 5, 50 # learning schedule hyperparameters</span><br><span class="line">def learning_schedule(t):</span><br><span class="line">return t0 / (t + t1)</span><br><span class="line">theta = np.random.randn(2,1) # random initialization</span><br><span class="line">for epoch in range(n_epochs):</span><br><span class="line">	for i in range(m):</span><br><span class="line">		random_index = np.random.randint(m)</span><br><span class="line">		xi = X_b[random_index:random_index+1]</span><br><span class="line">        yi = y[random_index:random_index+1]</span><br><span class="line">        gradients = 2 * xi.T.dot(xi.dot(theta) - yi)</span><br><span class="line">        eta = learning_schedule(epoch * m + i)</span><br><span class="line">        theta = theta - eta * gradients</span><br><span class="line">print(theta)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Stochastic-Gradient-Descent"><a href="#Stochastic-Gradient-Descent" class="headerlink" title="Stochastic Gradient Descent"></a>Stochastic Gradient Descent</h2><p>  在前面讲过，BGD在每次迭代中是把所有数据都用于计算的，因此当数据量很大时，算法会变得难以忍受的慢，因此需要使用其他梯度下降算法。随机梯度下降法跟批梯度下降是两个极端，SGD在每次迭代中会随机从训练集中选择一个样本，然后只用这个样本计算并更新梯度。因此，这个算法计算比BGD快很多很多；但也由于其随机特性，优化曲线不会“直接”向着最优点前进，而是来回波动，但最终会抵达最优值附近。其算法如下图所示：<br><img src="/2018/11/28/ck7g3h05a000dw4un38e74kbx/2.jpg" title="SGD"><br>  Python实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n_epochs = 50</span><br><span class="line">t0, t1 = 5, 50 # learning schedule hyperparameters</span><br><span class="line">def learning_schedule(t):</span><br><span class="line">return t0 / (t + t1)</span><br><span class="line">theta = np.random.randn(2,1) # random initialization</span><br><span class="line">for epoch in range(n_epochs):</span><br><span class="line">	for i in range(m):</span><br><span class="line">		random_index = np.random.randint(m)</span><br><span class="line">		xi = X_b[random_index:random_index+1]</span><br><span class="line">        yi = y[random_index:random_index+1]</span><br><span class="line">        gradients = 2 * xi.T.dot(xi.dot(theta) - yi)</span><br><span class="line">        eta = learning_schedule(epoch * m + i)</span><br><span class="line">        theta = theta - eta * gradients</span><br><span class="line">print(theta)</span><br></pre></td></tr></table></figure></p>
 <p>  如果用sklearn来实现的话，代码就简单多了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.linear_model import SGDRegressor</span><br><span class="line">sgd_reg = SGDRegressor(n_iter=50, penalty=None, eta0=0.1)</span><br><span class="line">sgd_reg.fit(X, y.ravel())</span><br><span class="line">print(sgd_reg.intercept_, sgd_reg.coef_)</span><br></pre></td></tr></table></figure></p>
 <p><strong>NOTE:</strong> epoch是指把所有数据样本都遍历一遍，iteration表示更新一次参数，batch则是指数据样本的大小，在SGD中，iteration=batch=1，epoch=num_X/batch</p>
-<h2 id="Mini-batch-Gradient-Descent"><a href="#Mini-batch-Gradient-Descent" class="headerlink" title="Mini-batch Gradient Descent"></a>Mini-batch Gradient Descent</h2><p>  Mini-batch GD介于SGD和BGD之间，也就是每次用来更新参数的样本不是一也不是所有（吴恩达说在2-400之间，他倾向于用10），它吸收了BGD和SGD的优缺点的折中，收敛更快，随机性较小，但也难抵达最优值，其算法流程如下图所示：<br><img src="/2018/11/28/ck7g3bjha000ah8un5i7wqcp2/3.jpg" title="Mini-batch GD"></p>
+<h2 id="Mini-batch-Gradient-Descent"><a href="#Mini-batch-Gradient-Descent" class="headerlink" title="Mini-batch Gradient Descent"></a>Mini-batch Gradient Descent</h2><p>  Mini-batch GD介于SGD和BGD之间，也就是每次用来更新参数的样本不是一也不是所有（吴恩达说在2-400之间，他倾向于用10），它吸收了BGD和SGD的优缺点的折中，收敛更快，随机性较小，但也难抵达最优值，其算法流程如下图所示：<br><img src="/2018/11/28/ck7g3h05a000dw4un38e74kbx/3.jpg" title="Mini-batch GD"></p>
 <p>  这里介绍的标准闭式解只适用于线性回归问题，但梯度下降法可以用来训练许多模型，在深度学习中也有广泛应用，将他们比较如下：</p>
 <div class="table-container">
 <table>
@@ -330,7 +330,7 @@
 </div>
 <h2 id="Polynomial-Regression"><a href="#Polynomial-Regression" class="headerlink" title="Polynomial Regression"></a>Polynomial Regression</h2><p>  如果数据并非一条直线呢，那么还可以用线性模型吗？实际上是可以的，主要方法就是把一个特征拓展成多维的，比如$x^2, x^3,…, x^k$，然后将其作为另一个维度的特征，比如$x_1 = x, x_2 = x^2$，那么就可以用线性模型按照上面的方法进行训练了，用sklearn实现如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from sklearn.preprocessing import PolynomialFeatures</span><br><span class="line">from sklearn.linear_model import LinearRegression</span><br><span class="line"></span><br><span class="line">m = 100</span><br><span class="line">X = 6 * np.random.rand(m, 1) - 3</span><br><span class="line">y = 1 * X**2 + X + 2 + np.random.randn(m, 1)</span><br><span class="line">plt.scatter(X, y)</span><br><span class="line"></span><br><span class="line">poly_features = PolynomialFeatures(degree=2, include_bias=False)</span><br><span class="line">X_poly = poly_features.fit_transform(X)</span><br><span class="line">lin_reg = LinearRegression()</span><br><span class="line">lin_reg.fit(X_poly, y)</span><br><span class="line">print(lin_reg.intercept_, lin_reg.coef_)</span><br><span class="line">xx = np.array((range(-3, 4)))</span><br><span class="line">print(xx)</span><br><span class="line">yy = xx*0.98134428+xx*xx*0.94365742+1.94555083</span><br><span class="line">plt.plot(xx, yy, c=&apos;r&apos;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<img src="/2018/11/28/ck7g3bjha000ah8un5i7wqcp2/4.png" title="Polynomial Regression">
+<img src="/2018/11/28/ck7g3h05a000dw4un38e74kbx/4.png" title="Polynomial Regression">
 <p>  此外，需要注意，<code>PolynomialFeatures(degree=d)</code>会把一个包含n个特征的矩阵转化为包含$\frac{(n+d)!}{d!n!}$个特征的矩阵，即如果对于两个特征a和b，令degree=3，那么特征不仅有$a^2$，$a^3$，$b^2$，$b^3$，还会有$ab$，$a^2b$和$ab^2$.</p>
 
         </div>
@@ -373,7 +373,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/06/19/ck7g3bjhn000jh8unvw2o5s8h/">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</a>
+                <a class="has-link-black-ter" href="/2018/06/19/ck7g3h0550008w4un5x3kqc63/">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</a>
             
         </h1>
         <div class="content">
@@ -388,7 +388,7 @@
 <h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3:"></a>Step 3:</h2><p>Otherwise, don’t worry, I encountered the same situation as you. Do as follows.</p>
 <h3 id="3-1-Install-Latexdiff-Package"><a href="#3-1-Install-Latexdiff-Package" class="headerlink" title="3.1 Install Latexdiff Package"></a>3.1 Install <code>Latexdiff</code> Package</h3><p>After you install a Tex, open <code>Start Menu-&gt;Ctex or Miktex-&gt;Package Manager (Admin)</code>.</p>
 <p>Search <code>Latexdiff</code> in column <code>Name:</code> as follows</p>
-<img src="/2018/06/19/ck7g3bjhn000jh8unvw2o5s8h/3.png" title="Install latexdiff">
+<img src="/2018/06/19/ck7g3h0550008w4un5x3kqc63/3.png" title="Install latexdiff">
 <p>Click the <code>+</code> button and install it.</p>
 <h3 id="3-2-Install-Perl"><a href="#3-2-Install-Perl" class="headerlink" title="3.2 Install Perl"></a>3.2 Install <code>Perl</code></h3><p><code>Latexdiff</code> is a <code>Perl</code> script, so you can go to <a href="https://www.perl.org/get.html">Perl</a> download corresponding version in your computer. Technically, <code>ActivePerl</code> and <code>StrawberryPerl</code> is both ok. </p>
 <p>Same steps in <strong>Step 2</strong>, if you have problem as </p>
@@ -406,7 +406,7 @@
 <h3 id="3-3-Latexdiff"><a href="#3-3-Latexdiff" class="headerlink" title="3.3 Latexdiff"></a>3.3 <code>Latexdiff</code></h3><p>Put your origin tex version (e.g., <code>old.tex</code>) and your modified tex version (e.g., <code>new.tex</code>) in a same file. <code>cmd</code> to this path, and input</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">latexdiff old.tex new.tex &gt;diff.tex</span><br></pre></td></tr></table></figure>
 <p>where <code>diff.tex</code> is the editted version, add the required files to this path and compile it. Then you can have the results</p>
-<img src="/2018/06/19/ck7g3bjhn000jh8unvw2o5s8h/2.png" title="Final pdf">
+<img src="/2018/06/19/ck7g3h0550008w4un5x3kqc63/2.png" title="Final pdf">
 <p>If you encounter some errors in compiling, just google it because they are just some common LATEX errors. Enjoy.</p>
 <p>!!!Tips: if you suffer any problem, first go to google or baidu it. </p>
 <p><strong>Please discover the truth by yourself.</strong></p>
@@ -451,7 +451,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/06/12/ck7g3bjgr0000h8un7xk21dwm/">A Stupid Mistake I Made about Sorting in Python DataFrame</a>
+                <a class="has-link-black-ter" href="/2018/06/12/ck7g3h04l0000w4un4bwlmcp3/">A Stupid Mistake I Made about Sorting in Python DataFrame</a>
             
         </h1>
         <div class="content">
@@ -513,7 +513,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/06/12/ck7g3bjh50006h8unvyh1xiw4/">Hexo: setup a static blog</a>
+                <a class="has-link-black-ter" href="/2018/06/12/ck7g3h0560009w4uneuj6b9z7/">Hexo: setup a static blog</a>
             
         </h1>
         <div class="content">
@@ -533,7 +533,7 @@
 </blockquote>
 <p>​    <strong>Dynamic site is not our topic here. I wil talk about how to deploy a hexo blog in Github repository under the environment of Window 10.</strong> </p>
 <h1 id="1-Github-initialization"><a href="#1-Github-initialization" class="headerlink" title="1. Github initialization"></a>1. Github initialization</h1><p>​    From the very beginning, you have to create a <a href="https://github.com/">GitHub</a> account and new a repository, note that the repository name need to be the same with your owner name (the alarm is appeared cause I have already newed a same one).</p>
-<img src="/2018/06/12/ck7g3bjh50006h8unvyh1xiw4/2.jpg" title="Create a repository">
+<img src="/2018/06/12/ck7g3h0560009w4uneuj6b9z7/2.jpg" title="Create a repository">
 <p><strong>REMEMBER</strong> the repository address (two kinds of address—- <code>SSH: git@github.com:dlc1994/dlc1994.github.io.git</code> and <code>HTTPS: https://github.com/dlc1994/dlc1994.github.io.git</code>). The configuration of SSH can be seen in <a href="https://www.cnblogs.com/superGG1990/p/6844952.html">here</a>, and HTTPS has no need of extra operation.</p>
 <p>Install <a href="https://git-scm.com/">Git</a> tool and the rest of operations is done through this tool.</p>
 <h1 id="2-Install-the-necessary-components"><a href="#2-Install-the-necessary-components" class="headerlink" title="2. Install the necessary components"></a>2. Install the necessary components</h1><p>After that, install <a href="https://nodejs.org/en/">Node.js</a>, in case of the low speed, you can also download it in <a href="http://nodejs.cn/download/">here</a>.</p>
@@ -548,7 +548,7 @@
 <p>In <code>Git Bash</code>, input <code>hexo g</code> and <code>hexo s</code>, it will return (perfectly)</p>
 <p><code>Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code></p>
 <p>Open your browser and input <code>localhost:4000</code> in address bar, you can see that (Ok it is really ugly)</p>
-<img src="/2018/06/12/ck7g3bjh50006h8unvyh1xiw4/4.png" title="Your First Blog">
+<img src="/2018/06/12/ck7g3h0560009w4uneuj6b9z7/4.png" title="Your First Blog">
 <p>Lastly, you have to deploy it to your github repository, continue to input <code>hexo d</code>. Luckily, there is no error and you can see it in your repository address like <code>git@github.com:dlc1994/dlc1994.github.io.git</code>. If not, go to google for help.</p>
 <p>Create a new blog use <code>hexo new &quot;postname&quot;</code> or in your blog path <code>blogpath\source\_posts</code> new a <code>.md</code> file and edit it use Markdown (<a href="https://www.typora.io/">Typora</a> is recommended here).</p>
 <p>More commands can be found <a href="https://hexo.io/docs/commands.html">here</a>. I will update the process of blog beautification in my next blogs.</p>
@@ -826,7 +826,7 @@
         
         <article class="media">
             
-            <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="media-left">
+            <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
                 </p>
@@ -835,7 +835,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
-                    <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -845,7 +845,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="media-left">
+            <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -854,7 +854,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -864,7 +864,7 @@
         
         <article class="media">
             
-            <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="media-left">
+            <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/linkedlist.png" alt="链表的算法合集整理">
                 </p>
@@ -873,7 +873,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T15:26:34.000Z">2019-08-21</time></div>
-                    <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
+                    <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a>
                     </p>
@@ -883,7 +883,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="media-left">
+            <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -892,7 +892,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -902,7 +902,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="media-left">
+            <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -911,7 +911,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -1192,7 +1192,7 @@
         
         <article class="media">
             
-            <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="media-left">
+            <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
                 </p>
@@ -1201,7 +1201,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
-                    <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -1211,7 +1211,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="media-left">
+            <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -1220,7 +1220,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1230,7 +1230,7 @@
         
         <article class="media">
             
-            <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="media-left">
+            <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/linkedlist.png" alt="链表的算法合集整理">
                 </p>
@@ -1239,7 +1239,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T15:26:34.000Z">2019-08-21</time></div>
-                    <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
+                    <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a>
                     </p>
@@ -1249,7 +1249,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="media-left">
+            <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -1258,7 +1258,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -1268,7 +1268,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="media-left">
+            <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -1277,7 +1277,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>

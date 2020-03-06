@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>二叉树常用操作的实现 - LC-Garden</title>
+<title>常用数据结构——栈 - LC-Garden</title>
 
 
-    <meta name="description" content="二叉树的最全总结，常考题型，持续更新二叉树的递归思想很重要，还有递归的复杂度分析">
-<meta name="keywords" content="Python,Binary Tree">
+    <meta name="description" content="本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。">
+<meta name="keywords" content="Stack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树常用操作的实现">
-<meta property="og:url" content="https://dlc1994.github.io/2019/03/09/ck7g3bjgx0002h8unuaxhv85k/index.html">
+<meta property="og:title" content="常用数据结构——栈">
+<meta property="og:url" content="https://dlc1994.github.io/2019/04/29/ck7g3h05m000tw4unn8x2calh/index.html">
 <meta property="og:site_name" content="LC-Garden">
-<meta property="og:description" content="二叉树的最全总结，常考题型，持续更新二叉树的递归思想很重要，还有递归的复杂度分析">
+<meta property="og:description" content="本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/binarytree.png">
-<meta property="og:updated_time" content="2020-03-06T11:20:50.465Z">
+<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/stack.jpg">
+<meta property="og:updated_time" content="2020-01-09T01:28:34.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树常用操作的实现">
-<meta name="twitter:description" content="二叉树的最全总结，常考题型，持续更新二叉树的递归思想很重要，还有递归的复杂度分析">
-<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/binarytree.png">
+<meta name="twitter:title" content="常用数据结构——栈">
+<meta name="twitter:description" content="本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。">
+<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/stack.jpg">
 
 
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="二叉树常用操作的实现" height="28">
+                <img src="/images/logo.svg" alt="常用数据结构——栈" height="28">
             
             </a>
         </div>
@@ -135,7 +135,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/binarytree.png" alt="二叉树常用操作的实现">
+            <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
         </span>
     </div>
     
@@ -143,17 +143,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-09T12:23:52.000Z">2019-03-09</time>
+                <time class="level-item has-text-grey" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
+                <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 801 words)
+                    9 minutes read (About 1320 words)
                 </span>
                 
                 
@@ -167,26 +167,31 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                二叉树常用操作的实现
+                常用数据结构——栈
             
         </h1>
         <div class="content">
-            <p>二叉树的最全总结，常考题型，持续更新<br><strong>二叉树的递归思想很重要，还有递归的复杂度分析</strong><br><a id="more"></a></p>
-<h1 id="1-1-二叉树的初始化"><a href="#1-1-二叉树的初始化" class="headerlink" title="1.1 二叉树的初始化"></a>1.1 二叉树的初始化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#initial of BinaryTree</span><br><span class="line">class BinaryTree:</span><br><span class="line">    def __init__(self,rootObj):</span><br><span class="line">        self.val = rootObj</span><br><span class="line">        self.left = None</span><br><span class="line">        self.right = None</span><br><span class="line"></span><br><span class="line">    def insertLeft(self,newNode):</span><br><span class="line">        if self.left == None:</span><br><span class="line">            self.left = BinaryTree(newNode)</span><br><span class="line">        else:</span><br><span class="line">            t = BinaryTree(newNode)</span><br><span class="line">            t.left = self.left</span><br><span class="line">            self.left = t</span><br><span class="line"></span><br><span class="line">    def insertRight(self,newNode):</span><br><span class="line">        if self.right == None:</span><br><span class="line">            self.right = BinaryTree(newNode)</span><br><span class="line">        else:</span><br><span class="line">            t = BinaryTree(newNode)</span><br><span class="line">            t.right = self.right</span><br><span class="line">            self.right = t</span><br></pre></td></tr></table></figure>
-<h1 id="1-2-创建一个二叉树"><a href="#1-2-创建一个二叉树" class="headerlink" title="1.2 创建一个二叉树"></a>1.2 创建一个二叉树</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#create a BinaryTree [18,7,11,3,4,5,6,#,#,#,#,1,3,2,4]</span><br><span class="line">#  18</span><br><span class="line"># 7  11</span><br><span class="line">#3 4 5 6</span><br><span class="line">#   1 3 2 4</span><br><span class="line"></span><br><span class="line">root = BinaryTree(18)</span><br><span class="line">root.left = BinaryTree(7)</span><br><span class="line">root.right = BinaryTree(11)</span><br><span class="line">root.left.left = BinaryTree(3)</span><br><span class="line">root.left.right = BinaryTree(4)</span><br><span class="line">root.right.left = BinaryTree(5)</span><br><span class="line">root.right.right = BinaryTree(6)</span><br><span class="line">root.right.left.left = BinaryTree(1)</span><br><span class="line">root.right.left.right = BinaryTree(3)</span><br><span class="line">root.right.right.left = BinaryTree(2)</span><br><span class="line">root.right.right.right = BinaryTree(4)</span><br></pre></td></tr></table></figure>
-<h1 id="1-3-前序遍历"><a href="#1-3-前序遍历" class="headerlink" title="1.3 前序遍历"></a>1.3 前序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def PreOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.PreOrder(node.left)</span><br><span class="line">        self.PreOrder(node.right)</span><br><span class="line">#循环版本</span><br><span class="line">def PreOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack =[]</span><br><span class="line">    print(node.val)</span><br><span class="line">    stack.append(node)</span><br><span class="line">    node = node.left</span><br><span class="line">    while stack!=[] or node:</span><br><span class="line">        while node:</span><br><span class="line">            print(node.val)</span><br><span class="line">            stack.append(node)</span><br><span class="line">            node = node.left</span><br><span class="line">        node = stack[-1].right</span><br><span class="line">        stack.pop()</span><br><span class="line"></span><br><span class="line">#ouput: 18 7 3 4 11 5 1 3 6 2 4</span><br></pre></td></tr></table></figure>
-<h1 id="1-4-中序遍历"><a href="#1-4-中序遍历" class="headerlink" title="1.4 中序遍历"></a>1.4 中序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def InOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        self.InOrder(node.left)</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.InOrder(node.right)</span><br><span class="line">#循环版本</span><br><span class="line">def InOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return None</span><br><span class="line">    stack = []</span><br><span class="line">    stack.append(node)</span><br><span class="line">    node = node.left</span><br><span class="line">    while stack!=[] or node:</span><br><span class="line">        while node:</span><br><span class="line">            stack.append(node)</span><br><span class="line">            node = node.left</span><br><span class="line">        print(stack[-1].val)</span><br><span class="line">        node = stack[-1].right</span><br><span class="line">        stack.pop()</span><br><span class="line">#output：3 7 4 18 1 5 3 11 2 6 4</span><br></pre></td></tr></table></figure>
-<h1 id="1-5-后序遍历"><a href="#1-5-后序遍历" class="headerlink" title="1.5 后序遍历"></a>1.5 后序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#递归</span><br><span class="line">def PostOrder(self, node):</span><br><span class="line">    if node:</span><br><span class="line">        self.PostOrder(node.left)</span><br><span class="line">        self.PostOrder(node.right)</span><br><span class="line">        print(node.val)</span><br><span class="line">#非递归</span><br><span class="line">def PostOrderLoop(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack =[]</span><br><span class="line">    stack.append(node)</span><br><span class="line">    pre = None</span><br><span class="line">    while stack!=[]:</span><br><span class="line">        node = stack[-1]</span><br><span class="line">        if ((node.left==None and node.right==None) or</span><br><span class="line">                (pre and (pre == node.left or pre ==node.right))):</span><br><span class="line">            print(node.val)</span><br><span class="line">            pre = node</span><br><span class="line">            stack.pop()</span><br><span class="line">        else:</span><br><span class="line">            if node.right:</span><br><span class="line">                stack.append(node.right)</span><br><span class="line">            if node.left:</span><br><span class="line">                stack.append(node.left)</span><br><span class="line">#output:3 4 7 1 3 5 2 4 6 11 18</span><br></pre></td></tr></table></figure>
-<h1 id="1-6-层序遍历"><a href="#1-6-层序遍历" class="headerlink" title="1.6 层序遍历"></a>1.6 层序遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def LevelOrder(self, node):</span><br><span class="line">    if node == None:</span><br><span class="line">        return</span><br><span class="line">    stack = []</span><br><span class="line">    stack.append(node)</span><br><span class="line">    while stack!=[]:</span><br><span class="line">        node = stack[0]</span><br><span class="line">        if node.left:</span><br><span class="line">            stack.append(node.left)</span><br><span class="line">        if node.right:</span><br><span class="line">            stack.append(node.right)</span><br><span class="line">        print(node.val)</span><br><span class="line">        stack.pop(0)</span><br><span class="line">output: 18 7 11 3 4 5 6 1 3 2 4</span><br></pre></td></tr></table></figure>
-<h1 id="1-7-计算节点数"><a href="#1-7-计算节点数" class="headerlink" title="1.7 计算节点数"></a>1.7 计算节点数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#递归版本</span><br><span class="line">def CountNode(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    return self.CountNode(root.left) + self.CountNode(root.right) + 1</span><br><span class="line">#非递归版本</span><br><span class="line">def CountNodeNotRev(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    stack = []</span><br><span class="line">    stack.append(root)</span><br><span class="line">    index = 0</span><br><span class="line">    while index&lt;len(stack):</span><br><span class="line">        if stack[index].left:</span><br><span class="line">            stack.append(stack[index].left)</span><br><span class="line">        if stack[index].right:</span><br><span class="line">            stack.append(stack[index].right)</span><br><span class="line">        index += 1</span><br><span class="line">    print(len(stack))</span><br><span class="line">output: 11</span><br></pre></td></tr></table></figure>
-<h1 id="1-8-计算树的深度"><a href="#1-8-计算树的深度" class="headerlink" title="1.8 计算树的深度"></a>1.8 计算树的深度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def getTreeDepth(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    left = self.getTreeDepth(root.left) + 1</span><br><span class="line">    right = self.getTreeDepth(root.right) + 1</span><br><span class="line">    return left if left&gt;right else right</span><br></pre></td></tr></table></figure>
-<h1 id="1-9-计算树的叶子树"><a href="#1-9-计算树的叶子树" class="headerlink" title="1.9 计算树的叶子树"></a>1.9 计算树的叶子树</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def countLeaves(self, root):</span><br><span class="line">    if root == None:</span><br><span class="line">        return 0</span><br><span class="line">    if root.left==None and root.right==None:</span><br><span class="line">        return 1</span><br><span class="line">    return self.countLeaves(root.left)+self.countLeaves(root.right)</span><br></pre></td></tr></table></figure>
-<h1 id="1-10-获取第K层节点数"><a href="#1-10-获取第K层节点数" class="headerlink" title="1.10 获取第K层节点数"></a>1.10 获取第K层节点数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def getKLevel(self, root, K):</span><br><span class="line">    if root == None: return 0</span><br><span class="line">    if K == 1: return 1</span><br><span class="line">    return self.getKLevel(root.left, K-1)+self.getKLevel(root.right, K-1)</span><br></pre></td></tr></table></figure>
-<h1 id="1-11-判断两颗二叉树是否相同"><a href="#1-11-判断两颗二叉树是否相同" class="headerlink" title="1.11 判断两颗二叉树是否相同"></a>1.11 判断两颗二叉树是否相同</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def StrucCmp(self, root1, root2):</span><br><span class="line">    if root1 == None and root2 == None: return True</span><br><span class="line">    elif root1 ==None or root2 == None: return False</span><br><span class="line">    return self.StrucCmp(root1.left, root2.left) and self.StrucCmp(root1.right, root2.right)</span><br></pre></td></tr></table></figure>
-<h1 id="1-12-二叉树的镜像"><a href="#1-12-二叉树的镜像" class="headerlink" title="1.12 二叉树的镜像"></a>1.12 二叉树的镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def Mirror(self, root):</span><br><span class="line">    if root == None: return</span><br><span class="line">    tmp = root.left</span><br><span class="line">    root.left = root.right</span><br><span class="line">    root.right = tmp</span><br><span class="line">    self.Mirror(root.left)</span><br><span class="line">    self.Mirror(root.right)</span><br></pre></td></tr></table></figure>
-<h1 id="1-13-找最低公共祖先节点"><a href="#1-13-找最低公共祖先节点" class="headerlink" title="1.13 找最低公共祖先节点"></a>1.13 找最低公共祖先节点</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def findLCA(self, root, node1, node2):</span><br><span class="line">    if root == None: return</span><br><span class="line">    if root == node1 or root == node2: return root</span><br><span class="line">    left = self.findLCA(root.left, node1, node2)</span><br><span class="line">    right = self.findLCA(root.right, node1, node2)</span><br><span class="line">    if left and right:</span><br><span class="line">        return root</span><br><span class="line">    return left if left else right</span><br></pre></td></tr></table></figure>
-<h1 id="1-14-获取两个节点的距离"><a href="#1-14-获取两个节点的距离" class="headerlink" title="1.14 获取两个节点的距离"></a>1.14 获取两个节点的距离</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def getDist(self, root, node1, node2):</span><br><span class="line">    lca = self.findLCA(root, node1, node2) #找最低公共祖宗节点</span><br><span class="line">    level1 = self.FindLevel(lca, node1) #祖节点到两个节点的距离</span><br><span class="line">    level2 = self.FindLevel(lca, node2)</span><br><span class="line">    return level1+level2</span><br><span class="line">def FindLevel(self, node, target):</span><br><span class="line">    if node == None: return -1</span><br><span class="line">    if node == target: return 0</span><br><span class="line">    level = self.FindLevel(node.left, target)</span><br><span class="line">    if level == -1: level = self.FindLevel(node.right, target)</span><br><span class="line">    if level != -1: return level + 1</span><br><span class="line">    return -1</span><br></pre></td></tr></table></figure>
-<h1 id="1-20-找一个节点的所有祖宗节点"><a href="#1-20-找一个节点的所有祖宗节点" class="headerlink" title="1.20 找一个节点的所有祖宗节点"></a>1.20 找一个节点的所有祖宗节点</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def findAllAncestor(self, root, target):</span><br><span class="line">    if root == None: return False</span><br><span class="line">    if root == target: return True</span><br><span class="line">    if self.findAllAncestor(root.left, target) or self.findAllAncestor(root.right, target):</span><br><span class="line">        print(root.val)</span><br><span class="line">        return True</span><br><span class="line">    return False</span><br></pre></td></tr></table></figure>
+            <p>本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。<br><a id="more"></a><br>  栈（stack）、队列（queues）、双端队列（deques）和列表都是有序数据容器，元素添加后在容器内的位置跟其他元素添加和删除的顺序有关，像这样的容器被称作线性数据结构（linear data structure）。<br>  栈可以想象为只有一端开口的瓶子，假设每放一个东西进去都会把前面放的完全盖住，那么这时你想取出最里面的东西显然是不可能的，所以你只能把上面的一个个拿出来才能取到你想要的，这就叫做后进先出（LIFO, last-in first-out）。</p>
+<h1 id="1-栈的主要方法及实现"><a href="#1-栈的主要方法及实现" class="headerlink" title="1. 栈的主要方法及实现"></a>1. 栈的主要方法及实现</h1><p>  栈的方法主要有下面几种：</p>
+<ul>
+<li><code>Stack()</code> creates a new stack that is empty. It needs no parameters and returns an empty stack.</li>
+<li><code>push(item)</code> adds a new item to the top of the stack. It needs the item and returns nothing.</li>
+<li><code>pop()</code> removes the top item from the stack. It needs no parameters and returns the item. The stack is modified.</li>
+<li><code>peek()</code> returns the top item from the stack but does not remove it. It needs no parameters. The stack is not modified.</li>
+<li><code>isEmpty()</code> tests to see whether the stack is empty. It needs no parameters and returns a boolean value.</li>
+<li><code>size()</code> returns the number of items on the stack. It needs no parameters and returns an integer.<br>在python中是没有栈的实现的，所以栈需要自己实现，简单点可以用个list充当下，更一般的要实现上面各种方法还是面向对象创造一个类比较好，实现代码如下所示：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line">     def __init__(self):</span><br><span class="line">         self.items = []</span><br><span class="line"></span><br><span class="line">     def isEmpty(self):</span><br><span class="line">         return self.items == []</span><br><span class="line"></span><br><span class="line">     def push(self, item):</span><br><span class="line">         self.items.append(item)</span><br><span class="line"></span><br><span class="line">     def pop(self):</span><br><span class="line">         return self.items.pop()</span><br><span class="line"></span><br><span class="line">     def peek(self):</span><br><span class="line">         return self.items[len(self.items)-1]</span><br><span class="line"></span><br><span class="line">     def size(self):</span><br><span class="line">         return len(self.items)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="2-栈的主要应用"><a href="#2-栈的主要应用" class="headerlink" title="2. 栈的主要应用"></a>2. 栈的主要应用</h1><h2 id="2-1-字符串反转"><a href="#2-1-字符串反转" class="headerlink" title="2.1 字符串反转"></a>2.1 字符串反转</h2><p>  那么，费尽心机创造一个栈有啥用呢？首先可以用来翻转字符串，当然python有超级多方式可以反转字符串，最简单的自然是string[::-1]。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def stringReverse(self, stringstring):</span><br><span class="line">	s = Stack()</span><br><span class="line">	output = &quot;&quot;</span><br><span class="line">	for ss in stringstring:</span><br><span class="line">		s.push(ss)</span><br><span class="line">	while not s.isEmpty():</span><br><span class="line">		output = output + s.pop()</span><br><span class="line">	return output</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-2-简单括号匹配"><a href="#2-2-简单括号匹配" class="headerlink" title="2.2 简单括号匹配"></a>2.2 简单括号匹配</h2><p>  除此之外，还有简单的括号匹配问题，也可以利用栈的特性来解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    s = Stack()</span><br><span class="line">    balanced = True</span><br><span class="line">    index = 0</span><br><span class="line">    while index &lt; len(symbolString) and balanced:</span><br><span class="line">        symbol = symbolString[index]</span><br><span class="line">        if symbol == &quot;(&quot;:</span><br><span class="line">            s.push(symbol)</span><br><span class="line">        else:</span><br><span class="line">            if s.isEmpty():</span><br><span class="line">                balanced = False</span><br><span class="line">            else:</span><br><span class="line">                s.pop()</span><br><span class="line"></span><br><span class="line">        index = index + 1</span><br><span class="line"></span><br><span class="line">    if balanced and s.isEmpty():</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br></pre></td></tr></table></figure></p>
+<p>  其实吧，也可以不用栈解决呀（不是我杠，笔试时间也是很重要的）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    left = 0</span><br><span class="line">    right = 0</span><br><span class="line">    for s in symbolString:</span><br><span class="line">        if s == &apos;(&apos;:</span><br><span class="line">            left+=1</span><br><span class="line">        else:</span><br><span class="line">            right+=1</span><br><span class="line">    return left==right</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-3-多重括号匹配"><a href="#2-3-多重括号匹配" class="headerlink" title="2.3 多重括号匹配"></a>2.3 多重括号匹配</h2><p>  拓展到更复杂一点的括号匹配问题——多重括号匹配：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    s = Stack()</span><br><span class="line">    balanced = True</span><br><span class="line">    index = 0</span><br><span class="line">    while index &lt; len(symbolString) and balanced:</span><br><span class="line">        symbol = symbolString[index]</span><br><span class="line">        if symbol in &quot;([&#123;&quot;:</span><br><span class="line">            s.push(symbol)</span><br><span class="line">        else:</span><br><span class="line">            if s.isEmpty():</span><br><span class="line">                balanced = False</span><br><span class="line">            else:</span><br><span class="line">                top = s.pop()</span><br><span class="line">                if not matches(top,symbol):</span><br><span class="line">                       balanced = False</span><br><span class="line">        index = index + 1</span><br><span class="line">    if balanced and s.isEmpty():</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">def matches(open,close):</span><br><span class="line">    opens = &quot;([&#123;&quot;</span><br><span class="line">    closers = &quot;)]&#125;&quot;</span><br><span class="line">    return opens.index(open) == closers.index(close)</span><br></pre></td></tr></table></figure></p>
+<p>  当然，我又“杠”了，主要不想想这么复杂的结构2333：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def parChecker(symbolString):</span><br><span class="line">    l1,l2,l3,r1,r2,r3=0,0,0,0,0,0</span><br><span class="line">    for s in symbolString:</span><br><span class="line">        if s==&apos;&#123;&apos;:</span><br><span class="line">            l1+=1</span><br><span class="line">        elif s==&apos;&#125;&apos;:</span><br><span class="line">            r1+=1</span><br><span class="line">        elif s==&apos;(&apos;:</span><br><span class="line">            l2+=1</span><br><span class="line">        elif s==&apos;)&apos;:</span><br><span class="line">            r2+=1</span><br><span class="line">        elif s==&apos;[&apos;:</span><br><span class="line">            l3+=1</span><br><span class="line">        else:</span><br><span class="line">            r3+=1</span><br><span class="line">    return [l1,l2,l3]==[r1,r2,r3]</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-4-将十进制数转换为各种进制"><a href="#2-4-将十进制数转换为各种进制" class="headerlink" title="2.4 将十进制数转换为各种进制"></a>2.4 将十进制数转换为各种进制</h2><p>  想将10进制数（Decimal）转换为2进制（Binary）、8进制（Octal）或者16进制（Hexidecimal），就将这个数不断除进制数，然后将余数逆序输出，不想贴图了自己百度查下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def baseConverter(decNumber,base):</span><br><span class="line">    digits = &quot;0123456789ABCDEF&quot;</span><br><span class="line">    remstack = Stack()</span><br><span class="line"></span><br><span class="line">    while decNumber &gt; 0:</span><br><span class="line">        rem = decNumber % base</span><br><span class="line">        remstack.push(rem)</span><br><span class="line">        decNumber = decNumber // base</span><br><span class="line"></span><br><span class="line">    newString = &quot;&quot;</span><br><span class="line">    while not remstack.isEmpty():</span><br><span class="line">        newString = newString + digits[remstack.pop()]</span><br><span class="line"></span><br><span class="line">    return newString</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-5-中缀表达式、前后缀表达式"><a href="#2-5-中缀表达式、前后缀表达式" class="headerlink" title="2.5 中缀表达式、前后缀表达式"></a>2.5 <strong>中缀表达式、前后缀表达式</strong></h2><p>  接下来就是栈的重点操作了（就是比较复杂一点）。<br>  什么是中缀表达式呢？就是一般的表达式，比如A+B, C*D等。<br>  顾名思义，前缀表达式就是操作符在前面，后缀就是在后面，给几个例子体会一下：<br> <strong>Infix Expression</strong>        <strong>Prefix Expression</strong>    <strong>Postfix Expression</strong><br>  A + B <em> C + D        + + A </em> B C D            A B C <em> + D +<br>  (A + B) </em> (C + D)        <em> + A B + C D            A B + C D + </em><br>  A <em> B + C </em> D        + <em> A B </em> C D            A B <em> C D </em> +<br>  A + B + C + D        + + + A B C D            A B + C + D +</p>
+<p>  将中缀表达式转换为后缀表达式，利用栈可以写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">def infixToPostfix(infixexpr):</span><br><span class="line">    prec = &#123;&#125;</span><br><span class="line">    prec[&quot;*&quot;] = 3</span><br><span class="line">    prec[&quot;/&quot;] = 3</span><br><span class="line">    prec[&quot;+&quot;] = 2</span><br><span class="line">    prec[&quot;-&quot;] = 2</span><br><span class="line">    prec[&quot;(&quot;] = 1</span><br><span class="line">    opStack = Stack()</span><br><span class="line">    postfixList = []</span><br><span class="line">    tokenList = infixexpr.split()</span><br><span class="line"></span><br><span class="line">    for token in tokenList:</span><br><span class="line">        if token in &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot; or token in &quot;0123456789&quot;:</span><br><span class="line">            postfixList.append(token)</span><br><span class="line">        elif token == &apos;(&apos;:</span><br><span class="line">            opStack.push(token)</span><br><span class="line">        elif token == &apos;)&apos;:</span><br><span class="line">            topToken = opStack.pop()</span><br><span class="line">            while topToken != &apos;(&apos;:</span><br><span class="line">                postfixList.append(topToken)</span><br><span class="line">                topToken = opStack.pop()</span><br><span class="line">        else:</span><br><span class="line">            while (not opStack.isEmpty()) and \</span><br><span class="line">               (prec[opStack.peek()] &gt;= prec[token]):</span><br><span class="line">                  postfixList.append(opStack.pop())</span><br><span class="line">            opStack.push(token)</span><br><span class="line"></span><br><span class="line">    while not opStack.isEmpty():</span><br><span class="line">        postfixList.append(opStack.pop())</span><br><span class="line">    return &quot; &quot;.join(postfixList)</span><br></pre></td></tr></table></figure></p>
+<p>  假如直接给你一个后缀表达式让你计算呢，这就是需要再写一个算法了，不过比较简单，贴上来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">def postfixEval(postfixExpr):</span><br><span class="line">    operandStack = Stack()</span><br><span class="line">    tokenList = postfixExpr.split()</span><br><span class="line"></span><br><span class="line">    for token in tokenList:</span><br><span class="line">        if token in &quot;0123456789&quot;:</span><br><span class="line">            operandStack.push(int(token))</span><br><span class="line">        else:</span><br><span class="line">            operand2 = operandStack.pop()</span><br><span class="line">            operand1 = operandStack.pop()</span><br><span class="line">            result = doMath(token,operand1,operand2)</span><br><span class="line">            operandStack.push(result)</span><br><span class="line">    return operandStack.pop()</span><br><span class="line"></span><br><span class="line">def doMath(op, op1, op2):</span><br><span class="line">    if op == &quot;*&quot;:</span><br><span class="line">        return op1 * op2</span><br><span class="line">    elif op == &quot;/&quot;:</span><br><span class="line">        return op1 / op2</span><br><span class="line">    elif op == &quot;+&quot;:</span><br><span class="line">        return op1 + op2</span><br><span class="line">    else:</span><br><span class="line">        return op1 - op2</span><br></pre></td></tr></table></figure></p>
+<p>  栈就目前学完了，后续有的话还会补充。</p>
 
         </div>
         
@@ -194,7 +199,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Binary-Tree/">Binary Tree</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                    <a class="has-link-grey -link" href="/tags/Stack/">Stack</a>
                 </div>
             </div>
         </div>
@@ -212,16 +217,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/16/ck7g3bjhs000oh8unbp0sby18/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">暑期实习招聘笔试题3月(更新ing)</span>
+                <span class="level-item">2019中兴捧月算法大赛——无线信道估计</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/28/ck7g3bjha000ah8un5i7wqcp2/">
-                <span class="level-item">Linear Regression</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/19/ck7g3h05k000ow4un4d78mo6q/">
+                <span class="level-item">常用排序算法（python）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -468,7 +473,7 @@
         
         <article class="media">
             
-            <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="media-left">
+            <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
                 </p>
@@ -477,7 +482,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
-                    <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -487,7 +492,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="media-left">
+            <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -496,7 +501,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -506,7 +511,7 @@
         
         <article class="media">
             
-            <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="media-left">
+            <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/linkedlist.png" alt="链表的算法合集整理">
                 </p>
@@ -515,7 +520,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T15:26:34.000Z">2019-08-21</time></div>
-                    <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
+                    <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a>
                     </p>
@@ -525,7 +530,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="media-left">
+            <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -534,7 +539,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -544,7 +549,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="media-left">
+            <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -553,7 +558,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -834,7 +839,7 @@
         
         <article class="media">
             
-            <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="media-left">
+            <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
                 </p>
@@ -843,7 +848,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
-                    <a href="/2020/03/06/ck7g3bjij002ch8ung89cp717/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <a href="/2020/03/06/ck7g3h06q002iw4unq604tgep/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
                     </p>
@@ -853,7 +858,7 @@
         
         <article class="media">
             
-            <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="media-left">
+            <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
                 </p>
@@ -862,7 +867,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
-                    <a href="/2020/01/08/ck7g3bjh70008h8unaa9up60f/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <a href="/2020/01/08/ck7g3h05i000mw4unsb5zwoji/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -872,7 +877,7 @@
         
         <article class="media">
             
-            <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="media-left">
+            <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/linkedlist.png" alt="链表的算法合集整理">
                 </p>
@@ -881,7 +886,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T15:26:34.000Z">2019-08-21</time></div>
-                    <a href="/2019/08/21/ck7g3bjho000kh8unfg36bxm3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
+                    <a href="/2019/08/21/ck7g3h05f000iw4un27xhpve7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链表的算法合集整理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure-and-Algorithm/">Data Structure and Algorithm</a>
                     </p>
@@ -891,7 +896,7 @@
         
         <article class="media">
             
-            <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="media-left">
+            <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/zte.jpg" alt="2019中兴捧月算法大赛——无线信道估计">
                 </p>
@@ -900,7 +905,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-24T15:02:50.000Z">2019-05-24</time></div>
-                    <a href="/2019/05/24/ck7g3bjht000qh8unr1lf52lq/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
+                    <a href="/2019/05/24/ck7g3h05p000zw4unkxhwvyh7/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019中兴捧月算法大赛——无线信道估计</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
                     </p>
@@ -910,7 +915,7 @@
         
         <article class="media">
             
-            <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="media-left">
+            <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈">
                 </p>
@@ -919,7 +924,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time></div>
-                    <a href="/2019/04/29/ck7g3bjhk000eh8un4fp7syxp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
+                    <a href="/2019/04/29/ck7g3h05m000tw4unn8x2calh/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用数据结构——栈</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                     </p>
@@ -1193,7 +1198,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="二叉树常用操作的实现" height="28">
+                    <img src="/images/logo.svg" alt="常用数据结构——栈" height="28">
                 
                 </a>
                 <p class="is-size-7">
