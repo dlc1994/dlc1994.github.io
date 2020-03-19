@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.7.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Linear Regression - LC-Garden</title>
+
+
+    <meta name="description" content="就从最简单的线性回归模型（Linear Regression model）开始学习吧。">
+<meta name="keywords" content="Python,Linear Regression,Polynomial Regression,Gradient Decent Methods">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linear Regression">
+<meta property="og:url" content="https://dlc1994.github.io/2018/11/28/ck7yndqjg000itounbi1fk54s/index.html">
+<meta property="og:site_name" content="LC-Garden">
+<meta property="og:description" content="就从最简单的线性回归模型（Linear Regression model）开始学习吧。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://dlc1994.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-06T12:07:53.588Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linear Regression">
+<meta name="twitter:description" content="就从最简单的线性回归模型（Linear Regression model）开始学习吧。">
+<meta name="twitter:image" content="https://dlc1994.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/head.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="is-3-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.jpg" alt="Linear Regression" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/dlc1994">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-28T12:23:52.000Z">2018-11-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    16 minutes read (About 2328 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Linear Regression
+            
+        </h1>
+        <div class="content">
+            <p>  就从最简单的线性回归模型（Linear Regression model）开始学习吧。<br>  <a id="more"></a><br>  从这个模型的名字我们可以看出，因变量和变量之间的关系是线性的，预测值可以通过计算输入特征的权重给出：</p>
+<script type="math/tex; mode=display">
+\hat{y} = \theta_0+\theta_1x_1+\theta_2x_2+...+\theta_nx_n</script><p>其中，$\hat{y}$是预测值，$n$是特征数量，$\theta_0$是bias，$x_i$是第$i$个特征值，$\theta_j$是第$j$个特征的模型参数。如果获取了模型的所有参数，给定一个样本我们就可以用上面这个公式模型得到预测值。<br>  为了表达更简洁，一般用向量表示：</p>
+<script type="math/tex; mode=display">
+\hat{y} = h_{\mathbf{\theta}}(\mathbf{x}) = \mathbf{\theta}^T \mathbf{x}</script><p>其中$h_{\mathbf{\theta}}()$是hypothesis function是关于$\mathbf{\theta}$的假设函数，$\mathbf{\theta} = [\theta_0;\theta_1;…;\theta_n]$，$\mathbf{x} = [x_0, x_1, x_2, …, x_n]$并且$x_0=1$。<br>  我们的目标当然是想要所有预测值都跟实际值相等，因此，目标函数或者称代价函数建模为：</p>
+<script type="math/tex; mode=display">
+\text{MSE}(\mathbf{X},h_{\mathbf{\theta}}) = \frac{1}{m}\sum_{i=1}^{m}\left(\mathbf{\theta}^T\cdot\mathbf{x}^{(i)}-y^{(i)}\right)^2</script><p>其中$\mathbf{X}$为所有样本的集合，数量为$m$。</p>
+<h1 id="标准闭式解"><a href="#标准闭式解" class="headerlink" title="标准闭式解"></a>标准闭式解</h1><p>  基于均方误差最小化来进行模型求解的方法称为“最小二乘法”（least square method）。在线性回归中，最小二乘法就是试图找到一条直线，使所有样本到直线上的欧氏距离之和最小。<br>  一般地，我们利用最小二乘法对$\mathbf{\theta}$进行估计。数据集$\mathbf{X}$表示为：</p>
+<script type="math/tex; mode=display">
+\mathbf{X}=\left(
+\begin{array}{ccc}   
+    1 & x_{11} & x_{12} &  \cdots\  & x_{1d}\\  
+    1 & x_{21} & x_{22} &  \cdots\  & x_{23} \\ 
+    \vdots & \vdots & \vdots & \ddots & \vdots\\
+    1 & x_{m1} & x_{m2} &  \cdots\  & x_{md}\\ 
+  \end{array}
+\right)
+=\left(
+\begin{array}{ccc}   
+    1 & \mathbf{x}_1^T \\  
+    1 & \mathbf{x}_2^T \\ 
+    \vdots & \vdots \\
+    1 & \mathbf{x}_m^T \\ 
+  \end{array}
+\right)</script><p>  然后把实际值也写成向量模式$\mathbf{y}=(y_1;y_2;…;y_m)$，因此优化问题为：</p>
+<script type="math/tex; mode=display">
+\mathbf{\theta}^*=\underset{\mathbf{\theta}}{\text{arg}\min}(\mathbf{y}-\mathbf{\theta}^T\mathbf{X})^T(\mathbf{y}-\mathbf{\theta}^T\mathbf{X})</script><p>  令$E_{\mathbf{\theta}}=(\mathbf{y}-\mathbf{\theta}^T\mathbf{X})^T(\mathbf{y}-\mathbf{\theta}^T\mathbf{X})$，对$\mathbf{\theta}$求导可得：</p>
+<script type="math/tex; mode=display">
+\frac{\partial E_{\mathbf{\theta}}}{\partial \mathbf{\theta}}=2\mathbf{X}^T(\mathbf{\theta}^T\mathbf{X}-\mathbf{y})</script><p>  令上式等于0可解得</p>
+<script type="math/tex; mode=display">
+\mathbf{\theta}^*=(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}</script><p>  如果$\mathbf{X}^T\mathbf{X}$不可逆怎么办，这可能是由于矩阵中存在冗余特征，在线性代数里说明矩阵并非线性不相关，因此可以删除多余特征；也有可能是由于特征数大于等于样本数，也就是$m \le n$，可以通过删除一些特征或者使用正则化（regularization，后续介绍）。<br>  给出python一个实现例子如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line"></span><br><span class="line">X = 2 * np.random.rand(100, 1)</span><br><span class="line">y = 2 + 6 * X + np.random.randn(100, 1)</span><br><span class="line"></span><br><span class="line">X_b = np.c_[np.ones((100, 1)), X] # add x0 = 1 to each instance</span><br><span class="line">theta_best = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)</span><br><span class="line">print(theta_best)</span><br><span class="line"># [[1.74568681] [6.27246194]]</span><br><span class="line"></span><br><span class="line">X_new = np.array([[0], [2]])</span><br><span class="line">X_new_b = np.c_[np.ones((2, 1)), X_new] # add x0 = 1 to each instance</span><br><span class="line">y_predict = X_new_b.dot(theta_best)</span><br><span class="line">print(y_predict) #[[ 1.74568681] [14.29061069]]</span><br><span class="line"></span><br><span class="line">plt.plot(X_new, y_predict, &quot;r-&quot;)</span><br><span class="line">plt.plot(X, y, &quot;b.&quot;)</span><br><span class="line">plt.axis([0, 2, 0, 15])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="/2018/11/28/ck7yndqjg000itounbi1fk54s/1.png" title="Linear Regression">
+<p>  如果用sklearn实现的话，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from sklearn.linear_model import LinearRegression</span><br><span class="line">&gt;&gt;&gt; lin_reg = LinearRegression()</span><br><span class="line">&gt;&gt;&gt; lin_reg.fit(X, y)</span><br><span class="line">&gt;&gt;&gt; lin_reg.intercept_, lin_reg.coef_</span><br><span class="line">(array([ 4.21509616]), array([[ 2.77011339]]))</span><br><span class="line">&gt;&gt;&gt; lin_reg.predict(X_new)</span><br><span class="line">array([[ 4.21509616],</span><br><span class="line">[ 9.75532293]])</span><br></pre></td></tr></table></figure></p>
+<p>  这种方式实现的计算复杂度只要在矩阵求逆上，对于一个$n \times n$的矩阵，求逆复杂度大约是$O(n^{2.4})$到$O(n^{3})$，当特征数量很大时（比如100,000以上时），标准闭式解会变得很慢；另一方面，对于样本数量其复杂度是$O(m)$，也就是线性的；此外，模型训练完成后，预测的复杂度对于样本数量和特征数量复杂度都很快。</p>
+<h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><p>  梯度下降法是十分常用的优化算法，目的是通过迭代过程不断更新参数进而最小化代价函数，每次优化的方向都是斜率绝对值最大的方向。<br><strong>Note：</strong></p>
+<ul>
+<li>需要谨慎选择步长（step size）或者叫做学习率（learning rate），太小的话，需要许多次迭代才能走到最优点，而步子太大，则有可能跨过最优点，然后陷入震荡。</li>
+<li>凸优化问题找到最优点比较容易，而非凸问题则容易陷入局部最优点或者陷入平台（plateau)。线性回归问题是个凸优化问题。</li>
+<li>最好在使用梯度下降法前对数据进行标准化处理，不然“碗”太长需要更多的迭代次数。</li>
+<li>问题参数越多，维度越大，参数空间越大，搜索最优解也就越难。</li>
+</ul>
+<h2 id="Batch-Gradient-Descent"><a href="#Batch-Gradient-Descent" class="headerlink" title="Batch Gradient Descent"></a>Batch Gradient Descent</h2><p>  Batch是批的意思，批梯度下降就是在每次迭代过程中把所有数据都来计算代价函数的偏导，也就是梯度。代价函数对于参数$\theta_j$的偏导为：</p>
+<script type="math/tex; mode=display">
+\frac{\partial \text{MSE}(\theta)}{\partial{\theta}_j}=\frac{2}{m}\sum_{i=1}^{m}\left(\theta^T \cdot \mathbf{x}^{(i)}-y^{(i)}\right)x_j^{(i)}</script><p>  用向量来表示梯度下降为：</p>
+<script type="math/tex; mode=display">
+\nabla_{\theta}\text{MSE}(\theta)=\left(
+\begin{array}{ccc}
+\frac{\partial \text{MSE}(\theta)}{\partial \theta_0}\\
+\frac{\partial \text{MSE}(\theta)}{\partial \theta_1}\\
+\vdots\\
+\frac{\partial \text{MSE}(\theta)}{\partial \theta_0}
+\end{array}
+\right)
+=\frac{2}{m}\mathbf{X}^T\cdot(\mathbf{X}\cdot \theta-\mathbf{y})</script><p>  由此，我们可以得到梯度下降的步骤：</p>
+<script type="math/tex; mode=display">
+\theta^{(n+1)} = \theta^{(n)}-\eta \nabla_{\theta}\text{MSE}(\theta)</script><p>  推导出这个公式之后就可以实现了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">eta = 0.1 # learning rate</span><br><span class="line">n_iterations = 1000</span><br><span class="line">m = 100</span><br><span class="line">theta = np.random.randn(2,1) # random initialization</span><br><span class="line">for iteration in range(n_iterations):</span><br><span class="line">	gradients = 2/m * X_b.T.dot(X_b.dot(theta) - y)</span><br><span class="line">	theta = theta - eta * gradients</span><br></pre></td></tr></table></figure></p>
+<h2 id="Stochastic-Gradient-Descent"><a href="#Stochastic-Gradient-Descent" class="headerlink" title="Stochastic Gradient Descent"></a>Stochastic Gradient Descent</h2><p>  在前面讲过，BGD在每次迭代中是把所有数据都用于计算的，因此当数据量很大时，算法会变得难以忍受的慢，因此需要使用其他梯度下降算法。随机梯度下降法跟批梯度下降是两个极端，SGD在每次迭代中会随机从训练集中选择一个样本，然后只用这个样本计算并更新梯度。因此，这个算法计算比BGD快很多很多；但也由于其随机特性，优化曲线不会“直接”向着最优点前进，而是来回波动，但最终会抵达最优值附近。其算法如下图所示：<br><img src="/2018/11/28/ck7yndqjg000itounbi1fk54s/2.jpg" title="SGD"><br>  Python实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n_epochs = 50</span><br><span class="line">t0, t1 = 5, 50 # learning schedule hyperparameters</span><br><span class="line">def learning_schedule(t):</span><br><span class="line">return t0 / (t + t1)</span><br><span class="line">theta = np.random.randn(2,1) # random initialization</span><br><span class="line">for epoch in range(n_epochs):</span><br><span class="line">	for i in range(m):</span><br><span class="line">		random_index = np.random.randint(m)</span><br><span class="line">		xi = X_b[random_index:random_index+1]</span><br><span class="line">        yi = y[random_index:random_index+1]</span><br><span class="line">        gradients = 2 * xi.T.dot(xi.dot(theta) - yi)</span><br><span class="line">        eta = learning_schedule(epoch * m + i)</span><br><span class="line">        theta = theta - eta * gradients</span><br><span class="line">print(theta)</span><br></pre></td></tr></table></figure></p>
+<p>  如果用sklearn来实现的话，代码就简单多了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.linear_model import SGDRegressor</span><br><span class="line">sgd_reg = SGDRegressor(n_iter=50, penalty=None, eta0=0.1)</span><br><span class="line">sgd_reg.fit(X, y.ravel())</span><br><span class="line">print(sgd_reg.intercept_, sgd_reg.coef_)</span><br></pre></td></tr></table></figure></p>
+<p><strong>NOTE:</strong> epoch是指把所有数据样本都遍历一遍，iteration表示更新一次参数，batch则是指数据样本的大小，在SGD中，iteration=batch=1，epoch=num_X/batch</p>
+<h2 id="Mini-batch-Gradient-Descent"><a href="#Mini-batch-Gradient-Descent" class="headerlink" title="Mini-batch Gradient Descent"></a>Mini-batch Gradient Descent</h2><p>  Mini-batch GD介于SGD和BGD之间，也就是每次用来更新参数的样本不是一也不是所有（吴恩达说在2-400之间，他倾向于用10），它吸收了BGD和SGD的优缺点的折中，收敛更快，随机性较小，但也难抵达最优值，其算法流程如下图所示：<br><img src="/2018/11/28/ck7yndqjg000itounbi1fk54s/3.jpg" title="Mini-batch GD"></p>
+<p>  这里介绍的标准闭式解只适用于线性回归问题，但梯度下降法可以用来训练许多模型，在深度学习中也有广泛应用，将他们比较如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Large m</th>
+<th>Out-of-core Support</th>
+<th>Large n</th>
+<th>Hyperparameters</th>
+<th>Scaling Required</th>
+<th>Sklearn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal Equation</td>
+<td>Fast</td>
+<td>No</td>
+<td>Slow</td>
+<td>0</td>
+<td>No</td>
+<td>LinearRegression</td>
+</tr>
+<tr>
+<td>Batch GD</td>
+<td>Slow</td>
+<td>No</td>
+<td>Fast</td>
+<td>2</td>
+<td>Yes</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Stochastic GD</td>
+<td>Fast</td>
+<td>Yes</td>
+<td>Fast</td>
+<td>$\ge$2</td>
+<td>Yes</td>
+<td>SGDRegressor</td>
+</tr>
+<tr>
+<td>Mini-batch GD</td>
+<td>Fast</td>
+<td>Yes</td>
+<td>Fast</td>
+<td>$\ge $2</td>
+<td>Yes</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Polynomial-Regression"><a href="#Polynomial-Regression" class="headerlink" title="Polynomial Regression"></a>Polynomial Regression</h2><p>  如果数据并非一条直线呢，那么还可以用线性模型吗？实际上是可以的，主要方法就是把一个特征拓展成多维的，比如$x^2, x^3,…, x^k$，然后将其作为另一个维度的特征，比如$x_1 = x, x_2 = x^2$，那么就可以用线性模型按照上面的方法进行训练了，用sklearn实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from sklearn.preprocessing import PolynomialFeatures</span><br><span class="line">from sklearn.linear_model import LinearRegression</span><br><span class="line"></span><br><span class="line">m = 100</span><br><span class="line">X = 6 * np.random.rand(m, 1) - 3</span><br><span class="line">y = 1 * X**2 + X + 2 + np.random.randn(m, 1)</span><br><span class="line">plt.scatter(X, y)</span><br><span class="line"></span><br><span class="line">poly_features = PolynomialFeatures(degree=2, include_bias=False)</span><br><span class="line">X_poly = poly_features.fit_transform(X)</span><br><span class="line">lin_reg = LinearRegression()</span><br><span class="line">lin_reg.fit(X_poly, y)</span><br><span class="line">print(lin_reg.intercept_, lin_reg.coef_)</span><br><span class="line">xx = np.array((range(-3, 4)))</span><br><span class="line">print(xx)</span><br><span class="line">yy = xx*0.98134428+xx*xx*0.94365742+1.94555083</span><br><span class="line">plt.plot(xx, yy, c=&apos;r&apos;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="/2018/11/28/ck7yndqjg000itounbi1fk54s/4.png" title="Polynomial Regression">
+<p>  此外，需要注意，<code>PolynomialFeatures(degree=d)</code>会把一个包含n个特征的矩阵转化为包含$\frac{(n+d)!}{d!n!}$个特征的矩阵，即如果对于两个特征a和b，令degree=3，那么特征不仅有$a^2$，$a^3$，$b^2$，$b^3$，还会有$ab$，$a^2b$和$ab^2$.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Gradient-Decent-Methods/">Gradient Decent Methods</a>, <a class="has-link-grey -link" href="/tags/Linear-Regression/">Linear Regression</a>, <a class="has-link-grey -link" href="/tags/Polynomial-Regression/">Polynomial Regression</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/09/ck7yndqiv0002tounwijogset/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">二叉树常用操作的实现</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/28/ck7yndqj30008toungjxjaczn/">
+                <span class="level-item">Introduction to Machine Learning</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/xigua.jpg" alt="Lingcheng Dai">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Lingcheng Dai
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Live and Learn.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Beijing, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            18
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            10
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            24
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/dlc1994" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/dlc1994">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/dlc1994" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Github</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm-and-Data-Structure/">
+            <span class="level-start">
+                <span class="level-item">Algorithm and Data Structure</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Competition/">
+            <span class="level-start">
+                <span class="level-item">Competition</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Processing/">
+            <span class="level-start">
+                <span class="level-item">Data Processing</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Development/">
+            <span class="level-start">
+                <span class="level-item">Development</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Git/">
+            <span class="level-start">
+                <span class="level-item">Git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/HEXO/">
+            <span class="level-start">
+                <span class="level-item">HEXO</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/LeetCode/">
+            <span class="level-start">
+                <span class="level-item">LeetCode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Machine-Learning/">
+            <span class="level-start">
+                <span class="level-item">Machine Learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Paper-Work/">
+            <span class="level-start">
+                <span class="level-item">Paper Work</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Wireless-Communications/">
+            <span class="level-start">
+                <span class="level-item">Wireless Communications</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Algorithm/" style="font-size: 16.67px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 13.33px;">Algorithms</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/C-C/" style="font-size: 13.33px;">C/C++</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 10px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 13.33px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 10px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Sorting/" style="font-size: 13.33px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/19/ck7yndqj90009tounaawcs689/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/kmp.png" alt="Knuth–Morris–Pratt algorithm (C++)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T15:26:34.000Z">2020-03-19</time></div>
+                    <a href="/2020/03/19/ck7yndqj90009tounaawcs689/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Knuth–Morris–Pratt algorithm (C++)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/19/ck7yndqji000jtounmmkop0bs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/maxp.png" alt="中国第二届高性能云计算大赛（MAXP)——京东云数据算法赛">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T07:20:45.000Z">2020-03-19</time></div>
+                    <a href="/2020/03/19/ck7yndqji000jtounmmkop0bs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">中国第二届高性能云计算大赛（MAXP)——京东云数据算法赛</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/19/ck7yndqjo000utounrbht09ll/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/post.jpg" alt="Postgresql+postgis地图开发说明">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T07:20:45.000Z">2020-03-19</time></div>
+                    <a href="/2020/03/19/ck7yndqjo000utounrbht09ll/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postgresql+postgis地图开发说明</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Development/">Development</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/06/ck7yndqks0039tounaw5uzd5n/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
+                    <a href="/2020/03/06/ck7yndqks0039tounaw5uzd5n/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/01/08/ck7yndqjm000ptounvfzffpzy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
+                    <a href="/2020/01/08/ck7yndqjm000ptounvfzffpzy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Git/">Git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithms/">
+                        <span class="tag">Algorithms</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Binary-Tree/">
+                        <span class="tag">Binary Tree</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C-C/">
+                        <span class="tag">C/C++</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataFrame/">
+                        <span class="tag">DataFrame</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Database/">
+                        <span class="tag">Database</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gradient-Decent-Methods/">
+                        <span class="tag">Gradient Decent Methods</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Latex/">
+                        <span class="tag">Latex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linear-Regression/">
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LinkedList/">
+                        <span class="tag">LinkedList</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Map/">
+                        <span class="tag">Map</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Matlab/">
+                        <span class="tag">Matlab</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Polynomial-Regression/">
+                        <span class="tag">Polynomial Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgis/">
+                        <span class="tag">Postgis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgresql/">
+                        <span class="tag">Postgresql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sorting/">
+                        <span class="tag">Sorting</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stack/">
+                        <span class="tag">Stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wireless-communications/">
+                        <span class="tag">Wireless communications</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux/">
+                        <span class="tag">linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/19/ck7yndqj90009tounaawcs689/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/kmp.png" alt="Knuth–Morris–Pratt algorithm (C++)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T15:26:34.000Z">2020-03-19</time></div>
+                    <a href="/2020/03/19/ck7yndqj90009tounaawcs689/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Knuth–Morris–Pratt algorithm (C++)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/19/ck7yndqji000jtounmmkop0bs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/maxp.png" alt="中国第二届高性能云计算大赛（MAXP)——京东云数据算法赛">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T07:20:45.000Z">2020-03-19</time></div>
+                    <a href="/2020/03/19/ck7yndqji000jtounmmkop0bs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">中国第二届高性能云计算大赛（MAXP)——京东云数据算法赛</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Competition/">Competition</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/19/ck7yndqjo000utounrbht09ll/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/post.jpg" alt="Postgresql+postgis地图开发说明">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T07:20:45.000Z">2020-03-19</time></div>
+                    <a href="/2020/03/19/ck7yndqjo000utounrbht09ll/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postgresql+postgis地图开发说明</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Development/">Development</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/06/ck7yndqks0039tounaw5uzd5n/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T13:27:23.000Z">2020-03-06</time></div>
+                    <a href="/2020/03/06/ck7yndqks0039tounaw5uzd5n/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题解(C++)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/01/08/ck7yndqjm000ptounvfzffpzy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/git.jpg" alt="Git">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T04:50:07.000Z">2020-01-08</time></div>
+                    <a href="/2020/01/08/ck7yndqjm000ptounvfzffpzy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Git</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Git/">Git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithms/">
+                        <span class="tag">Algorithms</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Binary-Tree/">
+                        <span class="tag">Binary Tree</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C-C/">
+                        <span class="tag">C/C++</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataFrame/">
+                        <span class="tag">DataFrame</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Database/">
+                        <span class="tag">Database</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gradient-Decent-Methods/">
+                        <span class="tag">Gradient Decent Methods</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Latex/">
+                        <span class="tag">Latex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linear-Regression/">
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LinkedList/">
+                        <span class="tag">LinkedList</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Map/">
+                        <span class="tag">Map</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Matlab/">
+                        <span class="tag">Matlab</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Polynomial-Regression/">
+                        <span class="tag">Polynomial Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgis/">
+                        <span class="tag">Postgis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgresql/">
+                        <span class="tag">Postgresql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sorting/">
+                        <span class="tag">Sorting</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stack/">
+                        <span class="tag">Stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wireless-communications/">
+                        <span class="tag">Wireless communications</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux/">
+                        <span class="tag">linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.jpg" alt="Linear Regression" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Lingcheng Dai&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/dlc1994">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://dlc1994.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
