@@ -157,7 +157,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1355 words)
+                    9 minutes read (About 1356 words)
                 </span>
                 
                 
@@ -166,58 +166,105 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2021/06/28/ckqgs2ccc000mucvexeqvjpup/">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
+                <a class="has-link-black-ter" href="/2021/06/28/ckqgsek35000jt0veek17ymik/">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
             
         </h1>
         <div class="content">
-            <p>首先，先得了解一下C++支持哪几种类成员初始化的方式，你常用的又是哪一种。</p>
+            <p>首先，先得了解一下C++支持哪几种类成员初始化的方式，你常用的又是哪一种。<br></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2021/06/28/ckqgsek35000jt0veek17ymik/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1244 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2021/06/28/ckqgsek3l000kt0veq2ozqgoi/">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="C-内存管理"><a href="#C-内存管理" class="headerlink" title="C++内存管理"></a>C++内存管理</h1><h2 id="1-c-内存分配"><a href="#1-c-内存分配" class="headerlink" title="1. c++内存分配"></a>1. c++内存分配</h2><p>c++中的程序加载到内存后按照代码区、数据区、堆区、栈区进行布局，其中数据区又可以分为自由存储区、全局/静态存储区和常量存储区，各区所长如下：</p>
 <ul>
-<li><p>初始化方式一：初始化列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    int a; // 初始化列表</span><br><span class="line">    A(int a_):a(a_)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化方式二：构造函数初始化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    int a; // 初始化列表</span><br><span class="line">    A(int a_, bool b) &#123; a = a_; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化方式三：声明时初始化（也称就地初始化，c++11后支持）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    int a = 1; // 声明时初始化</span><br><span class="line">    A() &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>栈区<br>函数执行的时候，局部变量的存储单元都在栈上创建，函数执行结束后存储单元会自动释放。<strong>栈内存分配运算内置于处理器指令集中，效率高，但分配内存容量有限。</strong></li>
+<li>堆区<br>堆就是new出来的内存块，编译器不管释放，由应用程序控制，<strong>new对应delete</strong>。如果没释放掉，程序结束后，操作系统会自动回收。</li>
+<li>自由存储区<br>C中malloc分配的内存块。用free结束生命周期。</li>
+<li>全局/静态存储区<br>全局变量和静态变量被分配到同一块内存中，<strong>定义的时候就会初始化</strong>。</li>
+<li>常量存储区<br>比较特殊的存储区，存放常量，不允许修改。</li>
 </ul>
-<p>在C++98中，支持了在类声明中使用等号“=”加初始值的方式，来初始化类中静态成员常量。这种声明方式我们也称之为“就地”声明。就地声明在代码编写时非常便利，不过C++98对类中就地声明的要求却非常高。如果静态成员不满足常量性，则不可以就地声明，而且即使常量的静态成员也只能是整型或者枚举型才能就地初始化。而非静态成员变量的初始化则必须在构造函数中进行。比如，如下代码在c++98中编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Init</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    Init(): a(0) []</span><br><span class="line">    Init(int d): a(d) &#123;&#125;</span><br><span class="line">private:</span><br><span class="line">    int a;</span><br><span class="line">    const static int b = 0;</span><br><span class="line"></span><br><span class="line">    int c = 1;           // member, cannot pass build</span><br><span class="line">    static int d = 0;    // member, cannot pass build</span><br><span class="line"></span><br><span class="line">    static const double e = 1.3;      // not int or enum type, cannot pass build</span><br><span class="line">    stati const char* const f = &quot;e&quot;;  // not int or enum type, cannot pass build</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这非常不方便，所以在C++11中，标准允许非静态成员变量的初始化有多种形式。具体而言，除了初始化列表外，在C++11中，标准还允许使用<strong>等号=</strong> 或者 <strong>花括号{}</strong> 进行就地的非静态成员变量初始化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct init &#123;</span><br><span class="line">    int a = 1;</span><br><span class="line">    double b &#123;1.2&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>大家知道，有几种情况下推荐优先使用列表初始化</p>
+<p>堆和栈的区别</p>
 <ul>
-<li><strong>const成员变量只能用成员初始化列表来完成初始化，而不能在构造函数内赋值</strong></li>
-<li><strong>初始化的数据成员是对象</strong></li>
-<li><strong>需要初始化引用成员数据</strong></li>
+<li>管理方式<br>栈由编译器自动管理，堆由程序员控制</li>
+<li>空间大小<br>32位系统下，堆内存可以达到4GB，栈有一定的空间大小</li>
+<li>碎片管理<br>对于堆，频繁的new/delete肯定造成内存空间的不连续，产生大量内存碎片降低程序效率；栈由于遵循先进后出的规则，不会产生空隙</li>
+<li>生长方向<br>堆是向上生长的，即向着内存地址增加的方向增长；而栈是向着内存地址减小的方向增长的</li>
+<li>分配方式<br>堆是动态分配的，栈有动态分配和静态分配之分：静态分配由编译器完成，动态分配由alloca函数完成，即使是动态分配，依然是编译器自动释放</li>
+<li>分配效率<br>计算机底层提供了栈的支持，分配了专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这决定了栈的效率会比较高。堆则是由C/C++函数库提供的，机制比较复杂，比如为了分配某个大小的内存需要在堆内存中搜索可用足够大小的空间，效率比栈要低的多</li>
 </ul>
-<p>具体的原因这里不细述，大家可以去看一下《C++ Primer》。</p>
-<p>构造函数初始化的本质是赋值操作（”=”），这个方法存在两个问题，一个是比起初始化列表和就地初始化，此方式的效率偏低；第二个是可能存在错误隐患。</p>
-<p>先说第一个，赋值过程中会产生临时对象，临时对象的构造析构会造成效率损耗，初始化列表的方式就避免了产生临时对象缩带来的问题。</p>
-<p>第二个是，如果你没有重写或者禁止赋值构造函数，c++会悄悄的加上默认的赋值构造函数，这个时候也有可能带来问题。</p>
-<p>从C++11之后，这三种初始化的方法都可以使用，并不会存在冲突，但是，他们之间是有优先级顺序的，这个优先级来源于他们在初始化的时间顺序，后面初始化的会把前面的覆盖掉，成员变量的初始化顺序是</p>
-<p><strong>声明时初始化-&gt;初始化列表-&gt;构造函数初始化</strong></p>
-<p>因此假如三种初始化方式同时存在的话，那么最后保留的成员变量值肯定是构造函数中初始化的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A </span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    int a = 1;</span><br><span class="line">    A(int a_) :a(2) &#123; a = 3; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    A a;</span><br><span class="line">    cout &lt;&lt; &quot;a.a=&quot; &lt;&lt; a.a &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// a.a=3</span><br></pre></td></tr></table></figure></p>
-<p>既然初始化方式这么多，那么什么时候适用哪种呢？</p>
-<p><strong>1. 声明时初始化的使用场景</strong></p>
-<ul>
-<li>一个优点是直观，你在声明的时候顺便给一个初始值，bravo，别人在看你代码的时候，点一下调到声明也能看到你赋予的初始值，不用再去看构造函数那里给的什么值</li>
-<li>第二个优点更有用了，比如你要定义多个构造函数，每个构造函数都用列表初始化的方法初始化，多麻烦呀，请看下面的例子，妈妈看了再也不用担心我想用其他初始化方法了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Group &#123;</span><br><span class="line">public:</span><br><span class="line">    Group() &#123;&#125;</span><br><span class="line">    Group(int a): data(a) &#123;&#125;</span><br><span class="line">    Group(Mem m): mem(m) &#123;&#125;</span><br><span class="line">    Group(int a, Mem m, string n): data(a), mem(m), name(n) &#123;&#125;</span><br><span class="line">private:</span><br><span class="line">    int data = 1;</span><br><span class="line">    Mem mem&#123;0&#125;;</span><br><span class="line">    string name&#123;&quot;Group&quot;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-new-delete和new-delete"><a href="#2-new-delete和new-delete" class="headerlink" title="2. new/delete和new []/delete []"></a>2. new/delete和new []/delete []</h2><ul>
+<li>回收new分配的单个对象内存空间时用delete，回收用new[]分配的一组对象时用delete[]</li>
+<li>对于内置类型(int/double/float/char/…)，由于new[]申请内存时，编译器还会悄悄在内存中保存整数，表示指针数组的个数，所以delete/delete[]都可以正确释放所申请的内存空间</li>
+<li>建议在调用new时使用的[]，那么调用delete也使用[]</li>
+</ul>
+<h2 id="3-new的三种形态"><a href="#3-new的三种形态" class="headerlink" title="3. new的三种形态"></a>3. new的三种形态</h2><ul>
+<li><strong>new operator</strong> 常用的new，语言函数内建，不能重载。调用过程中实际完成的有三件事：<ol>
+<li>为类型对象分配内存；</li>
+<li>调用构造函数初始化内存对象；</li>
+<li>返回对象指针<br>如果是在堆上建立对象，直接使用new operator。</li>
+</ol>
 </li>
-</ul>
-<p><strong>2. 列表初始化的使用场景</strong><br>前面说过了三个场景，这里赘述一下</p>
+<li><strong>operator new</strong> 普通操作符，可以重载。如果仅仅是分配内存，那么应该调用operator new，但不负责初始化。系统默认提供的分配器在时间和空间两方面都存在一些问题：分配器速度较慢，分配小型对象时空间浪费严重，重载new/delete有三方面好处：<ol>
+<li>改善效率</li>
+<li>检测代码中的内存错误</li>
+<li>获得内存使用的统计数据</li>
+</ol>
 <ul>
-<li>const成员变量只能用成员初始化列表来完成初始化，而不能在构造函数内赋值</li>
-<li>初始化的数据成员是对象</li>
-<li>需要初始化引用成员数据</li>
+<li>C++标准规定，重载的operator new必须是类成员函数或全局函数，全局的operator new重载不应该改变原有签名，而是直接无缝替换原有版本。全局重载很有侵略性，别人使用你的库无法使用默认的new，而具体类的重载只会影响本class和其派生类，但是类的operator new函数重载必须声明为static，因为operator new是在类的具体对象被构建出来之前调用的。</li>
+<li>为了获得2和3的优势，重载的operator new需要如下函数声明<code>void* operator new(size_t, const char* file, int line);</code></li>
+<li></li>
 </ul>
-<p>但是，需要注意列表初始化的顺序，不过IDE会提示你的</p>
-<p><strong>3. 构造函数初始化的使用场景</strong></p>
-<ul>
-<li>第一个就是拷贝和赋值构造函数里（不然怎么叫赋值构造函数呢）</li>
-<li>第二个就是比较无聊的情况了，比如你想把几个成员函数都初始化成一个值，请看下面例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Group &#123;</span><br><span class="line">public:</span><br><span class="line">    Group() &#123;data1 = data2 = data3 = 0;&#125;</span><br><span class="line">private:</span><br><span class="line">    int data1;</span><br><span class="line">    int data2;</span><br><span class="line">    int data3;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
+<li><strong>placement new</strong> 定义在库&lt;<new>&gt;中。如果想在一块已经获得内存里建立对象，那么应该调用placement new。通常情况不建议使用，但在<strong>某些对时间要求非常高的应用中</strong>可以考虑，因为选择合适的构造函数完成对象初始化是一个时间相对较长的过程。</new></li>
 </ul>
-<p>一言以蔽之，优先就地初始化和列表初始化。</p>
 
         </div>
         
@@ -236,8 +283,64 @@
     
 <div class="card">
     
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 minutes read (About 1447 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2021/06/28/ckqgsek40000yt0vemieqnz88/">如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止</a>
+            
+        </h1>
+        <div class="content">
+            <p>故事的起因来源于我在优化他人c++源码的时候，想通过多线程的方式提升程序的运算效率，主要存在以下需求和难点：</p>
+<ol>
+<li>多个线程并行跑模型，看哪个模型跑的快，跑出来后结束其他线程，线程间独立运行无通信过程</li>
+<li>源码模型很复杂，函数调用较多，不好改动，因此不太适合通过信号或标志进行通信终止</li></ol>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2021/06/28/ckqgsek40000yt0vemieqnz88/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
     <div class="card-image">
-        <a href="/2020/03/06/ckqgs2cei0038ucves0rkf0qi/" class="image is-7by1">
+        <a href="/2020/03/06/ckqgsek4w002gt0ve9a21oxz6/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/nowcoder.jpg" alt="剑指offer题解(C++)">
         </a>
     </div>
@@ -265,7 +368,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/06/ckqgs2cei0038ucves0rkf0qi/">剑指offer题解(C++)</a>
+                <a class="has-link-black-ter" href="/2020/03/06/ckqgsek4w002gt0ve9a21oxz6/">剑指offer题解(C++)</a>
             
         </h1>
         <div class="content">
@@ -276,7 +379,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/06/ckqgs2cei0038ucves0rkf0qi/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2020/03/06/ckqgsek4w002gt0ve9a21oxz6/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -318,7 +421,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/03/16/ckqgs2ccr0010ucvec2b568g8/">暑期实习招聘笔试题3月(更新ing)</a>
+                <a class="has-link-black-ter" href="/2019/03/16/ckqgsek400018t0vew8tyd76l/">暑期实习招聘笔试题3月(更新ing)</a>
             
         </h1>
         <div class="content">
@@ -329,7 +432,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/03/16/ckqgs2ccr0010ucvec2b568g8/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2019/03/16/ckqgsek400018t0vew8tyd76l/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -390,7 +493,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            32
+                            34
                         </p>
                     </a>
                 </div>
@@ -414,7 +517,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            25
+                            27
                         </p>
                     </a>
                 </div>
@@ -491,7 +594,7 @@
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Competition/">
@@ -576,7 +679,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 12.5px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 12.5px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 12.5px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 12.5px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Sorting/" style="font-size: 12.5px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a>
+        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 16px;">C++</a> <a href="/tags/C-C/" style="font-size: 14px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 12px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 12px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 12px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 12px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Sorting/" style="font-size: 12px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
     </div>
 </div>
     
@@ -591,7 +694,7 @@
         
         <article class="media">
             
-            <a href="/2021/06/28/ckqgs2ccc000mucvexeqvjpup/" class="media-left">
+            <a href="/2021/06/28/ckqgsek35000jt0veek17ymik/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式">
                 </p>
@@ -600,7 +703,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
-                    <a href="/2021/06/28/ckqgs2ccc000mucvexeqvjpup/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
+                    <a href="/2021/06/28/ckqgsek35000jt0veek17ymik/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a>
                     </p>
@@ -610,7 +713,45 @@
         
         <article class="media">
             
-            <a href="/2021/06/22/ckqgs2ccr000yucveclndy1p1/" class="media-left">
+            <a href="/2021/06/28/ckqgsek3l000kt0veq2ozqgoi/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（2）——你真的会用new吗">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
+                    <a href="/2021/06/28/ckqgsek3l000kt0veq2ozqgoi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/06/28/ckqgsek40000yt0vemieqnz88/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
+                    <a href="/2021/06/28/ckqgsek40000yt0vemieqnz88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/06/22/ckqgsek400013t0vecmmpo6dt/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="">
                 </p>
@@ -619,7 +760,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-22T14:03:11.811Z">2021-06-22</time></div>
-                    <a href="/2021/06/22/ckqgs2ccr000yucveclndy1p1/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2021/06/22/ckqgsek400013t0vecmmpo6dt/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -629,7 +770,7 @@
         
         <article class="media">
             
-            <a href="/2020/07/17/ckqgs2ccr000vucveegtqkw1x/" class="media-left">
+            <a href="/2020/07/17/ckqgsek40000zt0vedlso99x2/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/others.jpg" alt="智能优化算法（9）：其他类型的优化算法">
                 </p>
@@ -638,45 +779,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-17T10:11:40.000Z">2020-07-17</time></div>
-                    <a href="/2020/07/17/ckqgs2ccr000vucveegtqkw1x/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（9）：其他类型的优化算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Optimization-Algorithms/">Optimization Algorithms</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/07/17/ckqgs2ccc000bucve8gj5k12w/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/DE.jpg" alt="智能优化算法（8）：差分进化算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-17T10:09:30.000Z">2020-07-17</time></div>
-                    <a href="/2020/07/17/ckqgs2ccc000bucve8gj5k12w/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（8）：差分进化算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Optimization-Algorithms/">Optimization Algorithms</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/07/17/ckqgs2ccc000kucvesjvdlavg/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/TS.jpg" alt="智能优化算法（7）：禁忌搜索算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-17T10:07:01.000Z">2020-07-17</time></div>
-                    <a href="/2020/07/17/ckqgs2ccc000kucvesjvdlavg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（7）：禁忌搜索算法</a>
+                    <a href="/2020/07/17/ckqgsek40000zt0vedlso99x2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（9）：其他类型的优化算法</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Optimization-Algorithms/">Optimization Algorithms</a>
                     </p>
@@ -701,7 +804,7 @@
                     <span class="level-item">June 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -864,7 +967,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C++</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -1011,6 +1114,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/linux/">
                         <span class="tag">linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/内存管理/">
+                        <span class="tag">内存管理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多线程/">
+                        <span class="tag">多线程</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1039,7 +1156,7 @@
         
         <article class="media">
             
-            <a href="/2021/06/28/ckqgs2ccc000mucvexeqvjpup/" class="media-left">
+            <a href="/2021/06/28/ckqgsek35000jt0veek17ymik/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式">
                 </p>
@@ -1048,7 +1165,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
-                    <a href="/2021/06/28/ckqgs2ccc000mucvexeqvjpup/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
+                    <a href="/2021/06/28/ckqgsek35000jt0veek17ymik/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a>
                     </p>
@@ -1058,7 +1175,45 @@
         
         <article class="media">
             
-            <a href="/2021/06/22/ckqgs2ccr000yucveclndy1p1/" class="media-left">
+            <a href="/2021/06/28/ckqgsek3l000kt0veq2ozqgoi/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（2）——你真的会用new吗">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
+                    <a href="/2021/06/28/ckqgsek3l000kt0veq2ozqgoi/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/06/28/ckqgsek40000yt0vemieqnz88/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
+                    <a href="/2021/06/28/ckqgsek40000yt0vemieqnz88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/06/22/ckqgsek400013t0vecmmpo6dt/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="">
                 </p>
@@ -1067,7 +1222,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-22T14:03:11.811Z">2021-06-22</time></div>
-                    <a href="/2021/06/22/ckqgs2ccr000yucveclndy1p1/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2021/06/22/ckqgsek400013t0vecmmpo6dt/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1077,7 +1232,7 @@
         
         <article class="media">
             
-            <a href="/2020/07/17/ckqgs2ccr000vucveegtqkw1x/" class="media-left">
+            <a href="/2020/07/17/ckqgsek40000zt0vedlso99x2/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/others.jpg" alt="智能优化算法（9）：其他类型的优化算法">
                 </p>
@@ -1086,45 +1241,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-17T10:11:40.000Z">2020-07-17</time></div>
-                    <a href="/2020/07/17/ckqgs2ccr000vucveegtqkw1x/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（9）：其他类型的优化算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Optimization-Algorithms/">Optimization Algorithms</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/07/17/ckqgs2ccc000bucve8gj5k12w/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/DE.jpg" alt="智能优化算法（8）：差分进化算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-17T10:09:30.000Z">2020-07-17</time></div>
-                    <a href="/2020/07/17/ckqgs2ccc000bucve8gj5k12w/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（8）：差分进化算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Optimization-Algorithms/">Optimization Algorithms</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/07/17/ckqgs2ccc000kucvesjvdlavg/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/TS.jpg" alt="智能优化算法（7）：禁忌搜索算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-17T10:07:01.000Z">2020-07-17</time></div>
-                    <a href="/2020/07/17/ckqgs2ccc000kucvesjvdlavg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（7）：禁忌搜索算法</a>
+                    <a href="/2020/07/17/ckqgsek40000zt0vedlso99x2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">智能优化算法（9）：其他类型的优化算法</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Optimization-Algorithms/">Optimization Algorithms</a>
                     </p>
@@ -1149,7 +1266,7 @@
                     <span class="level-item">June 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1312,7 +1429,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C++</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -1459,6 +1576,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/linux/">
                         <span class="tag">linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/内存管理/">
+                        <span class="tag">内存管理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多线程/">
+                        <span class="tag">多线程</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1657,7 +1788,22 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="/js/insight.js" defer></script>
 <link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/insight.css">
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
