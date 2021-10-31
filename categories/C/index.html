@@ -167,7 +167,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2021/07/19/ckv6u6k01000img5cpsu08ic2/">如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针</a>
+                <a class="has-link-black-ter" href="/2021/07/19/ckveqbr2y000lbs5cwl91xjke/">如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针</a>
             
         </h1>
         <div class="content">
@@ -179,7 +179,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2021/07/19/ckv6u6k01000img5cpsu08ic2/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2021/07/19/ckveqbr2y000lbs5cwl91xjke/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -221,7 +221,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2021/06/28/ckv6u6k00000hmg5cyhiyk7j5/">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
+                <a class="has-link-black-ter" href="/2021/06/28/ckveqbr2y000kbs5cgbkauppx/">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
             
         </h1>
         <div class="content">
@@ -232,7 +232,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2021/06/28/ckv6u6k00000hmg5cyhiyk7j5/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2021/06/28/ckveqbr2y000kbs5cgbkauppx/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -265,7 +265,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1244 words)
+                    8 minutes read (About 1245 words)
                 </span>
                 
                 
@@ -274,55 +274,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2021/06/28/ckv6u6k01000jmg5cpp2jc3e5/">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
+                <a class="has-link-black-ter" href="/2021/06/28/ckveqbr30000pbs5c213rrm20/">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
             
         </h1>
         <div class="content">
-            <h1 id="C-内存管理"><a href="#C-内存管理" class="headerlink" title="C++内存管理"></a>C++内存管理</h1><h2 id="1-c-内存分配"><a href="#1-c-内存分配" class="headerlink" title="1. c++内存分配"></a>1. c++内存分配</h2><p>c++中的程序加载到内存后按照代码区、数据区、堆区、栈区进行布局，其中数据区又可以分为自由存储区、全局/静态存储区和常量存储区，各区所长如下：</p>
-<ul>
-<li>栈区<br>函数执行的时候，局部变量的存储单元都在栈上创建，函数执行结束后存储单元会自动释放。<strong>栈内存分配运算内置于处理器指令集中，效率高，但分配内存容量有限。</strong></li>
-<li>堆区<br>堆就是new出来的内存块，编译器不管释放，由应用程序控制，<strong>new对应delete</strong>。如果没释放掉，程序结束后，操作系统会自动回收。</li>
-<li>自由存储区<br>C中malloc分配的内存块。用free结束生命周期。</li>
-<li>全局/静态存储区<br>全局变量和静态变量被分配到同一块内存中，<strong>定义的时候就会初始化</strong>。</li>
-<li>常量存储区<br>比较特殊的存储区，存放常量，不允许修改。</li>
-</ul>
-<p>堆和栈的区别</p>
-<ul>
-<li>管理方式<br>栈由编译器自动管理，堆由程序员控制</li>
-<li>空间大小<br>32位系统下，堆内存可以达到4GB，栈有一定的空间大小</li>
-<li>碎片管理<br>对于堆，频繁的new/delete肯定造成内存空间的不连续，产生大量内存碎片降低程序效率；栈由于遵循先进后出的规则，不会产生空隙</li>
-<li>生长方向<br>堆是向上生长的，即向着内存地址增加的方向增长；而栈是向着内存地址减小的方向增长的</li>
-<li>分配方式<br>堆是动态分配的，栈有动态分配和静态分配之分：静态分配由编译器完成，动态分配由alloca函数完成，即使是动态分配，依然是编译器自动释放</li>
-<li>分配效率<br>计算机底层提供了栈的支持，分配了专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这决定了栈的效率会比较高。堆则是由C/C++函数库提供的，机制比较复杂，比如为了分配某个大小的内存需要在堆内存中搜索可用足够大小的空间，效率比栈要低的多</li>
-</ul>
-<h2 id="2-new-delete和new-delete"><a href="#2-new-delete和new-delete" class="headerlink" title="2. new/delete和new []/delete []"></a>2. new/delete和new []/delete []</h2><ul>
-<li>回收new分配的单个对象内存空间时用delete，回收用new[]分配的一组对象时用delete[]</li>
-<li>对于内置类型(int/double/float/char/…)，由于new[]申请内存时，编译器还会悄悄在内存中保存整数，表示指针数组的个数，所以delete/delete[]都可以正确释放所申请的内存空间</li>
-<li>建议在调用new时使用的[]，那么调用delete也使用[]</li>
-</ul>
-<h2 id="3-new的三种形态"><a href="#3-new的三种形态" class="headerlink" title="3. new的三种形态"></a>3. new的三种形态</h2><ul>
-<li><strong>new operator</strong> 常用的new，语言函数内建，不能重载。调用过程中实际完成的有三件事：<ol>
-<li>为类型对象分配内存；</li>
-<li>调用构造函数初始化内存对象；</li>
-<li>返回对象指针<br>如果是在堆上建立对象，直接使用new operator。</li>
-</ol>
-</li>
-<li><strong>operator new</strong> 普通操作符，可以重载。如果仅仅是分配内存，那么应该调用operator new，但不负责初始化。系统默认提供的分配器在时间和空间两方面都存在一些问题：分配器速度较慢，分配小型对象时空间浪费严重，重载new/delete有三方面好处：<ol>
-<li>改善效率</li>
-<li>检测代码中的内存错误</li>
-<li>获得内存使用的统计数据</li>
-</ol>
-<ul>
-<li>C++标准规定，重载的operator new必须是类成员函数或全局函数，全局的operator new重载不应该改变原有签名，而是直接无缝替换原有版本。全局重载很有侵略性，别人使用你的库无法使用默认的new，而具体类的重载只会影响本class和其派生类，但是类的operator new函数重载必须声明为static，因为operator new是在类的具体对象被构建出来之前调用的。</li>
-<li>为了获得2和3的优势，重载的operator new需要如下函数声明<code>void* operator new(size_t, const char* file, int line);</code></li>
-<li></li>
-</ul>
-</li>
-<li><strong>placement new</strong> 定义在库&lt;<new>&gt;中。如果想在一块已经获得内存里建立对象，那么应该调用placement new。通常情况不建议使用，但在<strong>某些对时间要求非常高的应用中</strong>可以考虑，因为选择合适的构造函数完成对象初始化是一个时间相对较长的过程。</new></li>
-</ul>
-
+            <h1 id="C-内存管理"><a href="#C-内存管理" class="headerlink" title="C++内存管理"></a>C++内存管理</h1><h2 id="1-c-内存分配"><a href="#1-c-内存分配" class="headerlink" title="1. c++内存分配"></a>1. c++内存分配</h2><p>c++中的程序加载到内存后按照代码区、数据区、堆区、栈区进行布局，其中数据区又可以分为自由存储区、全局/静态存储区和常量存储区，各区所长如下：<br></p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2021/06/28/ckveqbr30000pbs5c213rrm20/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -361,7 +327,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2021/06/28/ckv6u6k05000rmg5c8fb3h700/">如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止</a>
+                <a class="has-link-black-ter" href="/2021/06/28/ckveqbr34000vbs5cjqvdp529/">如何编写高效、优雅、可信代码系列（1）——C++多线程强制终止</a>
             
         </h1>
         <div class="content">
@@ -375,7 +341,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2021/06/28/ckv6u6k05000rmg5c8fb3h700/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2021/06/28/ckveqbr34000vbs5cjqvdp529/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -436,7 +402,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            37
+                            38
                         </p>
                     </a>
                 </div>
@@ -460,7 +426,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            31
+                            32
                         </p>
                     </a>
                 </div>
@@ -577,7 +543,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Machine-Learning/">
@@ -622,7 +588,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 17.5px;">C++</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DAG图/" style="font-size: 10px;">DAG图</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 12.5px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 12.5px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 12.5px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 12.5px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Sorting/" style="font-size: 12.5px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Week-contest/" style="font-size: 12.5px;">Week-contest</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/函数指针/" style="font-size: 10px;">函数指针</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a>
+        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 17.5px;">C++</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DAG图/" style="font-size: 10px;">DAG图</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 12.5px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 12.5px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 12.5px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 12.5px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Sorting/" style="font-size: 12.5px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Week-contest/" style="font-size: 15px;">Week-contest</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/函数指针/" style="font-size: 10px;">函数指针</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a>
     </div>
 </div>
     
@@ -637,7 +603,26 @@
         
         <article class="media">
             
-            <a href="/2021/10/24/ckv6u6k03000nmg5cok0yowkw/" class="media-left">
+            <a href="/2021/10/31/ckveqbr33000tbs5ccntyvpff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 265">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-10-31T04:00:00.000Z">2021-10-31</time></div>
+                    <a href="/2021/10/31/ckveqbr33000tbs5ccntyvpff/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 265</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/10/24/ckveqbr30000obs5c063foqst/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Single Week Contest 264">
                 </p>
@@ -646,7 +631,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-10-24T02:30:00.000Z">2021-10-24</time></div>
-                    <a href="/2021/10/24/ckv6u6k03000nmg5cok0yowkw/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Single Week Contest 264</a>
+                    <a href="/2021/10/24/ckveqbr30000obs5c063foqst/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Single Week Contest 264</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -656,7 +641,7 @@
         
         <article class="media">
             
-            <a href="/2021/10/10/ckv6u6k02000kmg5cwks2xq52/" class="media-left">
+            <a href="/2021/10/10/ckveqbr31000qbs5cwsx3rvad/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Week Contest 262">
                 </p>
@@ -665,7 +650,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-10-10T04:50:07.000Z">2021-10-10</time></div>
-                    <a href="/2021/10/10/ckv6u6k02000kmg5cwks2xq52/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Week Contest 262</a>
+                    <a href="/2021/10/10/ckveqbr31000qbs5cwsx3rvad/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Week Contest 262</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -675,7 +660,7 @@
         
         <article class="media">
             
-            <a href="/2021/07/19/ckv6u6k01000img5cpsu08ic2/" class="media-left">
+            <a href="/2021/07/19/ckveqbr2y000lbs5cwl91xjke/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针">
                 </p>
@@ -684,7 +669,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-07-19T15:59:53.000Z">2021-07-19</time></div>
-                    <a href="/2021/07/19/ckv6u6k01000img5cpsu08ic2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针</a>
+                    <a href="/2021/07/19/ckveqbr2y000lbs5cwl91xjke/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a>
                     </p>
@@ -694,7 +679,7 @@
         
         <article class="media">
             
-            <a href="/2021/06/28/ckv6u6k00000hmg5cyhiyk7j5/" class="media-left">
+            <a href="/2021/06/28/ckveqbr2y000kbs5cgbkauppx/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式">
                 </p>
@@ -703,26 +688,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
-                    <a href="/2021/06/28/ckv6u6k00000hmg5cyhiyk7j5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/06/28/ckv6u6k01000jmg5cpp2jc3e5/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（2）——你真的会用new吗">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
-                    <a href="/2021/06/28/ckv6u6k01000jmg5cpp2jc3e5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
+                    <a href="/2021/06/28/ckveqbr2y000kbs5cgbkauppx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a>
                     </p>
@@ -747,7 +713,7 @@
                     <span class="level-item">October 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -911,13 +877,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">17</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithms/">
                         <span class="tag">Algorithms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1072,7 +1045,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Week-contest/">
                         <span class="tag">Week-contest</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1149,7 +1122,26 @@
         
         <article class="media">
             
-            <a href="/2021/10/24/ckv6u6k03000nmg5cok0yowkw/" class="media-left">
+            <a href="/2021/10/31/ckveqbr33000tbs5ccntyvpff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 265">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-10-31T04:00:00.000Z">2021-10-31</time></div>
+                    <a href="/2021/10/31/ckveqbr33000tbs5ccntyvpff/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 265</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/10/24/ckveqbr30000obs5c063foqst/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Single Week Contest 264">
                 </p>
@@ -1158,7 +1150,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-10-24T02:30:00.000Z">2021-10-24</time></div>
-                    <a href="/2021/10/24/ckv6u6k03000nmg5cok0yowkw/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Single Week Contest 264</a>
+                    <a href="/2021/10/24/ckveqbr30000obs5c063foqst/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Single Week Contest 264</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1168,7 +1160,7 @@
         
         <article class="media">
             
-            <a href="/2021/10/10/ckv6u6k02000kmg5cwks2xq52/" class="media-left">
+            <a href="/2021/10/10/ckveqbr31000qbs5cwsx3rvad/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Week Contest 262">
                 </p>
@@ -1177,7 +1169,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-10-10T04:50:07.000Z">2021-10-10</time></div>
-                    <a href="/2021/10/10/ckv6u6k02000kmg5cwks2xq52/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Week Contest 262</a>
+                    <a href="/2021/10/10/ckveqbr31000qbs5cwsx3rvad/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Week Contest 262</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1187,7 +1179,7 @@
         
         <article class="media">
             
-            <a href="/2021/07/19/ckv6u6k01000img5cpsu08ic2/" class="media-left">
+            <a href="/2021/07/19/ckveqbr2y000lbs5cwl91xjke/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针">
                 </p>
@@ -1196,7 +1188,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-07-19T15:59:53.000Z">2021-07-19</time></div>
-                    <a href="/2021/07/19/ckv6u6k01000img5cpsu08ic2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针</a>
+                    <a href="/2021/07/19/ckveqbr2y000lbs5cwl91xjke/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（4）——今天教你学会用函数指针</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a>
                     </p>
@@ -1206,7 +1198,7 @@
         
         <article class="media">
             
-            <a href="/2021/06/28/ckv6u6k00000hmg5cyhiyk7j5/" class="media-left">
+            <a href="/2021/06/28/ckveqbr2y000kbs5cgbkauppx/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式">
                 </p>
@@ -1215,26 +1207,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
-                    <a href="/2021/06/28/ckv6u6k00000hmg5cyhiyk7j5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/06/28/ckv6u6k01000jmg5cpp2jc3e5/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何编写高效、优雅、可信代码系列（2）——你真的会用new吗">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-06-28T03:11:53.000Z">2021-06-28</time></div>
-                    <a href="/2021/06/28/ckv6u6k01000jmg5cpp2jc3e5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（2）——你真的会用new吗</a>
+                    <a href="/2021/06/28/ckveqbr2y000kbs5cgbkauppx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">如何编写高效、优雅、可信代码系列（3）——类成员初始化的三种方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a>
                     </p>
@@ -1259,7 +1232,7 @@
                     <span class="level-item">October 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1423,13 +1396,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">17</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithms/">
                         <span class="tag">Algorithms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1584,7 +1564,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Week-contest/">
                         <span class="tag">Week-contest</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
