@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>LeetCode Solutions - LC-Garden</title>
+
+
+    <meta name="description" content="Here are my solutions to the LeetCode problems, linking to my Github repository:">
+<meta name="keywords" content="Python,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode Solutions">
+<meta property="og:url" content="https://dlc1994.github.io/2018/07/30/ckxcryr10000a0w5cvlzyfeqa/index.html">
+<meta property="og:site_name" content="LC-Garden">
+<meta property="og:description" content="Here are my solutions to the LeetCode problems, linking to my Github repository:">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://dlc1994.github.io/gallery/thumbnails/leetcode.jpg">
+<meta property="og:updated_time" content="2021-09-13T14:51:03.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode Solutions">
+<meta name="twitter:description" content="Here are my solutions to the LeetCode problems, linking to my Github repository:">
+<meta name="twitter:image" content="https://dlc1994.github.io/gallery/thumbnails/leetcode.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/head.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="is-3-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.jpg" alt="LeetCode Solutions" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/dlc1994">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Solutions">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-30T04:50:07.000Z">2018-07-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes read (About 1919 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                LeetCode Solutions
+            
+        </h1>
+        <div class="content">
+            <p>Here are my solutions to the LeetCode problems, linking to my <a href="https://github.com/dlc1994">Github</a> repository:<br><a id="more"></a></p>
+<h1 id="EASY"><a href="#EASY" class="headerlink" title="EASY"></a>EASY</h1><ul>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/twoSums.py">Leetcode 1   Two Sum</a> </li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/PalindromeNumber.py">Leetcode 9   Palindrome Number</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode13%20roman2integer.py">Leetcode 13  roman2integer</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/longestCommonPrefix.py">Leetcode 14  longestcommonprefix</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/validParenthese.py">Leetcode 20  valid parentheses</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode21%20merge2sortedlist.py">Leetcode 21  merge2sortedlist</a></li>
+<li><p>Leetcode 73 矩阵置零</p>
+<blockquote>
+<p>给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。<br>进阶：<br>一个直观的解决方案是使用  O(mn) 的额外空间，但这并不是一个好的解决方案。<br>一个简单的改进方案是使用 O(m + n) 的额外空间，但这仍然不是最好的解决方案。<br>你能想出一个仅使用常量空间的解决方案吗？<br>示例 1：<br>输入：matrix = [[1,1,1],[1,0,1],[1,1,1]]<br>输出：[[1,0,1],[0,0,0],[1,0,1]]<br>示例 2：<br>输入：matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]<br>输出：[[0,0,0,0],[0,4,5,0],[0,3,1,0]]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">代码：</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void setZeroes(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        int m = matrix.size();</span><br><span class="line">        int n = matrix[0].size();</span><br><span class="line">        int flag_col0 = false;</span><br><span class="line">        for (int i = 0; i &lt; m; i++) &#123;</span><br><span class="line">            if (!matrix[i][0]) &#123;</span><br><span class="line">                flag_col0 = true;</span><br><span class="line">            &#125;</span><br><span class="line">            for (int j = 1; j &lt; n; j++) &#123;</span><br><span class="line">                if (!matrix[i][j]) &#123;</span><br><span class="line">                    matrix[i][0] = matrix[0][j] = 0;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = m - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">            for (int j = 1; j &lt; n; j++) &#123;</span><br><span class="line">                if (!matrix[i][0] || !matrix[0][j]) &#123;</span><br><span class="line">                    matrix[i][j] = 0;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if (flag_col0) &#123;</span><br><span class="line">                matrix[i][0] = 0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>Leetcode 150 逆波兰表达式求值</p>
+<blockquote>
+<p>逆波兰表达式：<br>逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。<br>平常使用的算式则是一种中缀表达式，如 ( 1 + 2 ) <em> ( 3 + 4 ) 。<br>该算式的逆波兰表达式写法为 ( ( 1 2 + ) ( 3 4 + ) </em> ) 。<br>逆波兰表达式主要有以下两个优点：<br>去掉括号后表达式无歧义，上式即便写成 1 2 + 3 4 + <em> 也可以依据次序计算出正确结果。<br>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中<br>根据 逆波兰表示法，求表达式的值。<br>有效的算符包括 +、-、</em>、/ 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。<br>说明：<br>整数除法只保留整数部分。<br>给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。<br>示例 1：<br>输入：tokens = [“2”,”1”,”+”,”3”,”<em>“]<br>输出：9<br>解释：该算式转化为常见的中缀算术表达式为：((2 + 1) </em> 3) = 9<br>示例 2：<br>输入：tokens = [“4”,”13”,”5”,”/“,”+”]<br>输出：6<br>解释：该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def evalRPN(self, tokens: List[str]) -&gt; int:</span><br><span class="line">        if len(tokens) == 1:</span><br><span class="line">            return int(tokens[0])</span><br><span class="line">        stack = []</span><br><span class="line">        for token in tokens:</span><br><span class="line">            if token not in &apos;+-*/&apos;:</span><br><span class="line">                stack.append(token)</span><br><span class="line">            else:</span><br><span class="line">                if len(stack) != 0:</span><br><span class="line">                    num1 = stack.pop()</span><br><span class="line">                    num2 = stack.pop()</span><br><span class="line">                    num3 = int(eval(str(num2) + token + str(num1)))</span><br><span class="line">                    stack.append(num3)</span><br><span class="line">        return stack[0]</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>Leetcode 191 位1的个数</p>
+<blockquote>
+<p>编写一个函数，输入是一个无符号整数（以二进制串的形式），返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。<br>提示：<br>请注意，在某些语言（如 Java）中，没有无符号整数类型。在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。<br>在 Java 中，编译器使用二进制补码记法来表示有符号整数。因此，在上面的 示例 3 中，输入表示有符号整数 -3。<br>示例 1：<br>输入：00000000000000000000000000001011<br>输出：3<br>解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 ‘1’。<br>示例 2：<br>输入：00000000000000000000000010000000<br>输出：1<br>解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 ‘1’。<br>示例 3：<br>输入：11111111111111111111111111111101<br>输出：31<br>解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 ‘1’。<br>提示：<br>输入必须是长度为 32 的 二进制串 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">代码：</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int hammingWeight(uint32_t n) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        while (n &gt; 0) &#123;</span><br><span class="line">            if (n &amp; 1 == 1) &#123;</span><br><span class="line">                ++res;</span><br><span class="line">            &#125;</span><br><span class="line">            n /= 2;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><a href="https://github.com/dlc1994/LeetCode/blob/master/hamming.py">Leetcode 461 Hamming Distance</a> </p>
+</li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/lowerCase.py">Leetcode 709 To Lower Case</a> </li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/JewerAndStones.py">Leetcode 771 Jewels and Stones</a> </li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/MorseCode.py">Leetcode 804 Unique Morse Code Words</a> </li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/circle.py">Circle</a> </li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/flipping%20image.py">Leetcode 832 Flipping an Image</a> </li>
+</ul>
+<h1 id="MEDIUM"><a href="#MEDIUM" class="headerlink" title="MEDIUM"></a>MEDIUM</h1><ul>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leecode12%20int2roman.py">Leetcode 12  int2roman</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode21%20merge2sortedlist.py">Leetcode 21  merge2sortedlist</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode22%20generateParentheses.py">Leetcode 22  generateParentheses</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode%2029%20%20DivideTwoIntegers.py">Leetcode 29  DivideTwoIntegers</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode%2033%20%20SearchInRotatedSortedArray.py">Leetcode 33  SearchInRotatedSortedArray</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode%2034%20%20FindFirstAndLastPositionInSortedArray.py">Leetcode 34  FindFirstAndLastPositionInSortedArray</a></li>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode%2036%20%20ValidSudoku.py">Leetcode 36  SearchInRotatedSortedArray</a></li>
+<li><p>Leetcode 341 扁平化嵌套列表迭代器</p>
+<blockquote>
+<p>问题描述：<br>给你一个嵌套的整型列表。请你设计一个迭代器，使其能够遍历这个整型列表中的所有整数。<br>列表中的每一项或者为一个整数，或者是另一个列表。其中列表的元素也可能是整数或是其他列表。<br>示例 1:<br>输入: [[1,1],2,[1,1]]<br>输出: [1,1,2,1,1]<br>解释: 通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,1,2,1,1]。<br>示例 2:<br>输入: [1,[4,[6]]]<br>输出: [1,4,6]<br>解释: 通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,4,6]。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">代码：</span><br><span class="line">/**</span><br><span class="line"> * // This is the interface that allows for creating nested lists.</span><br><span class="line"> * // You should not implement it, or speculate about its implementation</span><br><span class="line"> * class NestedInteger &#123;</span><br><span class="line"> *   public:</span><br><span class="line"> *     // Return true if this NestedInteger holds a single integer, rather than a nested list.</span><br><span class="line"> *     bool isInteger() const;</span><br><span class="line"> *</span><br><span class="line"> *     // Return the single integer that this NestedInteger holds, if it holds a single integer</span><br><span class="line"> *     // The result is undefined if this NestedInteger holds a nested list</span><br><span class="line"> *     int getInteger() const;</span><br><span class="line"> *</span><br><span class="line"> *     // Return the nested list that this NestedInteger holds, if it holds a nested list</span><br><span class="line"> *     // The result is undefined if this NestedInteger holds a single integer</span><br><span class="line"> *     const vector&lt;NestedInteger&gt; &amp;getList() const;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">class NestedIterator &#123;</span><br><span class="line">public:</span><br><span class="line">    NestedIterator(vector&lt;NestedInteger&gt; &amp;nestedList) &#123;</span><br><span class="line">        Hello(nestedList);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void Hello(vector&lt;NestedInteger&gt; &amp;nestedList) &#123;</span><br><span class="line">        for (int i = 0; i &lt; nestedList.size(); i++) &#123;</span><br><span class="line">            if (nestedList[i].isInteger()) &#123;</span><br><span class="line">                nestedList_.push_back(nestedList[i].getInteger());</span><br><span class="line">                continue;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                Hello(nestedList[i].getList());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int next() &#123;</span><br><span class="line">        return nestedList_[count++];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    bool hasNext() &#123;</span><br><span class="line">        if (count &lt; nestedList_.size()) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    vector&lt;int&gt; nestedList_;</span><br><span class="line">    int count = 0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your NestedIterator object will be instantiated and called as such:</span><br><span class="line"> * NestedIterator i(nestedList);</span><br><span class="line"> * while (i.hasNext()) cout &lt;&lt; i.next();</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><a href="https://github.com/dlc1994/LeetCode/blob/master/LongestPalindSubstring.py">Leetcode 516 LongestPalindSubstring</a></p>
+</li>
+<li><ol>
+<li>回旋镖的数量<blockquote>
+<p>给定平面上 n 对 互不相同 的点 points ，其中 points[i] = [xi, yi] 。回旋镖 是由点 (i, j, k) 表示的元组 ，其中 i 和 j 之间的距离和 i 和 k 之间的距离相等（需要考虑元组的顺序）。<br>返回平面上所有回旋镖的数量。<br>示例 1：<br>输入：points = [[0,0],[1,0],[2,0]]<br>输出：2<br>解释：两个回旋镖为 [[1,0],[0,0],[2,0]] 和 [[1,0],[2,0],[0,0]]<br>示例 2：<br>输入：points = [[1,1],[2,2],[3,3]]<br>输出：2<br>示例 3：<br>输入：points = [[1,1]]<br>输出：0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"> class Solution1 &#123;</span><br><span class="line">public:</span><br><span class="line">    int numberOfBoomerangs(vector&lt;vector&lt;int&gt;&gt;&amp; points) &#123;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for (auto&amp; p : points) &#123;</span><br><span class="line">            unordered_map&lt;int, int&gt; cnt;</span><br><span class="line">            for (auto&amp; q : points) &#123;</span><br><span class="line">                int dis = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]);</span><br><span class="line">                ++cnt[dis];</span><br><span class="line">            &#125;</span><br><span class="line">            for (auto&amp; [_, m] : cnt) &#123;</span><br><span class="line">                ans += m * (m - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int CalculateDistance(vector&lt;int&gt; pointX, vector&lt;int&gt; pointY)</span><br><span class="line">    &#123;</span><br><span class="line">        return (pointX[0] - pointY[0]) * (pointX[0] - pointY[0]) + (pointX[1] - pointY[1]) * (pointX[1] - pointY[1]);</span><br><span class="line">    &#125;</span><br><span class="line">    int CountHuixuanbiao(vector&lt;tuple&lt;int, int, int&gt;&gt;&amp; distanceTuple) &#123;</span><br><span class="line">        auto totalCount = 0;</span><br><span class="line">        auto lastCount = 1;</span><br><span class="line">        auto currentCount = 0;</span><br><span class="line">        int lastDistance;</span><br><span class="line">        for (auto i = distanceTuple.begin(); i != distanceTuple.end(); ++i) &#123;</span><br><span class="line">            auto x = get&lt;0&gt;(*i);</span><br><span class="line">            auto y = get&lt;1&gt;(*i);</span><br><span class="line">            auto z = get&lt;2&gt;(*i);</span><br><span class="line">            if (currentCount++ == 0) &#123;</span><br><span class="line">                lastDistance = z;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if (z == lastDistance) &#123; // equal</span><br><span class="line">                lastCount++;</span><br><span class="line">                if (i == distanceTuple.end() - 1) &#123;</span><br><span class="line">                    totalCount += lastCount * (lastCount - 1);</span><br><span class="line">                &#125;</span><br><span class="line">                continue;</span><br><span class="line">            &#125; else &#123;                // not equal</span><br><span class="line">                lastDistance = z;</span><br><span class="line">                if (lastCount == 1) &#123;</span><br><span class="line">                    continue;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    totalCount += lastCount * (lastCount - 1);</span><br><span class="line">                    lastCount = 1;</span><br><span class="line">                    lastDistance = z;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return totalCount;</span><br><span class="line">    &#125;</span><br><span class="line">    int numberOfBoomerangs(vector&lt;vector&lt;int&gt;&gt;&amp; points) &#123;</span><br><span class="line">        if (points.empty()) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125; else if (points[0].empty()) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int pointSize = points.size();</span><br><span class="line">        auto totalCount = 0;</span><br><span class="line"></span><br><span class="line">        for (auto i = 0; i &lt; pointSize; i++) &#123;</span><br><span class="line">            vector&lt;tuple&lt;int, int, int&gt;&gt; distanceTuple;</span><br><span class="line">            for (auto j = 0; j &lt; pointSize; j++) &#123;</span><br><span class="line">                if (i != j) &#123;</span><br><span class="line">                    distanceTuple.emplace_back(i, j, CalculateDistance(points[i], points[j]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            //printf(&quot;\n&quot;);</span><br><span class="line">            sort(distanceTuple.begin(), distanceTuple.end(),</span><br><span class="line">                [](const tuple&lt;int, int, int&gt;&amp; a, const tuple&lt;int, int, int&gt;&amp; b) -&gt; bool &#123;return get&lt;2&gt;(a) &lt; get&lt;2&gt;(b); &#125;);</span><br><span class="line"></span><br><span class="line">            totalCount += CountHuixuanbiao(distanceTuple);</span><br><span class="line"></span><br><span class="line">            //for (auto [x, y, z] : distanceTuple) &#123;</span><br><span class="line">            //    cout &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; &quot; &quot; &lt;&lt; z &lt;&lt; &quot; &quot; &lt;&lt; totalCount &lt;&lt; endl;</span><br><span class="line">            //&#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return totalCount;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="HARD"><a href="#HARD" class="headerlink" title="HARD"></a>HARD</h1><ul>
+<li><a href="https://github.com/dlc1994/LeetCode/blob/master/leetcode23%20mergeKsortedlist.py">Leetcode 23  mergeKsortedlists</a></li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Algorithm/">Algorithm</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/28/ckxcryr0z00090w5cg8arieq5/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Introduction to Machine Learning</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/18/ckxcryr14000g0w5chpjldse2/">
+                <span class="level-item">Water Filling Algorithm and Matlab Simulation</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/xigua.jpg" alt="Lingcheng Dai">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Lingcheng Dai
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Live and Learn.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Beijing, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            44
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            34
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/dlc1994" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/dlc1994">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/dlc1994" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Github</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm-and-Data-Structure/">
+            <span class="level-start">
+                <span class="level-item">Algorithm and Data Structure</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/C/">
+            <span class="level-start">
+                <span class="level-item">C++</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Competition/">
+            <span class="level-start">
+                <span class="level-item">Competition</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Processing/">
+            <span class="level-start">
+                <span class="level-item">Data Processing</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Development/">
+            <span class="level-start">
+                <span class="level-item">Development</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/HEXO/">
+            <span class="level-start">
+                <span class="level-item">HEXO</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/LeetCode/">
+            <span class="level-start">
+                <span class="level-item">LeetCode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Machine-Learning/">
+            <span class="level-start">
+                <span class="level-item">Machine Learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Optimization-Algorithms/">
+            <span class="level-start">
+                <span class="level-item">Optimization Algorithms</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">9</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Paper-Work/">
+            <span class="level-start">
+                <span class="level-item">Paper Work</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Wireless-Communications/">
+            <span class="level-start">
+                <span class="level-item">Wireless Communications</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/BFS/" style="font-size: 16px;">BFS</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 16px;">C++</a> <a href="/tags/C-C/" style="font-size: 14px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DAG图/" style="font-size: 10px;">DAG图</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 12px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 12px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIS/" style="font-size: 10px;">LIS</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 12px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 12px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Sorting/" style="font-size: 12px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Week-contest/" style="font-size: 18px;">Week-contest</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/函数指针/" style="font-size: 10px;">函数指针</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 272">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-19T04:00:00.000Z">2021-12-19</time></div>
+                    <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 272</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 271">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-12T04:00:00.000Z">2021-12-12</time></div>
+                    <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 271</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-67">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-11T14:30:00.000Z">2021-12-11</time></div>
+                    <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-67</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 269">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-28T04:00:00.000Z">2021-11-28</time></div>
+                    <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 269</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-66">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-27T14:30:00.000Z">2021-11-27</time></div>
+                    <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-66</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">9</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">24</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithms/">
+                        <span class="tag">Algorithms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Binary-Tree/">
+                        <span class="tag">Binary Tree</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C-C/">
+                        <span class="tag">C/C++</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Clion/">
+                        <span class="tag">Clion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DAG图/">
+                        <span class="tag">DAG图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataFrame/">
+                        <span class="tag">DataFrame</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Database/">
+                        <span class="tag">Database</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gradient-Decent-Methods/">
+                        <span class="tag">Gradient Decent Methods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LIS/">
+                        <span class="tag">LIS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Latex/">
+                        <span class="tag">Latex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linear-Regression/">
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LinkedList/">
+                        <span class="tag">LinkedList</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Map/">
+                        <span class="tag">Map</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Matlab/">
+                        <span class="tag">Matlab</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Polynomial-Regression/">
+                        <span class="tag">Polynomial Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgis/">
+                        <span class="tag">Postgis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgresql/">
+                        <span class="tag">Postgresql</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sorting/">
+                        <span class="tag">Sorting</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stack/">
+                        <span class="tag">Stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Week-contest/">
+                        <span class="tag">Week-contest</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wireless-communications/">
+                        <span class="tag">Wireless communications</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux/">
+                        <span class="tag">linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/内存管理/">
+                        <span class="tag">内存管理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/函数指针/">
+                        <span class="tag">函数指针</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多线程/">
+                        <span class="tag">多线程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/并查集/">
+                        <span class="tag">并查集</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/拓扑排序/">
+                        <span class="tag">拓扑排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 272">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-19T04:00:00.000Z">2021-12-19</time></div>
+                    <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 272</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 271">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-12T04:00:00.000Z">2021-12-12</time></div>
+                    <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 271</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-67">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-11T14:30:00.000Z">2021-12-11</time></div>
+                    <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-67</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 269">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-28T04:00:00.000Z">2021-11-28</time></div>
+                    <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 269</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-66">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-27T14:30:00.000Z">2021-11-27</time></div>
+                    <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-66</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">9</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">24</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithms/">
+                        <span class="tag">Algorithms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Binary-Tree/">
+                        <span class="tag">Binary Tree</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C-C/">
+                        <span class="tag">C/C++</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Clion/">
+                        <span class="tag">Clion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DAG图/">
+                        <span class="tag">DAG图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataFrame/">
+                        <span class="tag">DataFrame</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Database/">
+                        <span class="tag">Database</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gradient-Decent-Methods/">
+                        <span class="tag">Gradient Decent Methods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LIS/">
+                        <span class="tag">LIS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Latex/">
+                        <span class="tag">Latex</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linear-Regression/">
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LinkedList/">
+                        <span class="tag">LinkedList</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Map/">
+                        <span class="tag">Map</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Matlab/">
+                        <span class="tag">Matlab</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Polynomial-Regression/">
+                        <span class="tag">Polynomial Regression</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgis/">
+                        <span class="tag">Postgis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Postgresql/">
+                        <span class="tag">Postgresql</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sorting/">
+                        <span class="tag">Sorting</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stack/">
+                        <span class="tag">Stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Week-contest/">
+                        <span class="tag">Week-contest</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wireless-communications/">
+                        <span class="tag">Wireless communications</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux/">
+                        <span class="tag">linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/内存管理/">
+                        <span class="tag">内存管理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/函数指针/">
+                        <span class="tag">函数指针</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多线程/">
+                        <span class="tag">多线程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/并查集/">
+                        <span class="tag">并查集</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/拓扑排序/">
+                        <span class="tag">拓扑排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.jpg" alt="LeetCode Solutions" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 Lingcheng Dai&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/dlc1994">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://dlc1994.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
