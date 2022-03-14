@@ -137,6 +137,183 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-06-22T14:03:11.811Z">2021-06-22</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 626 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2021/06/22/cl0qm0cdl001f945c393vtj8h/"></a>
+            
+        </h1>
+        <div class="content">
+            <p>在primal simplex算法中，每轮迭代都需要选择most candidate的方向并移动到邻近的顶点上，那么，用什么来评估方向的好坏呢？我们知道，选择一个方向走下去对目标值的改善程度是由方向和步长决定的，对于标准型的线性规划问题而言，使目标值下降的方向是reduced cost $d_j &lt;= 0$的那些非基变量，理论上来说，任意一个满足$d_j &lt;= 0$条件的非基变量都可以作为入基，但是我们不是那么随便的人，肯定不会随便选，那要如何选择呢？</p>
+<p>用一高一矮两个人来比喻，同样是走100步，你觉得是高的人走的远还是矮的人走得远呢（莫杠，正常场景）？同理，我这里当然是选择单位步长下能走更远的非基变量，当然，步长也是决定你能走多远的重要因素，这里暂且不论，就考虑最基本的dantzig的选基算法，即</p>
+<script type="math/tex; mode=display">q\in \underset{j\in N}{\argmin} \bar{z}_j</script><p>选入基的法则非常简单对不对，那么假设你处在某一次迭代中，想要计算所有非基变量的reduced cost $d_j, j\in N$，难道需要用reduced cost的计算公式每次计算？</p>
+<script type="math/tex; mode=display">\bar{z}_N = c_N - N^TB^{-T}c_B</script><p>显然大家不会那么傻，就跟revised simplex的$B^{-1}$更新一样，两次迭代间的reduced cost也是有关联关系的，接下来就给大家推导一下，不感兴趣的可以直接跳到结论了哈。</p>
+<p>对于一个genenal形式的LP问题：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \min:& \quad c^T x \\
+ s.t.:& \quad a \le Ax \le b, \\
+      & \quad l \le x \le u
+\end{aligned}</script><p>通过增加结构变量的形式可以转成一般形式的LP问题：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \min:& \quad c^T x \\
+ s.t.:& \quad Ax = b, \\
+      & \quad l \le x \le u
+\end{aligned}</script><p>注意到当前的$x$包含原始变量和结构变量，记为$x_c$和$x_r$。</p>
+<p>假设primal feasible，由对偶问题性质$Ay+s=c$，那么对于任意迭代时刻，都有如下条件满足</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+B x_B + s_B = c_B \\
+N x_N + s_N = c_N \\
+s_B = 0
+\end{cases}</script><p>其中$s_B, s_N$分别为对应基矩阵和非基矩阵的reduced costs。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/04/29/cl0qm0cdn001j945cyalmd4k9/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/stack.jpg" alt="常用数据结构——栈 (python)">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-29T13:27:23.000Z">2019-04-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm-and-Data-Structure/">Algorithm and Data Structure</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes read (About 1320 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/29/cl0qm0cdn001j945cyalmd4k9/">常用数据结构——栈 (python)</a>
+            
+        </h1>
+        <div class="content">
+            <p>本科学过c++的数据结构了，但研究生转无线通信后就忘的差不多了，现在重新复习下栈。<br></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/29/cl0qm0cdn001j945cyalmd4k9/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-16T13:27:23.000Z">2019-03-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 257 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/16/cl0qm0cdq001k945c2ch9yhk5/">暑期实习招聘笔试题3月(更新ing)</a>
+            
+        </h1>
+        <div class="content">
+            <p>实习笔试试题，有些没投（准备好先），拿过来先看了看<br></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/16/cl0qm0cdq001k945c2ch9yhk5/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-11-28T12:23:52.000Z">2018-11-28</time>
                 
                 <div class="level-item">
@@ -156,7 +333,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/11/28/ckxcryr11000b0w5ckt1a705t/">Linear Regression</a>
+                <a class="has-link-black-ter" href="/2018/11/28/cl0qm0cc4000a945cf4pr1mg9/">Linear Regression</a>
             
         </h1>
         <div class="content">
@@ -167,7 +344,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/28/ckxcryr11000b0w5ckt1a705t/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/11/28/cl0qm0cc4000a945cf4pr1mg9/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -209,7 +386,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/06/19/ckxcryr0y00080w5c1psa50c2/">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</a>
+                <a class="has-link-black-ter" href="/2018/06/19/cl0qm0cc30009945cvnlkwpsh/">How to Make a Visual Mark Up and Revision of Significant Differences between Two Latex Files by Latexdiff</a>
             
         </h1>
         <div class="content">
@@ -220,7 +397,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/06/19/ckxcryr0y00080w5c1psa50c2/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/06/19/cl0qm0cc30009945cvnlkwpsh/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -262,7 +439,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/06/12/ckxcryr0p00010w5cgd0x1x2y/">A Stupid Mistake I Made about Sorting in Python DataFrame</a>
+                <a class="has-link-black-ter" href="/2018/06/12/cl0qm0cbs0000945ca3oed3c0/">A Stupid Mistake I Made about Sorting in Python DataFrame</a>
             
         </h1>
         <div class="content">
@@ -273,7 +450,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/06/12/ckxcryr0p00010w5cgd0x1x2y/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/06/12/cl0qm0cbs0000945ca3oed3c0/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -315,7 +492,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/06/12/ckxcryr0w00060w5claa9g9ai/">Hexo: setup a static blog</a>
+                <a class="has-link-black-ter" href="/2018/06/12/cl0qm0cc00005945ctge6welp/">Hexo: setup a static blog</a>
             
         </h1>
         <div class="content">
@@ -326,7 +503,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/06/12/ckxcryr0w00060w5claa9g9ai/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/06/12/cl0qm0cc00005945ctge6welp/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -410,7 +587,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            44
+                            47
                         </p>
                     </a>
                 </div>
@@ -434,7 +611,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            34
+                            38
                         </p>
                     </a>
                 </div>
@@ -551,7 +728,7 @@
                 <span class="level-item">LeetCode</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Machine-Learning/">
@@ -596,7 +773,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/BFS/" style="font-size: 16px;">BFS</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 16px;">C++</a> <a href="/tags/C-C/" style="font-size: 14px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DAG图/" style="font-size: 10px;">DAG图</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 12px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 12px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIS/" style="font-size: 10px;">LIS</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 12px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 12px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Sorting/" style="font-size: 12px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Week-contest/" style="font-size: 18px;">Week-contest</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/函数指针/" style="font-size: 10px;">函数指针</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a>
+        <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Algorithms/" style="font-size: 10px;">Algorithms</a> <a href="/tags/BFS/" style="font-size: 16.67px;">BFS</a> <a href="/tags/Binary-Tree/" style="font-size: 10px;">Binary Tree</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/C-C/" style="font-size: 13.33px;">C/C++</a> <a href="/tags/Clion/" style="font-size: 10px;">Clion</a> <a href="/tags/DAG图/" style="font-size: 10px;">DAG图</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DataFrame/" style="font-size: 10px;">DataFrame</a> <a href="/tags/Database/" style="font-size: 11.67px;">Database</a> <a href="/tags/Gradient-Decent-Methods/" style="font-size: 11.67px;">Gradient Decent Methods</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIS/" style="font-size: 10px;">LIS</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/Linear-Regression/" style="font-size: 10px;">Linear Regression</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 11.67px;">Matlab</a> <a href="/tags/Polynomial-Regression/" style="font-size: 10px;">Polynomial Regression</a> <a href="/tags/Postgis/" style="font-size: 10px;">Postgis</a> <a href="/tags/Postgresql/" style="font-size: 11.67px;">Postgresql</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Sorting/" style="font-size: 11.67px;">Sorting</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union Find</a> <a href="/tags/Week-contest/" style="font-size: 18.33px;">Week-contest</a> <a href="/tags/Wireless-communications/" style="font-size: 10px;">Wireless communications</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/leetcode/" style="font-size: 11.67px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/函数指针/" style="font-size: 10px;">函数指针</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a> <a href="/tags/括号匹配/" style="font-size: 10px;">括号匹配</a>
     </div>
 </div>
     
@@ -611,7 +788,64 @@
         
         <article class="media">
             
-            <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="media-left">
+            <a href="/2022/03/13/cl0qm0cc8000g945cuede1ejl/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/uf.jpg" alt="并查集">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-03-13T14:57:07.000Z">2022-03-13</time></div>
+                    <a href="/2022/03/13/cl0qm0cc8000g945cuede1ejl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">并查集</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2022/03/10/cl0qm0cbz0004945c564f0hbt/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/Island.png" alt="岛屿问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-03-10T04:50:07.000Z">2022-03-10</time></div>
+                    <a href="/2022/03/10/cl0qm0cbz0004945c564f0hbt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">岛屿问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/25/cl0qm0ccd000o945c9u5l2t62/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-68">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-25T14:30:00.000Z">2021-12-25</time></div>
+                    <a href="/2021/12/25/cl0qm0ccd000o945c9u5l2t62/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-68</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/19/cl0qm0ccj000w945c96lf834t/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 272">
                 </p>
@@ -620,7 +854,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-19T04:00:00.000Z">2021-12-19</time></div>
-                    <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 272</a>
+                    <a href="/2021/12/19/cl0qm0ccj000w945c96lf834t/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 272</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -630,7 +864,7 @@
         
         <article class="media">
             
-            <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="media-left">
+            <a href="/2021/12/12/cl0qm0cck000z945c8okvljc6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 271">
                 </p>
@@ -639,64 +873,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-12T04:00:00.000Z">2021-12-12</time></div>
-                    <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 271</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-67">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-11T14:30:00.000Z">2021-12-11</time></div>
-                    <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-67</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 269">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-28T04:00:00.000Z">2021-11-28</time></div>
-                    <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 269</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-66">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-27T14:30:00.000Z">2021-11-27</time></div>
-                    <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-66</a>
+                    <a href="/2021/12/12/cl0qm0cck000z945c8okvljc6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 271</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -716,12 +893,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2022/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2021/12/">
                 <span class="level-start">
                     <span class="level-item">December 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -907,7 +1095,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">24</span>
+                        <span class="tag is-grey">25</span>
                     </a>
                 </div>
                 
@@ -921,7 +1109,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/BFS/">
                         <span class="tag">BFS</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -956,6 +1144,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/DAG图/">
                         <span class="tag">DAG图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DFS/">
+                        <span class="tag">DFS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1080,9 +1275,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Union-Find/">
+                        <span class="tag">Union Find</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Week-contest/">
                         <span class="tag">Week-contest</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -1097,6 +1299,13 @@
                     <a class="tags has-addons" href="/tags/git/">
                         <span class="tag">git</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/leetcode/">
+                        <span class="tag">leetcode</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1138,6 +1347,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/拓扑排序/">
                         <span class="tag">拓扑排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/括号匹配/">
+                        <span class="tag">括号匹配</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1166,7 +1382,64 @@
         
         <article class="media">
             
-            <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="media-left">
+            <a href="/2022/03/13/cl0qm0cc8000g945cuede1ejl/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/uf.jpg" alt="并查集">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-03-13T14:57:07.000Z">2022-03-13</time></div>
+                    <a href="/2022/03/13/cl0qm0cc8000g945cuede1ejl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">并查集</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2022/03/10/cl0qm0cbz0004945c564f0hbt/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/Island.png" alt="岛屿问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-03-10T04:50:07.000Z">2022-03-10</time></div>
+                    <a href="/2022/03/10/cl0qm0cbz0004945c564f0hbt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">岛屿问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/25/cl0qm0ccd000o945c9u5l2t62/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-68">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-25T14:30:00.000Z">2021-12-25</time></div>
+                    <a href="/2021/12/25/cl0qm0ccd000o945c9u5l2t62/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-68</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/12/19/cl0qm0ccj000w945c96lf834t/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 272">
                 </p>
@@ -1175,7 +1448,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-19T04:00:00.000Z">2021-12-19</time></div>
-                    <a href="/2021/12/19/ckxcryr1d000t0w5cllzpk6hc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 272</a>
+                    <a href="/2021/12/19/cl0qm0ccj000w945c96lf834t/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 272</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1185,7 +1458,7 @@
         
         <article class="media">
             
-            <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="media-left">
+            <a href="/2021/12/12/cl0qm0cck000z945c8okvljc6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 271">
                 </p>
@@ -1194,64 +1467,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-12T04:00:00.000Z">2021-12-12</time></div>
-                    <a href="/2021/12/12/ckxcryr1e000w0w5cog3ovumt/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 271</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-67">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-12-11T14:30:00.000Z">2021-12-11</time></div>
-                    <a href="/2021/12/11/ckxcryr1a000p0w5cnlczttxx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-67</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode Weekly Contest 269">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-28T04:00:00.000Z">2021-11-28</time></div>
-                    <a href="/2021/11/28/ckxcryr1c000s0w5cn364q1v1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 269</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/leetcode.jpg" alt="LeetCode biweekly-contest-66">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-11-27T14:30:00.000Z">2021-11-27</time></div>
-                    <a href="/2021/11/27/ckxcryr1b000q0w5cj2nx8hu0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode biweekly-contest-66</a>
+                    <a href="/2021/12/12/cl0qm0cck000z945c8okvljc6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LeetCode Weekly Contest 271</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                     </p>
@@ -1271,12 +1487,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2022/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2021/12/">
                 <span class="level-start">
                     <span class="level-item">December 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1462,7 +1689,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Algorithm/">
                         <span class="tag">Algorithm</span>
-                        <span class="tag is-grey">24</span>
+                        <span class="tag is-grey">25</span>
                     </a>
                 </div>
                 
@@ -1476,7 +1703,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/BFS/">
                         <span class="tag">BFS</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1511,6 +1738,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/DAG图/">
                         <span class="tag">DAG图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DFS/">
+                        <span class="tag">DFS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1635,9 +1869,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Union-Find/">
+                        <span class="tag">Union Find</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Week-contest/">
                         <span class="tag">Week-contest</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -1652,6 +1893,13 @@
                     <a class="tags has-addons" href="/tags/git/">
                         <span class="tag">git</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/leetcode/">
+                        <span class="tag">leetcode</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1697,6 +1945,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/括号匹配/">
+                        <span class="tag">括号匹配</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -1718,7 +1973,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2021 Lingcheng Dai&nbsp;
+                &copy; 2022 Lingcheng Dai&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 
